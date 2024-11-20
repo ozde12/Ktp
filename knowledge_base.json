@@ -1,3 +1,31 @@
 {
-    "message": "hello world"
+    "message": "hello world",
+    "Knowledge base": [
+        {
+            "animal group": "vertebrate or invertebrate",
+            "feature": [
+                {
+                    "name": "backbone",
+                    "question": "Does the animal have a backbone?"
+                }
+            ]
+        }
+    ],
+    "Rules": [
+        {
+            "current animal group": "vertebrate",
+            "required feature": [
+                "backbone"
+            ],
+            "question number": 1,
+            "next step": "conclusion vertebrate animal"
+        },
+        {
+            "current animal group": "conclusion vertebrate animal",
+            "conclusion": "The animal is a vertebrate animal."
+        }
+    ],
+    "Facts": [
+        "backbone"
+    ]
 }
