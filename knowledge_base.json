@@ -81,7 +81,7 @@
                     "question": "Does the animal breathe using lungs its entire life?"
                 },
                 {
-                    "name": "eggs in land",
+                    "name": "eggs on land",
                     "question": "Does the animal lay eggs on land?"
                 }
             ]
@@ -268,6 +268,66 @@
             "false": "10 and 11"
         },
         {
+            "question number": "10 and 11",
+            "current animal group": "vertebrates",
+            "features": [
+                "both water land",
+                "larva born"
+            ],
+            "bothTrue": "amphibian",
+            "bothFalse": "13 and 14",
+            "oneTrue": "12"
+        },
+        {
+            "question number": "12",
+            "current animal group": "vertebrates",
+            "features": [
+                "eggs in water"
+            ],
+            "true": "amphibian",
+            "false": "13 and 14"
+        },
+        {
+            "question number": "13 and 14",
+            "current animal group": "vertebrates",
+            "features": [
+                "scaly skin",
+                "lungs"
+            ],
+            "bothTrue": "reptile",
+            "bothFalse": "16 and 17",
+            "oneTrue": "15"
+        },
+        {
+            "question number": "15",
+            "current animal group": "vertebrates",
+            "features": [
+                "eggs on land"
+            ],
+            "true": "reptile",
+            "false": "16 and 17"
+        },
+        {
+            "question number": "16 and 17",
+            "current animal group": "vertebrates",
+            "features": [
+                "feathers",
+                "beak"
+            ],
+            "bothTrue": "bird",
+            "bothFalse": "1 and 2",
+            "oneTrue": "18"
+        },
+        {
+            "question number": "18",
+            "current animal group": "vertebrates",
+            "features": [
+                "eggs hard shell"
+            ],
+            "true": "bird",
+            "false": "1 and 2"
+        },
+        {
             "question number": "19 and 20",
             "current animal group": "invertebrates"
         }
@@ -287,7 +347,7 @@
         "eggs in water",
         "scaly skin",
         "lungs",
-        "eggs in land",
+        "eggs on land",
         "feathers",
         "beak",
         "eggs hard shell",
