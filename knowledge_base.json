@@ -22,15 +22,15 @@
             "animal group": "mammal",
             "features": [
                 {
-                    "name": "milk_feeding",
+                    "name": "milk feeding",
                     "question": "Does the animal produce milk to feed its young? "
                 },
                 {
-                    "name": "warm_blooded",
+                    "name": "warm blooded",
                     "question": "Does the animal have a constant body temperature (warm-blooded)?"
                 },
                 {
-                    "name": "hair_fur",
+                    "name": "hair fur",
                     "question": "Does the animal have fur or hair?"
                 }
             ]
@@ -47,7 +47,7 @@
                     "question": "Does the animal breathe with gills?"
                 },
                 {
-                    "name": "in_water",
+                    "name": "in water",
                     "question": "Does the animal live in water?"
                 }
             ]
@@ -56,15 +56,15 @@
             "animal group": "amphibian",
             "features": [
                 {
-                    "name": "both_water_land",
+                    "name": "both water land",
                     "question": "Does the animal live both in water and on land at different stages of its life?"
                 },
                 {
-                    "name": "larva_born",
+                    "name": "larva born",
                     "question": "Does the animal start life as a larva or tadpole in water?"
                 },
                 {
-                    "name": "eggs_in_water",
+                    "name": "eggs in water",
                     "question": "Does the animal lay eggs in water?"
                 }
             ]
@@ -73,7 +73,7 @@
             "animal group": "reptile",
             "features": [
                 {
-                    "name": "scaly_skin",
+                    "name": "scaly skin",
                     "question": "Does the animal have dry, scaly skin?"
                 },
                 {
@@ -81,7 +81,7 @@
                     "question": "Does the animal breathe using lungs its entire life?"
                 },
                 {
-                    "name": "eggs_in_land",
+                    "name": "eggs in land",
                     "question": "Does the animal lay eggs on land?"
                 }
             ]
@@ -98,7 +98,7 @@
                     "question": "Does the animal have a beak or bill instead of teeth?"
                 },
                 {
-                    "name": "eggs_hard_shell",
+                    "name": "eggs hard shell",
                     "question": "Does the animal lay eggs with hard shells?"
                 }
             ]
@@ -173,6 +173,21 @@
         "backbone",
         "skeleton",
         "skull",
+        "milk feeding",
+        "warm blooded",
+        "hair fur",
+        "fins",
+        "gills",
+        "in water",
+        "both water land",
+        "larva born",
+        "eggs in water",
+        "scaly skin",
+        "lungs",
+        "eggs in land",
+        "feathers",
+        "beak",
+        "eggs hard shell",
         "lack of tissues and organs",
         "pores",
         "relies on water flow",
