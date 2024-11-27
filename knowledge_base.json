@@ -19,6 +19,91 @@
             ]
         },
         {
+            "animal group": "mammal",
+            "features": [
+                {
+                    "name": "milk_feeding",
+                    "question": "Does the animal produce milk to feed its young? "
+                },
+                {
+                    "name": "warm_blooded",
+                    "question": "Does the animal have a constant body temperature (warm-blooded)?"
+                },
+                {
+                    "name": "hair_fur",
+                    "question": "Does the animal have fur or hair?"
+                }
+            ]
+        },
+        {
+            "animal group": "fish",
+            "features": [
+                {
+                    "name": "fins",
+                    "question": "Does the animal have fins instead of legs?"
+                },
+                {
+                    "name": "gills",
+                    "question": "Does the animal breathe with gills?"
+                },
+                {
+                    "name": "in_water",
+                    "question": "Does the animal live in water?"
+                }
+            ]
+        },
+        {
+            "animal group": "amphibian",
+            "features": [
+                {
+                    "name": "both_water_land",
+                    "question": "Does the animal live both in water and on land at different stages of its life?"
+                },
+                {
+                    "name": "larva_born",
+                    "question": "Does the animal start life as a larva or tadpole in water?"
+                },
+                {
+                    "name": "eggs_in_water",
+                    "question": "Does the animal lay eggs in water?"
+                }
+            ]
+        },
+        {
+            "animal group": "reptile",
+            "features": [
+                {
+                    "name": "scaly_skin",
+                    "question": "Does the animal have dry, scaly skin?"
+                },
+                {
+                    "name": "lungs",
+                    "question": "Does the animal breathe using lungs its entire life?"
+                },
+                {
+                    "name": "eggs_in_land",
+                    "question": "Does the animal lay eggs on land?"
+                }
+            ]
+        },
+        {
+            "animal group": "bird",
+            "features": [
+                {
+                    "name": "feathers",
+                    "question": "Does the animal have feathers?"
+                },
+                {
+                    "name": "beak",
+                    "question": "Does the animal have a beak or bill instead of teeth?"
+                },
+                {
+                    "name": "eggs_hard_shell",
+                    "question": "Does the animal lay eggs with hard shells?"
+                }
+            ]
+        },
+        {
             "animal group": "sponge",
             "features": [
                 {
