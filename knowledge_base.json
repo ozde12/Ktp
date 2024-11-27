@@ -208,32 +208,16 @@
     ],
     "Rules": [
         {
-            "current animal group": "vertebrate",
-            "required feature": [
-                "backbone"
-            ],
-            "question number": 1,
-            "next step": "conclusion vertebrate animal"
-        },
-        {
-            "current animal group": "conclusion vertebrate animal",
-            "conclusion": "The animal is a vertebrate animal."
-        },
-        {
-            "conditionGroup": {
-                "requirements": ["backbone", "skeleton"],
-                "logic": {
-                    "bothTrue": {
-                        "action": "Label as vertebrate and proceed with vertebrate questions"
-                    },
-                    "oneTrue": {
-                        "action": "Label as invertebrate but with special notes for skeletal anomalies"
-                    },
-                    "bothFalse": {
-                        "action": "Label as invertebrate and proceed with invertebrate questions"
-                    }
+            "current animal group": {
+                "required features": [
+                    "backbone",
+                    "skeleton"
+                ],
+                "question number": "1 and 2",
+                "bothTrue": "vertebrate questions",
+                "oneTrue": "question 3",
+                "bothFalse": "invertebrate questions"
                 }
-            }
         }
     ],
     "Facts": [
