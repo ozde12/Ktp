@@ -2,11 +2,19 @@
     "message": "hello world",
     "Knowledge base": [
         {
-            "animal group": "vertebrate or invertebrate",
-            "feature": [
+            "animal group": "vertebrate",
+            "features": [
                 {
                     "name": "backbone",
-                    "question": "Does the animal have a backbone?"
+                    "question": "Does the animal have a backbone or spine?"
+                },
+                {
+                    "name": "skeleton",
+                    "question": "Does the animal have an internal skeleton made of bone or cartilage?"
+                },
+                {
+                    "name": "skull",
+                    "question": "Does the animal have a head with a brain protected by a skull?"
                 }
             ]
         }
