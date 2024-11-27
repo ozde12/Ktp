@@ -208,16 +208,29 @@
     ],
     "Rules": [
         {
-            "current animal group": {
-                "required features": [
-                    "backbone",
-                    "skeleton"
-                ],
-                "question number": "1 and 2",
-                "bothTrue": "vertebrate questions",
-                "oneTrue": "question 3",
-                "bothFalse": "invertebrate questions"
-                }
+            "question number": "1 and 2",
+            "current animal group": "animal",
+            "bothTrue": "vertebrates",
+            "bothFalse": "invertebrates",
+            "oneTrue": "question 3"
+        },
+        {
+            "question number": "19 and 20",
+            "current animal group": "vertebrates",
+            "required features": [
+                "backbone",
+                "skeleton"
+            ]
+        },
+        {
+            "question number": "19 and 20",
+            "current animal group": "invertebrates"
+        },
+        {
+            "question number": "3",
+            "current animal group": "animal",
+            "true": "vertebrates",
+            "false": "invertebrates"
         }
     ],
     "Facts": [
