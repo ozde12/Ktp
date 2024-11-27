@@ -17,6 +17,57 @@
                     "question": "Does the animal have a head with a brain protected by a skull?"
                 }
             ]
+        },
+        {
+            "animal group": "sponge",
+            "features": [
+                {
+                    "name": "lack of tissues and organs",
+                    "question": "Does the animal lack true tissues and organs?"
+                },
+                {
+                    "name": "pores",
+                    "question": "Does the animal have a porous body with many small holes (pores)?"
+                },
+                {
+                    "name": "relies on water flow",
+                    "question": "Does the animal rely on water flow for feeding and breathing?"
+                }
+            ]
+        },
+        {
+            "animal group": "coelenterate",
+            "features": [
+                {
+                    "name": "symmetry",
+                    "question": "Does the animal have radial symmetry?"
+                },
+                {
+                    "name": "cnidocytes",
+                    "question": "Does the animal have stinging cells (cnidocytes) on its tentacles?"
+                },
+                {
+                    "name": "sac-like",
+                    "question": "Does the animal have a sac-like body with a single opening for food and waste?"
+                }
+            ]
+        },
+        {
+            "animal group": "worm",
+            "features": [
+                {
+                    "name": "unsegmented or segmented body",
+                    "question": "Does the animal have a long, soft, unsegmented or segmented body?"
+                },
+                {
+                    "name": "bilateral symmetry",
+                    "question": "Does the animal have bilateral symmetry?"
+                },
+                {
+                    "name": "lacks legs or appendages",
+                    "question": "Does the animal lack legs or appendages?"
+                }
+            ]
         }
     ],
     "Rules": [
@@ -34,6 +85,17 @@
         }
     ],
     "Facts": [
-        "backbone"
+        "backbone",
+        "skeleton",
+        "skull",
+        "lack of tissues and organs",
+        "pores",
+        "relies on water flow",
+        "symmetry",
+        "cnidocytes",
+        "sac-like",
+        "unsegmented or segmented body",
+        "bilateral symmetry",
+        "lacks legs or appendages"
     ]
 }
