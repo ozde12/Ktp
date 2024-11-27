@@ -1,5 +1,4 @@
 {
-    "message": "hello world",
     "Knowledge base": [
         {
             "animal group": "vertebrates",
@@ -329,7 +328,123 @@
         },
         {
             "question number": "19 and 20",
-            "current animal group": "invertebrates"
+            "current animal group": "invertebrates",
+            "features": [
+                "lack of tissues and organs",
+                "pores"
+            ],
+            "bothTrue": "sponge",
+            "bothFalse": "22 and 23",
+            "oneTrue": "21"
+        },
+        {
+            "question number": "21",
+            "current animal group": "invertebrates",
+            "features": [
+                "relies on water flow"
+            ],
+            "true": "sponge",
+            "false": "22 and 23"
+        },
+        {
+            "question number": "22 and 23",
+            "current animal group": "invertebrates",
+            "features": [
+                "symmetry",
+                "cnidocytes"
+            ],
+            "bothTrue": "coelenterate",
+            "bothFalse": "25 and 26",
+            "oneTrue": "24"
+        },
+        {
+            "question number": "24",
+            "current animal group": "invertebrates",
+            "features": [
+                "sac-like"
+            ],
+            "true": "coelenterate",
+            "false": "25 and 26"
+        },
+        {
+            "question number": "25 and 26",
+            "current animal group": "invertebrates",
+            "features": [
+                "unsegmented or segmented body",
+                "bilateral symmetry"
+            ],
+            "bothTrue": "worm",
+            "bothFalse": "28 and 29",
+            "oneTrue": "27"
+        },
+        {
+            "question number": "27",
+            "current animal group": "invertebrates",
+            "features": [
+                "lacks legs or appendages"
+            ],
+            "true": "worm",
+            "false": "28 and 29"
+        },
+        {
+            "question number": "28 and 29",
+            "current animal group": "invertebrates",
+            "features": [
+                "unsegmented body",
+                "tentacles"
+            ],
+            "bothTrue": "mollusk",
+            "bothFalse": "31 and 32",
+            "oneTrue": "30"
+        },
+        {
+            "question number": "30",
+            "current animal group": "invertebrates",
+            "features": [
+                "mantle"
+            ],
+            "true": "mollusk",
+            "false": "31 and 32"
+        },
+        {
+            "question number": "31 and 32",
+            "current animal group": "invertebrates",
+            "features": [
+                "segmented body",
+                "jointed legs"
+            ],
+            "bothTrue": "arthropod",
+            "bothFalse": "34 and 35",
+            "oneTrue": "33"
+        },
+        {
+            "question number": "33",
+            "current animal group": "invertebrates",
+            "features": [
+                "exoskeleton"
+            ],
+            "true": "arthropod",
+            "false": "34 and 35"
+        },
+        {
+            "question number": "34 and 35",
+            "current animal group": "invertebrates",
+            "features": [
+                "radial symmetry",
+                "endoskeleton"
+            ],
+            "bothTrue": "echinoderm",
+            "bothFalse": "1 and 2",
+            "oneTrue": "36"
+        },
+        {
+            "question number": "36",
+            "current animal group": "invertebrates",
+            "features": [
+                "water vascular system"
+            ],
+            "true": "echinoderm",
+            "false": "1 and 2"
         }
     ],
     "Facts": [
