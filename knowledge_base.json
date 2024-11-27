@@ -104,6 +104,57 @@
             ]
         },
         {
+            "animal group": "mollusk",
+            "features": [
+                {
+                    "name": "unsegmented body",
+                    "question": "Does the animal have a soft, unsegmented body?"
+                },
+                {
+                    "name": "tentacles",
+                    "question": "Does the animal have a muscular foot or tentacles for movement?"
+                },
+                {
+                    "name": "mantle",
+                    "question": "Does the animal have a mantle (a tissue layer) that secretes a shell or protects internal organs?"
+                }
+            ]
+        },
+        {
+            "animal group": "arthropod",
+            "features": [
+                {
+                    "name": "segmented body",
+                    "question": "Does the animal have a segmented body?"
+                },
+                {
+                    "name": "jointed legs",
+                    "question": "Does the animal have jointed legs or appendages?"
+                },
+                {
+                    "name": "exoskeleton",
+                    "question": "Does the animal have an exoskeleton made of chitin?"
+                }
+            ]
+        }, 
+        {
+            "animal group": "echinoderm",
+            "features": [
+                {
+                    "name": "radial symmetry",
+                    "question": "Does the animal have radial symmetry?"
+                },
+                {
+                    "name": "endoskeleton",
+                    "question": "Does the animal have an endoskeleton made of ossicles?"
+                },
+                {
+                    "name": "water vascular system",
+                    "question": "Does the animal have a Does the animal have a water vascular system?"
+                }
+            ]
+        },
+        {
             "animal group": "sponge",
             "features": [
                 {
