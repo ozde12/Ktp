@@ -214,8 +214,8 @@
                 "backbone",
                 "skeleton"
             ],
-            "bothTrue": "vertebrates",
-            "bothFalse": "invertebrates",
+            "bothTrue": "4 and 5",
+            "bothFalse": "19 and 20",
             "oneTrue": "3"
         },
         {
