@@ -221,20 +221,20 @@
         },
         {
             "conditionGroup": {
-              "requirements": ["backbone", "skeleton"],
-              "logic": {
-                "bothTrue": {
-                  "action": "Label as vertebrate and proceed with vertebrate questions"
-                },
-                "oneTrue": {
-                  "action": "Label as invertebrate but with special notes for skeletal anomalies"
-                },
-                "bothFalse": {
-                  "action": "Label as invertebrate and proceed with invertebrate questions"
+                "requirements": ["backbone", "skeleton"],
+                "logic": {
+                    "bothTrue": {
+                        "action": "Label as vertebrate and proceed with vertebrate questions"
+                    },
+                    "oneTrue": {
+                        "action": "Label as invertebrate but with special notes for skeletal anomalies"
+                    },
+                    "bothFalse": {
+                        "action": "Label as invertebrate and proceed with invertebrate questions"
+                    }
                 }
-              }
             }
-          }
+        }
     ],
     "Facts": [
         "backbone",
