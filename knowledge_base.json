@@ -2,7 +2,7 @@
     "message": "hello world",
     "Knowledge base": [
         {
-            "animal group": "vertebrate",
+            "animal group": "vertebrates",
             "features": [
                 {
                     "name": "backbone",
@@ -210,27 +210,66 @@
         {
             "question number": "1 and 2",
             "current animal group": "animal",
-            "bothTrue": "vertebrates",
-            "bothFalse": "invertebrates",
-            "oneTrue": "question 3"
-        },
-        {
-            "question number": "19 and 20",
-            "current animal group": "vertebrates",
-            "required features": [
+            "features": [
                 "backbone",
                 "skeleton"
-            ]
-        },
-        {
-            "question number": "19 and 20",
-            "current animal group": "invertebrates"
+            ],
+            "bothTrue": "vertebrates",
+            "bothFalse": "invertebrates",
+            "oneTrue": "3"
         },
         {
             "question number": "3",
             "current animal group": "animal",
+            "features": [
+                "skull"
+            ],
             "true": "vertebrates",
             "false": "invertebrates"
+        },
+        {
+            "question number": "4 and 5",
+            "current animal group": "vertebrates",
+            "features": [
+                "milk feeding",
+                "warm blooded"
+            ],
+            "bothTrue": "mammal",
+            "bothFalse": "7 and 8",
+            "oneTrue": "6"
+        },
+        {
+            "question number": "6",
+            "current animal group": "vertebrates",
+            "features": [
+                "hair fur"
+            ],
+            "true": "mammal",
+            "false": "7 and 8"
+        },
+        {
+            "question number": "7 and 8",
+            "current animal group": "vertebrates",
+            "features": [
+                "fins",
+                "gills"
+            ],
+            "bothTrue": "fish",
+            "bothFalse": "10 and 11",
+            "oneTrue": "9"
+        },
+        {
+            "question number": "9",
+            "current animal group": "vertebrates",
+            "features": [
+                "in water"
+            ],
+            "true": "fish",
+            "false": "10 and 11"
+        },
+        {
+            "question number": "19 and 20",
+            "current animal group": "invertebrates"
         }
     ],
     "Facts": [
