@@ -24,12 +24,20 @@ class KnowledgeBaseApp:
     def setup_gui(self):
         self.main_frame = tk.Frame(self.root, bg='white')
         self.main_frame.pack(fill="both", expand=True)
-        self.question_label = tk.Label(self.main_frame, text="", bg='white', font=("Arial", 14), wraplength=500)
+        self.question_label = tk.Label(
+            self.main_frame,
+            text="",
+            bg='white',  # Background color
+            fg='black',  # Text color
+            font=("Arial", 14),
+            wraplength=500
+        )
         self.question_label.pack(pady=20)
         self.yes_button = tk.Button(self.main_frame, text="Yes", command=lambda: self.answer("Yes"))
         self.yes_button.pack(side="left", padx=20)
         self.no_button = tk.Button(self.main_frame, text="No", command=lambda: self.answer("No"))
         self.no_button.pack(side="right", padx=20)
+
 
     def start(self):
         self.display_next_question("1 and 2")  # Starting with the first set of questions
