@@ -8,7 +8,6 @@ with open('knowledge_base.json', 'r') as file:
 # Extract relevant sections from the JSON
 knowledge_base = knowledge_data["Knowledge base"]
 rules = knowledge_data["Rules"]
-facts = knowledge_data["Facts"]
 
 class KnowledgeBaseApp:
     def __init__(self, root, knowledge_base, rules):
@@ -16,7 +15,7 @@ class KnowledgeBaseApp:
         self.knowledge_base = knowledge_base
         self.rules = rules
         self.current_question = None
-        self.current_group = "animal"  # Start with the general category
+        self.current_feature_index = 0  # Track which feature within the rule is being asked
         self.answers = {}  # Store user answers
         self.setup_gui()
         self.start()
@@ -38,7 +37,6 @@ class KnowledgeBaseApp:
         self.no_button = tk.Button(self.main_frame, text="No", command=lambda: self.answer("No"))
         self.no_button.pack(side="right", padx=20)
 
-
     def start(self):
         self.display_next_question("1 and 2")  # Starting with the first set of questions
 
@@ -46,10 +44,19 @@ class KnowledgeBaseApp:
         for rule in self.rules:
             if rule["question number"] == question_number:
                 self.current_question = rule
-                features = rule["features"]
-                self.question_label.config(text=" and ".join([self.get_question_text(feature) for feature in features]))
+                self.current_feature_index = 0  # Reset feature index for the new rule
+                self.ask_feature_question()
                 return
         self.end_classification("No matching rule found.")
+
+    def ask_feature_question(self):
+        if self.current_feature_index < len(self.current_question["features"]):
+            feature_name = self.current_question["features"][self.current_feature_index]
+            question_text = self.get_question_text(feature_name)
+            self.question_label.config(text=question_text)
+        else:
+            # All features in the rule have been answered; determine the next step
+            self.determine_next_step()
 
     def get_question_text(self, feature_name):
         for group in self.knowledge_base:
@@ -59,17 +66,33 @@ class KnowledgeBaseApp:
         return "Unknown question"
 
     def answer(self, user_input):
-        answers = self.current_question
-        if len(answers["features"]) == 1:  # Single feature question
-            next_step = answers["true"] if user_input == "Yes" else answers["false"]
-        else:  # Multiple feature question
-            if user_input == "Yes":
-                self.answers[self.current_question["features"][0]] = True
-            else:
-                self.answers[self.current_question["features"][0]] = False
+        feature_name = self.current_question["features"][self.current_feature_index]
+        self.answers[feature_name] = (user_input == "Yes")  # Store True/False for the feature
+        self.current_feature_index += 1  # Move to the next feature in the rule
 
-            next_step = answers.get("bothTrue") if all(self.answers.values()) else (
-                answers.get("bothFalse") if not any(self.answers.values()) else answers.get("oneTrue"))
+        # Ask the next feature question, or move to the next step if all features are answered
+        if self.current_feature_index < len(self.current_question["features"]):
+            self.ask_feature_question()
+        else:
+            self.determine_next_step()
+
+    def determine_next_step(self):
+        # Determine the next step based on answers to features
+        current_rule = self.current_question
+        features = current_rule["features"]
+
+        if len(features) == 1:  # Single feature question
+            next_step = current_rule["true"] if self.answers[features[0]] else current_rule["false"]
+        else:  # Multiple features
+            all_true = all(self.answers.get(feature, False) for feature in features)
+            all_false = all(not self.answers.get(feature, False) for feature in features)
+
+            if all_true:
+                next_step = current_rule.get("bothTrue")
+            elif all_false:
+                next_step = current_rule.get("bothFalse")
+            else:
+                next_step = current_rule.get("oneTrue")
 
         if next_step in [group["animal group"] for group in self.knowledge_base]:  # Classification found
             self.end_classification(next_step)
