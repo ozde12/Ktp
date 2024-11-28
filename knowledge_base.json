@@ -586,9 +586,7 @@
         "segmented body",
         "mantle",
         "tentacles",
-        "unsegmented body",
-<<<<<<< HEAD
-        "underdeveloped young",
+        "unsegmented body","underdeveloped young",
         "pouch",
         "live birth",
         "fully developed young",
@@ -596,8 +594,7 @@
         "chewing",
         "lay eggs",
         "specialized glands",
-        "live in water"
-=======
+        "live in water",
         "sucker-like or slit-like mouth",
         "looks like an eel",
         "slim, elongated body",
@@ -607,6 +604,5 @@
         "hard bones, shiny scales",
         "looks like common fish",
         "streamlined or symmetrical body"
->>>>>>> 00a74aec8ae7223221e6e70b10b139ed416687f8
     ]
 }
