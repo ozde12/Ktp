@@ -35,6 +35,58 @@
             ]
         },
         {
+            "animal group": "marsupial",
+            "features": [
+                {
+                    "name": "underdeveloped young",
+                    "question": "Does the animal give birth to underdeveloped young that crawl into a pouch?"
+                },
+                {
+                    "name": "pouch",
+                    "question": "Does the animal have a pouch where the young develop after birth?"
+                },
+                {
+                    "name": "live birth",
+                    "question": "Does the animal give live birth (i.e., the offspring develop inside the mother and are born alive, rather than hatching from eggs)? "
+                }
+            ]
+        },
+        {
+            "animal group": "placental",
+            "features": [
+                {
+                    "name": "fully developed young",
+                    "question": "Does the animal give birth to fully developed young (does not require nurturing outside the womb (e.g., in a pouch))?"
+                },
+                {
+                    "name": "placenta",
+                    "question": "Does the animal have a placenta to nourish the young during gestation (between contraception and birth)?"
+                },
+                {
+                    "name": "chewing",
+                    "question": "Does the animal have specialized teeth for chewing or grinding food?"
+                }
+            ]
+        },
+
+        {
+            "animal group": "monotremes",
+            "features": [
+                {
+                    "name": "lay eggs",
+                    "question": "Does the animal lay eggs instead of giving live birth?"
+                },
+                {
+                    "name": "specialized glands",
+                    "question": "Does the animal have specialized glands for producing milk but no nipples?"
+                },
+                {
+                    "name": "live in water",
+                    "question": "Does the animal primarily live in water or burrow underground?"
+                }
+            ]
+        },
+        {
             "animal group": "fish",
             "features": [
                 {
@@ -483,6 +535,15 @@
         "segmented body",
         "mantle",
         "tentacles",
-        "unsegmented body"
+        "unsegmented body",
+        "underdeveloped young",
+        "pouch",
+        "live birth",
+        "fully developed young",
+        "placenta",
+        "chewing",
+        "lay eggs",
+        "specialized glands",
+        "live in water"
     ]
 }
