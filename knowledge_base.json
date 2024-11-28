@@ -203,6 +203,57 @@
                     "question": "Does the animal lack legs or appendages?"
                 }
             ]
+        },
+        {
+            "animal group": "jawless fish",
+            "features": [
+                {
+                    "name": "sucker-like or slit-like mouth",
+                    "question": "Does the fish lack a jaw and have a round, sucker-like or slit-like mouth instead of teeth?"
+                },
+                {
+                    "name": "looks like an eel",
+                    "question": "Does it look like an eel, with smooth skin and no visible scales?"
+                },
+                {
+                    "name": "slim, elongated body",
+                    "question": "Does the fish have a slim, elongated body and appear to be more primitive compared to other fish?"
+                }
+            ]
+        },
+        {
+            "animal group": "cartilaginous fish",
+            "features": [
+                {
+                    "name": "feels rough like sandpaper",
+                    "question": "Does the fish have visible fins and jaws but feel rough like sandpaper, or seem to have no hard bones?"
+                },
+                {
+                    "name": "looks like a shark",
+                    "question": "Does it look like a shark, ray, or skate?"
+                },
+                {
+                    "name": "long, cylindrical body",
+                    "question": "Does the fish have a long, cylindrical body and appear to swim using side-to-side motions?"
+                }
+            ]
+        },
+        {
+            "animal group": "bony fish",
+            "features": [
+                {
+                    "name": "hard bones, shiny scales",
+                    "question": "Does the fish look like it has hard bones, scales that are smooth or shiny, and a wide variety of body shapes?"
+                },
+                {
+                    "name": "looks like common fish",
+                    "question": "Does it look like most common fish you would see in aquariums or when fishing?"
+                },
+                {
+                    "name": "streamlined or symmetrical body",
+                    "question": "Does the fish have a more streamlined or symmetrical body and often appear in schools or large groups?"
+                }
+            ]
         }
     ],
     "Rules": [
@@ -483,6 +534,15 @@
         "segmented body",
         "mantle",
         "tentacles",
-        "unsegmented body"
+        "unsegmented body",
+        "sucker-like or slit-like mouth",
+        "looks like an eel",
+        "slim, elongated body",
+        "feels rough like sandpaper",
+        "looks like a shark",
+        "long, cylindrical body",
+        "hard bones, shiny scales",
+        "looks like common fish",
+        "streamlined or symmetrical body"
     ]
 }
