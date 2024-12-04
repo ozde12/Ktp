@@ -5,11 +5,22 @@ import json
 with open('knowledge_base.json', 'r') as file:
     knowledge_data = json.load(file)
 
-# Extract relevant sections from the JSON
+# The JSON structure is expected to have two keys which are Knowledge base and rules
 knowledge_base = knowledge_data["Knowledge base"]
 rules = knowledge_data["Rules"]
 
 class KnowledgeBaseApp:
+    """
+    parameters:
+    root: the main Tkinter window
+    knowledge_base: it is loaded from the JSON 
+    rules: specifies the flow of questions and the classification logic
+
+    attributes:
+    current_question: stores the current rule being processed
+    current_feature_indec: tracks the current feature/question within a rule
+    answer: is the dictionary to store user answers for features
+    """
     def __init__(self, root, knowledge_base, rules):
         self.root = root
         self.knowledge_base = knowledge_base
@@ -20,6 +31,7 @@ class KnowledgeBaseApp:
         self.setup_gui()
         self.start()
 
+    # creates a main frame with a question label and two buttons named as "Yes" and "No"
     def setup_gui(self):
         self.main_frame = tk.Frame(self.root, bg='white')
         self.main_frame.pack(fill="both", expand=True)
@@ -37,9 +49,15 @@ class KnowledgeBaseApp:
         self.no_button = tk.Button(self.main_frame, text="No", command=lambda: self.answer("No"))
         self.no_button.pack(side="right", padx=20)
 
+    # indicates the start of classification by starting with a specific question number "1 and 2"
     def start(self):
         self.display_next_question("1 and 2")  # Starting with the first set of questions
 
+    """
+    Displays the next question. 
+    It looks for a rule with a matching "question number".
+    If it finds the matching question numbers, it then initializes "current_question" and starts asking feature-related questions using ask_feature_question()
+    """
     def display_next_question(self, question_number):
         for rule in self.rules:
             if rule["question number"] == question_number:
@@ -49,6 +67,7 @@ class KnowledgeBaseApp:
                 return
         self.end_classification("No matching rule found.")
 
+    # retrievs and displays a question for the current feature using get_question_text()
     def ask_feature_question(self):
         if self.current_feature_index < len(self.current_question["features"]):
             feature_name = self.current_question["features"][self.current_feature_index]
@@ -58,6 +77,7 @@ class KnowledgeBaseApp:
             # All features in the rule have been answered; determine the next step
             self.determine_next_step()
 
+    # searches the knowledge_base for  a matching feature name and returns the associated question text. If not found returns "Unknown question"
     def get_question_text(self, feature_name):
         for group in self.knowledge_base:
             for feature in group["features"]:
@@ -65,6 +85,8 @@ class KnowledgeBaseApp:
                     return feature["question"]
         return "Unknown question"
 
+    # records the user's answer as True for Yes annd No for False in the answers dictionary
+    # Moves to the next feature or determines the next step if all features are answered
     def answer(self, user_input):
         feature_name = self.current_question["features"][self.current_feature_index]
         self.answers[feature_name] = (user_input == "Yes")  # Store True/False for the feature
@@ -76,6 +98,13 @@ class KnowledgeBaseApp:
         else:
             self.determine_next_step()
 
+    """
+    The logic for progressing based on the user's answers:
+    For single-feature rules: Use true or false keys in the rule.
+    For multi-feature rules: Checks if all features are True, all are False, or mixed.
+    Uses keys like bothTrue, bothFalse or oneTrue
+    Then checks if the next step is a classification (an "animal group") or another rule.
+    """
     def determine_next_step(self):
         # Determine the next step based on answers to features
         current_rule = self.current_question
@@ -99,6 +128,8 @@ class KnowledgeBaseApp:
         else:
             self.display_next_question(next_step)
 
+    # displays the final classification result on the GUI
+    # removes the "Yes" and "No" buttons, ending the interaction
     def end_classification(self, classification):
         self.question_label.config(text=f"The animal is classified as: {classification}")
         self.yes_button.pack_forget()
