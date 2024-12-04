@@ -70,7 +70,7 @@
         },
 
         {
-            "animal group": "monotremes",
+            "animal group": "monotreme",
             "features": [
                 {
                     "name": "lay eggs",
@@ -100,6 +100,57 @@
                 {
                     "name": "in water",
                     "question": "Does the animal live in water?"
+                }
+            ]
+        },
+        {
+            "animal group": "jawless fish",
+            "features": [
+                {
+                    "name": "sucker-like or slit-like mouth",
+                    "question": "Does the fish lack a jaw and have a round, sucker-like or slit-like mouth instead of teeth?"
+                },
+                {
+                    "name": "looks like an eel",
+                    "question": "Does it look like an eel, with smooth skin and no visible scales?"
+                },
+                {
+                    "name": "slim, elongated body",
+                    "question": "Does the fish have a slim, elongated body and appear to be more primitive compared to other fish?"
+                }
+            ]
+        },
+        {
+            "animal group": "cartilaginous fish",
+            "features": [
+                {
+                    "name": "feels rough like sandpaper",
+                    "question": "Does the fish have visible fins and jaws but feel rough like sandpaper, or seem to have no hard bones?"
+                },
+                {
+                    "name": "looks like a shark",
+                    "question": "Does it look like a shark, ray, or skate?"
+                },
+                {
+                    "name": "long, cylindrical body",
+                    "question": "Does the fish have a long, cylindrical body and appear to swim using side-to-side motions?"
+                }
+            ]
+        },
+        {
+            "animal group": "bony fish",
+            "features": [
+                {
+                    "name": "hard bones, shiny scales",
+                    "question": "Does the fish look like it has hard bones, scales that are smooth or shiny, and a wide variety of body shapes?"
+                },
+                {
+                    "name": "looks like common fish",
+                    "question": "Does it look like most common fish you would see in aquariums or when fishing?"
+                },
+                {
+                    "name": "streamlined or symmetrical body",
+                    "question": "Does the fish have a more streamlined or symmetrical body and often appear in schools or large groups?"
                 }
             ]
         },
@@ -187,7 +238,75 @@
                     "question": "Does the animal have an exoskeleton made of chitin?"
                 }
             ]
-        }, 
+        },
+        {
+            "animal group": "crustacean",
+            "features": [
+                {
+                    "name": "aquatic",
+                    "question": "Does the animal live primarily in aquatic environments?"
+                },
+                {
+                    "name": "pairs of antennae",
+                    "question": "Does the animal have two pairs of antennae?"
+                },
+                {
+                    "name": "carapace",
+                    "question": "Does the animal have a hard exoskeleton (often called a carapace) covering its body?"
+                }
+            ]
+        },
+        {
+            "animal group": "myriapod",
+            "features": [
+                {
+                    "name": "segmented body with numerous legs",
+                    "question": "Does the animal have a long, segmented body with numerous legs?"
+                },
+                {
+                    "name": "pair of legs per segment",
+                    "question": "Does the animal have one or two pair of legs per segment"
+                },
+                {
+                    "name": "fangs or small mandibles",
+                    "question": "Does the animal have large fangs (for injecting venom) or smaller mandibles for grinding vegetation?"
+                }
+            ]
+        },
+        {
+            "animal group": "arachnoid",
+            "features": [
+                {
+                    "name": "two segments",
+                    "question": "Does the animal have a body divided into two main segments (cephalothorax and abdomen)?"
+                },
+                {
+                    "name": "eight legs",
+                    "question": "Does the animal have four pairs of legs (eight legs total)?"
+                },
+                {
+                    "name": "pedipalps",
+                    "question": "Does the animal have specialized appendages called pedipalps near the mouth?"
+                }
+            ]
+        },
+        {
+            "animal group": "insect",
+            "features": [
+                {
+                    "name": "three segments",
+                    "question": "Does the animal have a body divided into three main segments (head, thorax, abdomen)?"
+                },
+                {
+                    "name": "six legs",
+                    "question": "Does the animal have three pairs of legs (six legs total)?"
+                },
+                {
+                    "name": "compound eyes and antennae",
+                    "question": "Does the animal have compound eyes and one pair of antennae?"
+                }
+            ]
+        },
         {
             "animal group": "echinoderm",
             "features": [
@@ -240,6 +359,57 @@
             ]
         },
         {
+            "animal group": "coral",
+            "features": [
+                {
+                    "name": "sessile",
+                    "question": "Is the animal sessile (fixed in one place) for its entire life?"
+                },
+                {
+                    "name": "reefs",
+                    "question": "Does the animal form colonies that uild reefs?"
+                },
+                {
+                    "name": "get energy from tiny plants",
+                    "question": "Does the animal get energy from tiny plants (algae) that live inside its body and help it make food?"
+                }
+            ]
+        },
+        {
+            "animal group": "hydra",
+            "features": [
+                {
+                    "name": "freshwater",
+                    "question": "Does the animal live in freshwater, like lakes, rivers, or ponds, instead of the ocean?"
+                },
+                {
+                    "name": "regenerate",
+                    "question": "Does the animal regenerate when cut into pieces?"
+                },
+                {
+                    "name": "stay in one place",
+                    "question": "Does the animal stay in one place, attached to a surface (polyplop form), for its whole life instead of swimming freely?"
+                }
+            ]
+        },
+        {
+            "animal group": "jellyfish",
+            "features": [
+                {
+                    "name": "bell-shaped",
+                    "question": "Does the animal have a bell-shaped medusa body form??"
+                },
+                {
+                    "name": "float-freely",
+                    "question": "Does the animal float freely in water currents?"
+                },
+                {
+                    "name": "stinging cells",
+                    "question": "Does the animal have tentacles with stinging cells used to capture prey?"
+                }
+            ]
+        },
+        {
             "animal group": "worm",
             "features": [
                 {
@@ -257,53 +427,53 @@
             ]
         },
         {
-            "animal group": "jawless fish",
+            "animal group": "flatworm",
             "features": [
                 {
-                    "name": "sucker-like or slit-like mouth",
-                    "question": "Does the fish lack a jaw and have a round, sucker-like or slit-like mouth instead of teeth?"
+                    "name": "dorsoventrally flattened",
+                    "question": "Is the animal dorsoventrally flattened (flat body)?"
                 },
                 {
-                    "name": "looks like an eel",
-                    "question": "Does it look like an eel, with smooth skin and no visible scales?"
+                    "name": "lacks body cavity",
+                    "question": "Does the animal lack a body cavity (acoelomate)?"
                 },
                 {
-                    "name": "slim, elongated body",
-                    "question": "Does the fish have a slim, elongated body and appear to be more primitive compared to other fish?"
+                    "name": "relies on diffusion for gas exchange",
+                    "question": "Does the animal rely on diffusion for gas exchange and waste removal?"
                 }
             ]
         },
         {
-            "animal group": "cartilaginous fish",
+            "animal group": "roundworm",
             "features": [
                 {
-                    "name": "feels rough like sandpaper",
-                    "question": "Does the fish have visible fins and jaws but feel rough like sandpaper, or seem to have no hard bones?"
+                    "name": "cylindrical, unsegmented body",
+                    "question": "Does the animal have a cylindrical, unsegmented body?"
                 },
                 {
-                    "name": "looks like a shark",
-                    "question": "Does it look like a shark, ray, or skate?"
+                    "name": "complete digestive tract",
+                    "question": "Does the animal have a complete digestive tract with a separate mouth and anus?"
                 },
                 {
-                    "name": "long, cylindrical body",
-                    "question": "Does the fish have a long, cylindrical body and appear to swim using side-to-side motions?"
+                    "name": "simple digestive system",
+                    "question": "Does the animal have a simple digestive system with a primitive brain?"
                 }
             ]
         },
         {
-            "animal group": "bony fish",
+            "animal group": "segmented worm",
             "features": [
                 {
-                    "name": "hard bones, shiny scales",
-                    "question": "Does the fish look like it has hard bones, scales that are smooth or shiny, and a wide variety of body shapes?"
+                    "name": "segmented body divided into repeating sections",
+                    "question": "Does the animal have a segmented body divided into repeating sections, like rings or segments?"
                 },
                 {
-                    "name": "looks like common fish",
-                    "question": "Does it look like most common fish you would see in aquariums or when fishing?"
+                    "name": "circulatory system with blood vessels",
+                    "question": "Does the animal have a circulatory system with blood vessels?"
                 },
                 {
-                    "name": "streamlined or symmetrical body",
-                    "question": "Does the fish have a more streamlined or symmetrical body and often appear in schools or large groups?"
+                    "name": "tiny hair-like structures",
+                    "question": "Does the animal have tiny hair-like structures on its body that help it move?"
                 }
             ]
         }
@@ -548,6 +718,326 @@
             ],
             "true": "echinoderm",
             "false": "1 and 2"
+        },
+        {
+            "question number": "37 and 38",
+            "current animal group": "mammal",
+            "features": [
+                "underdeveloped young",
+                "pouch"
+            ],
+            "bothTrue": "marsupial",
+            "bothFalse": "40 and 41",
+            "oneTrue": "39"
+        },
+        {
+            "question number": "39",
+            "current animal group": "mammal",
+            "features": [
+                "live birth"
+            ],
+            "true": "marsupial",
+            "false": "40 and 41"
+        },
+        {
+            "question number": "40 and 41",
+            "current animal group": "mammal",
+            "features": [
+                "fully developed young",
+                "placenta"
+            ],
+            "bothTrue": "placental",
+            "bothFalse": "43 and 44",
+            "oneTrue": "42"
+        },
+        {
+            "question number": "42",
+            "current animal group": "mammal",
+            "features": [
+                "chewing"
+            ],
+            "true": "placental",
+            "false": "43 and 44"
+        },
+        {
+            "question number": "43 and 44",
+            "current animal group": "mammal",
+            "features": [
+                "lay eggs",
+                "specialized glands"
+            ],
+            "bothTrue": "monotreme",
+            "bothFalse": "37 and 38",
+            "oneTrue": "45"
+        },
+        {
+            "question number": "45",
+            "current animal group": "mammal",
+            "features": [
+                "live in water"
+            ],
+            "true": "monotreme",
+            "false": "37 and 38"
+        },
+        {
+            "question number": "46 and 47",
+            "current animal group": "fish",
+            "features": [
+                "sucker-like or slit-like mouth",
+                "looks like an eel"
+            ],
+            "bothTrue": "jawless fish",
+            "bothFalse": "49 and 50",
+            "oneTrue": "48"
+        },
+        {
+            "question number": "48",
+            "current animal group": "fish",
+            "features": [
+                "slim, elongated body"
+            ],
+            "true": "jawless fish",
+            "false": "49 and 50"
+        },
+        {
+            "question number": "49 and 50",
+            "current animal group": "fish",
+            "features": [
+                "feels rough like sandpaper",
+                "looks like a shark"
+            ],
+            "bothTrue": "cartilaginous fish",
+            "bothFalse": "52 and 53",
+            "oneTrue": "51"
+        },
+        {
+            "question number": "51",
+            "current animal group": "fish",
+            "features": [
+                "long, cylindrical body"
+            ],
+            "true": "cartilaginous fish",
+            "false": "52 and 53"
+        },
+        {
+            "question number": "52 and 53",
+            "current animal group": "fish",
+            "features": [
+                "hard bones, shiny scales",
+                "looks like common fish"
+            ],
+            "bothTrue": "bony fish",
+            "bothFalse": "46 and 47",
+            "oneTrue": "54"
+        },
+        {
+            "question number": "54",
+            "current animal group": "fish",
+            "features": [
+                "streamlined or symmetrical body"
+            ],
+            "true": "bony fish",
+            "false": "46 and 47"
+        },
+        {
+            "question number": "55 and 56",
+            "current animal group": "coelenterate",
+            "features": [
+                "sessile",
+                "reefs"
+            ],
+            "bothTrue": "coral",
+            "bothFalse": "58 and 59",
+            "oneTrue": "57"
+        },
+        {
+            "question number": "57",
+            "current animal group": "coelenterate",
+            "features": [
+                "get energy from tiny plants"
+            ],
+            "true": "coral",
+            "false": "58 and 59"
+        },
+        {
+            "question number": "58 and 59",
+            "current animal group": "coelenterate",
+            "features": [
+                "freshwater",
+                "regenerate"
+            ],
+            "bothTrue": "hydra",
+            "bothFalse": "61 and 62",
+            "oneTrue": "60"
+        },
+        {
+            "question number": "60",
+            "current animal group": "coelenterate",
+            "features": [
+                "stay in one place"
+            ],
+            "true": "hydra",
+            "false": "61 and 62"
+        },
+        {
+            "question number": "61 and 62",
+            "current animal group": "coelenterate",
+            "features": [
+                "bell-shaped",
+                "float-freely"
+            ],
+            "bothTrue": "jellyfish",
+            "bothFalse": "55 and 56",
+            "oneTrue": "63"
+        },
+        {
+            "question number": "63",
+            "current animal group": "coelenterate",
+            "features": [
+                "stinging cells"
+            ],
+            "true": "jellyfish",
+            "false": "55 and 56"
+        },
+        {
+            "question number": "64 and 65",
+            "current animal group": "worm",
+            "features": [
+                "dorsoventrally flattened",
+                "lacks body cavity"
+            ],
+            "bothTrue": "flatworm",
+            "bothFalse": "67 and 68",
+            "oneTrue": "66"
+        },
+        {
+            "question number": "66",
+            "current animal group": "worm",
+            "features": [
+                "relies on diffusion for gas exchange"
+            ],
+            "true": "flatworm",
+            "false": "67 and 68"
+        },
+        {
+            "question number": "67 and 68",
+            "current animal group": "worm",
+            "features": [
+                "cylindrical, unsegmented body",
+                "complete digestive tract"
+            ],
+            "bothTrue": "roundworm",
+            "bothFalse": "70 and 71",
+            "oneTrue": "69"
+        },
+        {
+            "question number": "69",
+            "current animal group": "worm",
+            "features": [
+                "simple digestive system"
+            ],
+            "true": "roundworm",
+            "false": "70 and 71"
+        },
+        {
+            "question number": "70 and 71",
+            "current animal group": "worm",
+            "features": [
+                "segmented body divided into repeating sections",
+                "circulatory system with blood vessels"
+            ],
+            "bothTrue": "segmented worm",
+            "bothFalse": "64 and 65",
+            "oneTrue": "72"
+        },
+        {
+            "question number": "72",
+            "current animal group": "worm",
+            "features": [
+                "tiny hair-like structures"
+            ],
+            "true": "segmented worm",
+            "false": "64 and 65"
+        },
+        {
+            "question number": "73 and 74",
+            "current animal group": "arthropod",
+            "features": [
+                "aquatic",
+                "pairs of antennae"
+            ],
+            "bothTrue": "crustacean",
+            "bothFalse": "76 and 77",
+            "oneTrue": "75"
+        },
+        {
+            "question number": "75",
+            "current animal group": "arthropod",
+            "features": [
+                "carapace"
+            ],
+            "true": "crustacean",
+            "false": "76 and 77"
+        },
+        {
+            "question number": "76 and 77",
+            "current animal group": "arthropod",
+            "features": [
+                "segmented body with numerous leg",
+                "pair of legs per segment"
+            ],
+            "bothTrue": "myriapod",
+            "bothFalse": "79 and 80",
+            "oneTrue": "78"
+        },
+        {
+            "question number": "78",
+            "current animal group": "arthropod",
+            "features": [
+                "fangs or small mandibles"
+            ],
+            "true": "myriapod",
+            "false": "79 and 80"
+        },
+        {
+            "question number": "79 and 80",
+            "current animal group": "arthropod",
+            "features": [
+                "two segments",
+                "eight legs"
+            ],
+            "bothTrue": "arachnoid",
+            "bothFalse": "82 and 83",
+            "oneTrue": "81"
+        },
+        {
+            "question number": "81",
+            "current animal group": "arthropod",
+            "features": [
+                "pedipalps"
+            ],
+            "true": "arachnoid",
+            "false": "82 and 83"
+        },
+        {
+            "question number": "82 and 83",
+            "current animal group": "arthropod",
+            "features": [
+                "three segments",
+                "six legs"
+            ],
+            "bothTrue": "insect",
+            "bothFalse": "73 and 74",
+            "oneTrue": "84"
+        },
+        {
+            "question number": "84",
+            "current animal group": "arthropod",
+            "features": [
+                "compound eyes and antennae"
+            ],
+            "true": "insect",
+            "false": "73 and 74"
         }
     ],
     "Facts": [
@@ -604,6 +1094,36 @@
         "long, cylindrical body",
         "hard bones, shiny scales",
         "looks like common fish",
-        "streamlined or symmetrical body"
+        "streamlined or symmetrical body",
+        "dorsoventrally flattened",
+        "lacks body cavity",
+        "relies on diffusion for gas exchange",
+        "cylindrical, unsegmented body",
+        "complete digestive tract",
+        "simple digestive system",
+        "segmented body divided into repeating sections",
+        "circulatory system with blood vessels",
+        "tiny hair-like structures",
+        "aquatic",
+        "pairs of antennae",
+        "carapace",
+        "segmented body with numerous legs",
+        "pair of legs per segment",
+        "fangs or small mandibles",
+        "two segments",
+        "eight legs",
+        "pedipalps",
+        "three segments",
+        "six legs",
+        "compound eyes and antennae",
+        "sessile",
+        "reefs",
+        "get energy from tiny plants",
+        "freshwater",
+        "regenerate",
+        "stay in one place",
+        "bell-shaped",
+        "float-freely",
+        "stinging cells"
     ]
 }
