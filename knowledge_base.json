@@ -496,8 +496,8 @@
             "features": [
                 "skull"
             ],
-            "true": "vertebrates",
-            "false": "invertebrates"
+            "true": "4 and 5",
+            "false": "19 and 20"
         },
         {
             "question number": "4 and 5",
@@ -506,7 +506,7 @@
                 "milk feeding",
                 "warm blooded"
             ],
-            "bothTrue": "mammal",
+            "bothTrue": "37 and 38",
             "bothFalse": "7 and 8",
             "oneTrue": "6"
         },
@@ -516,7 +516,7 @@
             "features": [
                 "hair fur"
             ],
-            "true": "mammal",
+            "true": "37 and 38",
             "false": "7 and 8"
         },
         {
@@ -526,7 +526,7 @@
                 "fins",
                 "gills"
             ],
-            "bothTrue": "fish",
+            "bothTrue": "46 and 47",
             "bothFalse": "10 and 11",
             "oneTrue": "9"
         },
@@ -536,7 +536,7 @@
             "features": [
                 "in water"
             ],
-            "true": "fish",
+            "true": "46 and 47",
             "false": "10 and 11"
         },
         {
@@ -626,7 +626,7 @@
                 "symmetry",
                 "cnidocytes"
             ],
-            "bothTrue": "coelenterate",
+            "bothTrue": "55 and 56",
             "bothFalse": "25 and 26",
             "oneTrue": "24"
         },
@@ -636,7 +636,7 @@
             "features": [
                 "sac-like"
             ],
-            "true": "coelenterate",
+            "true": "55 and 56",
             "false": "25 and 26"
         },
         {
@@ -646,7 +646,7 @@
                 "unsegmented or segmented body",
                 "bilateral symmetry"
             ],
-            "bothTrue": "worm",
+            "bothTrue": "64 and 65",
             "bothFalse": "28 and 29",
             "oneTrue": "27"
         },
@@ -656,7 +656,7 @@
             "features": [
                 "lacks legs or appendages"
             ],
-            "true": "worm",
+            "true": "64 and 65",
             "false": "28 and 29"
         },
         {
@@ -686,7 +686,7 @@
                 "segmented body",
                 "jointed legs"
             ],
-            "bothTrue": "arthropod",
+            "bothTrue": "73 and 74",
             "bothFalse": "34 and 35",
             "oneTrue": "33"
         },
@@ -696,7 +696,7 @@
             "features": [
                 "exoskeleton"
             ],
-            "true": "arthropod",
+            "true": "73 and 74",
             "false": "34 and 35"
         },
         {
