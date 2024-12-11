@@ -29,14 +29,37 @@ class KnowledgeBaseApp:
         self.current_feature_index = 0  # Track which feature within the rule is being asked
         self.answers = {}  # Store user answers
         self.setup_gui()
-        self.start()
 
     def setup_gui(self):
         # Main frame setup
         self.main_frame = tk.Frame(self.root, bg='#A5D6A7')  # Light green background
         self.main_frame.pack(fill="both", expand=True)
 
-        # Question label
+        # Welcome Label
+        self.welcome_label = tk.Label(
+            self.main_frame,
+            text="Welcome to the Animal Classification System!",
+            bg='#A5D6A7',
+            fg='black',
+            font=("Arial", 40, "bold"),
+            wraplength=1100
+        )
+        self.welcome_label.place(relx=0.5, rely=0.4, anchor="center")
+
+        # Start Button
+        self.start_button = tk.Button(
+            self.main_frame,
+            text="Start",
+            command=self.start,
+            fg="black",
+            font=("Arial", 20),
+            relief="solid",
+            padx=20,
+            pady=10
+        )
+        self.start_button.place(relx=0.5, rely=0.6, anchor="center")
+
+        # Question label (initially hidden)
         self.question_label = tk.Label(
             self.main_frame,
             text="",
@@ -45,11 +68,9 @@ class KnowledgeBaseApp:
             font=("Arial", 40, "bold"),
             wraplength=1100
         )
-        self.question_label.place(relx=0.5, rely=0.4, anchor="center")
-
-        # Frame for buttons to align them horizontally
+        
+        # Frame for buttons to align them horizontally (initially hidden)
         self.button_frame = tk.Frame(self.main_frame, bg='#A5D6A7')
-        self.button_frame.place(relx=0.5, rely=0.6, anchor="center")
 
         # Yes button
         self.yes_button = tk.Button(
@@ -62,7 +83,6 @@ class KnowledgeBaseApp:
             padx=30,  # Padding for a larger clickable area
             pady=15
         )
-        self.yes_button.pack(side="left", padx=40)
 
         # No button
         self.no_button = tk.Button(
@@ -75,10 +95,19 @@ class KnowledgeBaseApp:
             padx=30,
             pady=15
         )
+
+    # Start classification by showing the first question
+    def start(self):
+        # Hide welcome message and start button
+        self.welcome_label.place_forget()
+        self.start_button.place_forget()
+
+        # Show question label and buttons
+        self.question_label.place(relx=0.5, rely=0.4, anchor="center")
+        self.button_frame.place(relx=0.5, rely=0.6, anchor="center")
+        self.yes_button.pack(side="left", padx=40)
         self.no_button.pack(side="right", padx=40)
 
-    # indicates the start of classification by starting with a specific question number "1 and 2"
-    def start(self):
         self.display_next_question("1 and 2")  # Starting with the first set of questions
 
     """
