@@ -5,11 +5,11 @@
             "features": [
                 {
                     "name": "backbone",
-                    "question": "Does the animal have a backbone or spine?"
+                    "question": "Does the animal have a backbone or spine or notochord?"
                 },
                 {
                     "name": "skeleton",
-                    "question": "Does the animal have an internal skeleton made of bone or cartilage?"
+                    "question": "Does the animal have an internal skeleton (or notochord) made of bone or cartilage?"
                 },
                 {
                     "name": "skull",
@@ -22,7 +22,7 @@
             "features": [
                 {
                     "name": "milk feeding",
-                    "question": "Does the animal produce milk to feed its young? "
+                    "question": "Does the animal produce milk (NOT crop milk) to feed its young? "
                 },
                 {
                     "name": "warm blooded",
@@ -183,8 +183,8 @@
                     "question": "Does the animal breathe using lungs its entire life?"
                 },
                 {
-                    "name": "eggs on land",
-                    "question": "Does the animal lay eggs on land?"
+                    "name": "leathery eggs",
+                    "question": "Does the animal lay eggs leathery or soft-shell eggs?"
                 }
             ]
         },
@@ -329,7 +329,7 @@
             "features": [
                 {
                     "name": "lack of tissues and organs",
-                    "question": "Does the animal lack true tissues and organs?"
+                    "question": "Does the animal lack true tissues or organs?"
                 },
                 {
                     "name": "pores",
@@ -337,7 +337,7 @@
                 },
                 {
                     "name": "also lives in fresh water",
-                    "question": "Can the animal be found in fresh water and estuaries?"
+                    "question": "Can the animal be found in fresh water?"
                 }
             ]
         },
@@ -367,7 +367,7 @@
                 },
                 {
                     "name": "reefs",
-                    "question": "Does the animal form colonies that uild reefs?"
+                    "question": "Does the animal form colonies that build reefs?"
                 },
                 {
                     "name": "get energy from tiny plants",
@@ -380,7 +380,7 @@
             "features": [
                 {
                     "name": "freshwater",
-                    "question": "Does the animal live in freshwater, like lakes, rivers, or ponds, instead of the ocean?"
+                    "question": "Does the animal live in freshwater (like lakes, rivers, or ponds instead of the ocean?"
                 },
                 {
                     "name": "regenerate",
@@ -397,7 +397,7 @@
             "features": [
                 {
                     "name": "bell-shaped",
-                    "question": "Does the animal have a bell-shaped medusa body form??"
+                    "question": "Does the animal have a bell-shaped medusa body form?"
                 },
                 {
                     "name": "float-freely",
@@ -455,8 +455,8 @@
                     "question": "Does the animal have a complete digestive tract with a separate mouth and anus?"
                 },
                 {
-                    "name": "simple digestive system",
-                    "question": "Does the animal have a simple digestive system with a primitive brain?"
+                    "name": "parasite in mammals",
+                    "question": "Does the animal usually live as a parasite in the digestive system of mammals?"
                 }
             ]
         },
@@ -574,7 +574,7 @@
             "question number": "15",
             "current animal group": "vertebrates",
             "features": [
-                "eggs on land"
+                "leathery eggs"
             ],
             "true": "reptile",
             "false": "16 and 17"
@@ -777,7 +777,7 @@
                 "live in water"
             ],
             "true": "monotreme",
-            "false": "16 and 17"
+            "false": "37 and 38"
         },
         {
             "question number": "46 and 47",
@@ -934,7 +934,7 @@
             "question number": "69",
             "current animal group": "worm",
             "features": [
-                "simple digestive system"
+                "parasite in mammals"
             ],
             "true": "roundworm",
             "false": "70 and 71"
@@ -983,7 +983,7 @@
             "question number": "76 and 77",
             "current animal group": "arthropod",
             "features": [
-                "segmented body with numerous leg",
+                "segmented body with numerous legs",
                 "pair of legs per segment"
             ],
             "bothTrue": "myriapod",
@@ -1055,7 +1055,7 @@
         "eggs in water",
         "scaly skin",
         "lungs",
-        "eggs on land",
+        "leathery eggs",
         "feathers",
         "beak",
         "eggs hard shell",
@@ -1100,7 +1100,7 @@
         "relies on diffusion for gas exchange",
         "cylindrical, unsegmented body",
         "complete digestive tract",
-        "simple digestive system",
+        "parasite in mammals",
         "segmented body divided into repeating sections",
         "circulatory system with blood vessels",
         "tiny hair-like structures",
