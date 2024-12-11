@@ -33,21 +33,64 @@ class KnowledgeBaseApp:
 
     # creates a main frame with a question label and two buttons named as "Yes" and "No"
     def setup_gui(self):
-        self.main_frame = tk.Frame(self.root, bg='white')
-        self.main_frame.pack(fill="both", expand=True)
+        # Main frame with a light green background
+        self.main_frame = tk.Frame(self.root, bg='#A5D6A7')  # Light green
+        self.main_frame.pack(fill="both", expand=True, padx=20, pady=20)
+
+        # Add a title label for context
+        self.title_label = tk.Label(
+            self.main_frame,
+            text="Animal Species ",
+            bg='#2E7D32',  # Dark green background for title
+            fg='#FFFFFF',  # White text for contrast
+            font=("Helvetica", 18, "bold")
+        )
+        self.title_label.pack(pady=(10, 20))
+
+        # Question label with padding and improved font
         self.question_label = tk.Label(
             self.main_frame,
-            text="",
-            bg='white',  # Background color
-            fg='black',  # Text color
-            font=("Arial", 14),
+            text="",  # Placeholder text
+            bg='#A5D6A7',  # Light green background
+            fg='#444444',  # Slightly lighter gray text
+            font=("Arial", 25),
             wraplength=500
         )
         self.question_label.pack(pady=20)
-        self.yes_button = tk.Button(self.main_frame, text="Yes", command=lambda: self.answer("Yes"))
-        self.yes_button.pack(side="left", padx=20)
-        self.no_button = tk.Button(self.main_frame, text="No", command=lambda: self.answer("No"))
-        self.no_button.pack(side="right", padx=20)
+
+        # Create a frame for buttons to align them horizontally
+        self.button_frame = tk.Frame(self.main_frame, bg='#A5D6A7')
+        self.button_frame.pack(pady=20)
+
+        # Yes button with improved styling
+        self.yes_button = tk.Button(
+            self.button_frame,
+            text="Yes",
+            command=lambda: self.answer("Yes"),
+            bg="#4CAF50",  # Green background
+            fg="black",  # Black text
+            font=("Arial", 17),
+            relief="flat",  # Flat button style
+            padx=20,  # Padding for a larger clickable area
+            pady=10
+        )
+        self.yes_button.pack(side="left", padx=10)
+
+        # No button with matching styling
+        self.no_button = tk.Button(
+            self.button_frame,
+            text="No",
+            command=lambda: self.answer("No"),
+            bg="#F44336",  # Red background
+            fg="black",  # Black text
+            font=("Arial", 17),
+            relief="flat",
+            padx=20,
+            pady=10
+        )
+        self.no_button.pack(side="right", padx=10)
+
+
 
     # indicates the start of classification by starting with a specific question number "1 and 2"
     def start(self):
