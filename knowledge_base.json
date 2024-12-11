@@ -336,8 +336,8 @@
                     "question": "Does the animal have a porous body with many small holes (pores)?"
                 },
                 {
-                    "name": "relies on water flow",
-                    "question": "Does the animal rely on water flow for feeding and breathing?"
+                    "name": "also lives in fresh water",
+                    "question": "Can the animal be found in fresh water and estuaries?"
                 }
             ]
         },
@@ -614,7 +614,7 @@
             "question number": "21",
             "current animal group": "invertebrates",
             "features": [
-                "relies on water flow"
+                "also lives in fresh water"
             ],
             "true": "sponge",
             "false": "22 and 23"
@@ -1061,7 +1061,7 @@
         "eggs hard shell",
         "lack of tissues and organs",
         "pores",
-        "relies on water flow",
+        "also lives in fresh water",
         "symmetry",
         "cnidocytes",
         "sac-like",
