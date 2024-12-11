@@ -18,7 +18,7 @@ class KnowledgeBaseApp:
 
     attributes:
     current_question: stores the current rule being processed
-    current_feature_indec: tracks the current feature/question within a rule
+    current_feature_index: tracks the current feature/question within a rule
     answer: is the dictionary to store user answers for features
     """
     def __init__(self, root, knowledge_base, rules):
@@ -28,77 +28,106 @@ class KnowledgeBaseApp:
         self.current_question = None
         self.current_feature_index = 0  # Track which feature within the rule is being asked
         self.answers = {}  # Store user answers
+        self.previous_animal_group = None  # Track previous animal group for end classification message
         self.setup_gui()
-        self.start()
 
-    # creates a main frame with a question label and two buttons named as "Yes" and "No"
     def setup_gui(self):
-        # Main frame with a light green background
-        self.main_frame = tk.Frame(self.root, bg='#A5D6A7')  # Light green
-        self.main_frame.pack(fill="both", expand=True, padx=20, pady=20)
+        # Main frame setup
+        self.main_frame = tk.Frame(self.root, bg='#A5D6A7')  # Light green background
+        self.main_frame.pack(fill="both", expand=True)
 
-        # Add a title label for context
-        self.title_label = tk.Label(
+        # Welcome Label
+        self.welcome_label = tk.Label(
             self.main_frame,
-            text="Animal Species ",
-            bg='#2E7D32',  # Dark green background for title
-            fg='#FFFFFF',  # White text for contrast
-            font=("Helvetica", 18, "bold")
+            text="Welcome to the Animal Classification System!",
+            bg='#A5D6A7',
+            fg='black',
+            font=("Arial", 40, "bold"),
+            wraplength=1100
         )
-        self.title_label.pack(pady=(10, 20))
+        self.welcome_label.place(relx=0.5, rely=0.4, anchor="center")
 
-        # Question label with padding and improved font
+        # Start Button
+        self.start_button = tk.Button(
+            self.main_frame,
+            text="Start",
+            command=self.start,
+            fg="black",
+            font=("Arial", 20),
+            relief="solid",
+            padx=20,
+            pady=10
+        )
+        self.start_button.place(relx=0.5, rely=0.6, anchor="center")
+
+        # Question label (initially hidden)
         self.question_label = tk.Label(
             self.main_frame,
-            text="",  # Placeholder text
+            text="",
             bg='#A5D6A7',  # Light green background
-            fg='#444444',  # Slightly lighter gray text
-            font=("Arial", 25),
-            wraplength=500
+            fg='black',  # Black text
+            font=("Arial", 40, "bold"),
+            wraplength=1100
         )
-        self.question_label.pack(pady=20)
-
-        # Create a frame for buttons to align them horizontally
+        
+        # Frame for buttons to align them horizontally (initially hidden)
         self.button_frame = tk.Frame(self.main_frame, bg='#A5D6A7')
-        self.button_frame.pack(pady=20)
 
-        # Yes button with improved styling
+        # Yes button
         self.yes_button = tk.Button(
             self.button_frame,
             text="Yes",
             command=lambda: self.answer("Yes"),
-            bg="#4CAF50",  # Green background
             fg="black",  # Black text
             font=("Arial", 17),
-            relief="flat",  # Flat button style
-            padx=20,  # Padding for a larger clickable area
-            pady=10
+            relief="solid",  # Solid line around the button
+            padx=30,  # Padding for a larger clickable area
+            pady=15
         )
-        self.yes_button.pack(side="left", padx=10)
 
-        # No button with matching styling
+        # No button
         self.no_button = tk.Button(
             self.button_frame,
             text="No",
             command=lambda: self.answer("No"),
-            bg="#F44336",  # Red background
             fg="black",  # Black text
             font=("Arial", 17),
-            relief="flat",
-            padx=20,
-            pady=10
+            relief="solid",  # Solid line around the button
+            padx=30,
+            pady=15
         )
-        self.no_button.pack(side="right", padx=10)
 
+        # Animal group label (hidden at the start)
+        self.animal_group_label = tk.Label(
+            self.main_frame,
+            text="Current Animal Group: None",
+            bg='#A5D6A7',
+            fg='black',
+            font=("Arial", 12),
+            anchor="w"
+        )
 
+        # This label will show up later during the classification and update
+        self.animal_group_label.place(relx=0.01, rely=0.05)  # Position at the top left
+        self.animal_group_label.place_forget()  # Initially hide it
 
-    # indicates the start of classification by starting with a specific question number "1 and 2"
+    # Start classification by showing the first question
     def start(self):
+        # Hide welcome message and start button
+        self.welcome_label.place_forget()
+        self.start_button.place_forget()
+
+        # Show question label and buttons
+        self.question_label.place(relx=0.5, rely=0.4, anchor="center")
+        self.button_frame.place(relx=0.5, rely=0.6, anchor="center")
+        self.yes_button.pack(side="left", padx=40)
+        self.no_button.pack(side="right", padx=40)
+
         self.display_next_question("1 and 2")  # Starting with the first set of questions
 
     """
     Displays the next question. 
-    It looks for a rule with a matching "question number".
+    It looks for a rule with a matching "question number". 
     If it finds the matching question numbers, it then initializes "current_question" and starts asking feature-related questions using ask_feature_question()
     """
     def display_next_question(self, question_number):
@@ -110,7 +139,7 @@ class KnowledgeBaseApp:
                 return
         self.end_classification("No matching rule found.")
 
-    # retrievs and displays a question for the current feature using get_question_text()
+    # Retrieves and displays a question for the current feature using get_question_text()
     def ask_feature_question(self):
         if self.current_feature_index < len(self.current_question["features"]):
             feature_name = self.current_question["features"][self.current_feature_index]
@@ -120,7 +149,7 @@ class KnowledgeBaseApp:
             # All features in the rule have been answered; determine the next step
             self.determine_next_step()
 
-    # searches the knowledge_base for  a matching feature name and returns the associated question text. If not found returns "Unknown question"
+    # Searches the knowledge_base for a matching feature name and returns the associated question text. If not found, returns "Unknown question"
     def get_question_text(self, feature_name):
         for group in self.knowledge_base:
             for feature in group["features"]:
@@ -128,7 +157,7 @@ class KnowledgeBaseApp:
                     return feature["question"]
         return "Unknown question"
 
-    # records the user's answer as True for Yes annd No for False in the answers dictionary
+    # Records the user's answer as True for Yes and False for No in the answers dictionary
     # Moves to the next feature or determines the next step if all features are answered
     def answer(self, user_input):
         feature_name = self.current_question["features"][self.current_feature_index]
@@ -140,6 +169,9 @@ class KnowledgeBaseApp:
             self.ask_feature_question()
         else:
             self.determine_next_step()
+
+        # Update animal group after every answer, without showing it yet
+        self.update_animal_group_label()
 
     """
     The logic for progressing based on the user's answers:
@@ -166,17 +198,35 @@ class KnowledgeBaseApp:
             else:
                 next_step = current_rule.get("oneTrue")
 
+        # If next_step is a classification (animal group), display it
         if next_step in [group["animal group"] for group in self.knowledge_base]:  # Classification found
+            self.previous_animal_group = self.animal_group_label.cget("text")  # Save the previous group
             self.end_classification(next_step)
         else:
             self.display_next_question(next_step)
 
-    # displays the final classification result on the GUI
-    # removes the "Yes" and "No" buttons, ending the interaction
+    # Displays the final classification result on the GUI
+    # Removes the "Yes" and "No" buttons, ending the interaction
     def end_classification(self, classification):
-        self.question_label.config(text=f"The animal is classified as: {classification}")
+        # Hide the animal group label during end classification
+        self.animal_group_label.place_forget()
+
+        # Display the final result
+        vertebrate_or_invertebrate = "vertebrate" if "vertebrate" in classification.lower() else "invertebrate"
+        self.question_label.config(
+            text=f"The animal is classified as: {classification} from {vertebrate_or_invertebrate, self.previous_animal_group}."
+        )
+
+        # Remove the "Yes" and "No" buttons
         self.yes_button.pack_forget()
         self.no_button.pack_forget()
+
+    def update_animal_group_label(self):
+        # Set the initial animal group based on the current question
+        if self.current_question:
+            group = self.current_question.get("current animal group", "Unknown")
+            self.animal_group_label.config(text=f"Current Animal Group: {group}")
+            self.animal_group_label.place(relx=0.01, rely=0.05)  # Show the animal group label
 
 # Initialize the app
 root = tk.Tk()
