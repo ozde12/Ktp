@@ -137,7 +137,6 @@ class KnowledgeBaseApp:
                 self.current_feature_index = 0  # Reset feature index for the new rule
                 self.ask_feature_question()
                 return
-        self.end_classification("No matching rule found.")
 
     # Retrieves and displays a question for the current feature using get_question_text()
     def ask_feature_question(self):
@@ -155,7 +154,6 @@ class KnowledgeBaseApp:
             for feature in group["features"]:
                 if feature["name"] == feature_name:
                     return feature["question"]
-        return "Unknown question"
 
     # Records the user's answer as True for Yes and False for No in the answers dictionary
     # Moves to the next feature or determines the next step if all features are answered
@@ -224,7 +222,7 @@ class KnowledgeBaseApp:
     def update_animal_group_label(self):
         # Set the initial animal group based on the current question
         if self.current_question:
-            group = self.current_question.get("current animal group", "Unknown")
+            group = self.current_question.get("current animal group")
             self.animal_group_label.config(text=f"Current Animal Group: {group}")
             self.animal_group_label.place(relx=0.01, rely=0.05)  # Show the animal group label
 
