@@ -5,18 +5,21 @@
             "features": [
                 {
                     "name": "backbone",
-                    "question": "Does the animal have a backbone or spine or notochord?"
+                    "question": "Does the animal have a backbone or spine or notochord?",
+                    "negative feature": "no backbone"
                 },
                 {
                     "name": "skeleton",
-                    "question": "Does the animal have an internal skeleton (or notochord) made of bone or cartilage?"
+                    "question": "Does the animal have an internal skeleton (or notochord) made of bone or cartilage?",
+                    "negative feature": "no skeleton"
                 },
                 {
                     "name": "skull",
-                    "question": "Does the animal have a head with a brain protected by a skull?"
+                    "question": "Does the animal have a head with a brain protected by a skull?",
+                    "negative feature": "no skull"
                 }
             ]
-        },
+        },        
         {
             "animal group": "mammal",
             "features": [
@@ -1044,6 +1047,9 @@
         "backbone",
         "skeleton",
         "skull",
+        "no backbone",
+        "no skeleton",
+        "no skull",
         "milk feeding",
         "warm blooded",
         "hair fur",

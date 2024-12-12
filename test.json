@@ -22,7 +22,9 @@
     {
         "current animal group": "invertebrates",
         "required features": [
-            ...
+            "no backbone",
+            "no skeleton",
+            "no skull"
         ],
         "new direction": "sponge",
         "else": "vertebrates"
