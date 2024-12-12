@@ -6,7 +6,6 @@
             "skeleton",
             "skull"
         ],
-        "number": 1,
         "new direction": "mammal",
         "else": "invertebrates"
     },
@@ -17,7 +16,6 @@
             "warm blooded",
             "hair fur"
         ],
-        "number": 2,
         "new direction": "marsupial",
         "else": "fish"
     },
@@ -26,7 +24,6 @@
         "required features": [
             ...
         ],
-        "number": 3,
         "new direction": "sponge",
         "else": "vertebrates"
     }
