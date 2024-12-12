@@ -1,0 +1,33 @@
+"Rules": [
+    {
+        "current animal group": "vertebrates",
+        "required features": [
+            "backbone",
+            "skeleton",
+            "skull"
+        ],
+        "number": 1,
+        "new direction": "mammal",
+        "else": "invertebrates"
+    },
+    {
+        "current animal group": "mammal",
+        "required features": [
+            "milk feeding",
+            "warm blooded",
+            "hair fur"
+        ],
+        "number": 2,
+        "new direction": "marsupial",
+        "else": "fish"
+    },
+    {
+        "current animal group": "invertebrates",
+        "required features": [
+            ...
+        ],
+        "number": 3,
+        "new direction": "sponge",
+        "else": "vertebrates"
+    }
+]
