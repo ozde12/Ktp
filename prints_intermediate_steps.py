@@ -6,7 +6,7 @@ HAS SUBCATEGORIES INCLUDED + SHOWS THE DECISION PROCESS
 """
 
 # Load the JSON data
-with open('knowledge_base.json', 'r') as file:
+with open('with_negative_features.json', 'r') as file:
     knowledge_data = json.load(file)
 
 # The JSON structure is expected to have two keys which are Knowledge base and rules

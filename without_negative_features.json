@@ -1,31 +1,45 @@
 {
-    "Knowledge base": [
+    "Knowledge base": [      
         {
             "animal group": "vertebrates",
             "features": [
                 {
                     "name": "backbone",
-                    "question": "Does the animal have a backbone or spine or notochord?",
-                    "negative feature": "no backbone"
+                    "question": "Does the animal have a backbone, spine, or notochord?"
                 },
                 {
                     "name": "skeleton",
-                    "question": "Does the animal have an internal skeleton (or notochord) made of bone or cartilage?",
-                    "negative feature": "no skeleton"
+                    "question": "Does the animal have an internal skeleton (or notochord) made of bone or cartilage?"
                 },
                 {
                     "name": "skull",
-                    "question": "Does the animal have a head with a brain protected by a skull?",
-                    "negative feature": "no skull"
+                    "question": "Does the animal have a head with a brain protected by a skull?"
                 }
             ]
-        },        
+        },
         {
-            "animal group": "mammal",
+            "animal group": "sponges",
+            "features": [
+                {
+                    "name": "lack of tissues and organs",
+                    "question": "Does the animal lack true tissues or organs?"
+                },
+                {
+                    "name": "pores",
+                    "question": "Does the animal have a porous body with many small holes (pores)?"
+                },
+                {
+                    "name": "also lives in fresh water",
+                    "question": "Can the animal be found in fresh water?"
+                }
+            ]
+        },         
+        {
+            "animal group": "mammals",
             "features": [
                 {
                     "name": "milk feeding",
-                    "question": "Does the animal produce milk (NOT crop milk) to feed its young? "
+                    "question": "Does the animal produce milk (NOT crop milk) to feed its young?"
                 },
                 {
                     "name": "warm blooded",
@@ -38,7 +52,7 @@
             ]
         },
         {
-            "animal group": "marsupial",
+            "animal group": "marsupials",
             "features": [
                 {
                     "name": "underdeveloped young",
@@ -50,20 +64,20 @@
                 },
                 {
                     "name": "live birth",
-                    "question": "Does the animal give live birth (i.e., the offspring develop inside the mother and are born alive, rather than hatching from eggs)? "
+                    "question": "Does the animal give live birth (i.e., do the offspring develop inside the mother and are born alive, rather than hatching from eggs)?"
                 }
             ]
         },
         {
-            "animal group": "placental",
+            "animal group": "placentals",
             "features": [
                 {
                     "name": "fully developed young",
-                    "question": "Does the animal give birth to fully developed young (does not require nurturing outside the womb (e.g., in a pouch))?"
+                    "question": "Does the animal give birth to fully developed young (i.e., those that do not require nurturing outside the womb, such as in a pouch)?"
                 },
                 {
                     "name": "placenta",
-                    "question": "Does the animal have a placenta to nourish the young during gestation (between contraception and birth)?"
+                    "question": "Does the animal have a placenta to nourish the young during gestation (between conception and birth)?"
                 },
                 {
                     "name": "chewing",
@@ -71,9 +85,8 @@
                 }
             ]
         },
-
         {
-            "animal group": "monotreme",
+            "animal group": "monotremes",
             "features": [
                 {
                     "name": "lay eggs",
@@ -81,7 +94,7 @@
                 },
                 {
                     "name": "specialized glands",
-                    "question": "Does the animal have specialized glands for producing milk but no nipples?"
+                    "question": "Does the animal have specialized mammary glands for producing milk, but no nipples?"
                 },
                 {
                     "name": "live in water",
@@ -158,7 +171,7 @@
             ]
         },
         {
-            "animal group": "amphibian",
+            "animal group": "amphibians",
             "features": [
                 {
                     "name": "both water land",
@@ -175,7 +188,7 @@
             ]
         },
         {
-            "animal group": "reptile",
+            "animal group": "reptiles",
             "features": [
                 {
                     "name": "scaly skin",
@@ -187,12 +200,12 @@
                 },
                 {
                     "name": "leathery eggs",
-                    "question": "Does the animal lay eggs leathery or soft-shell eggs?"
+                    "question": "Does the animal lay leathery or soft-shell eggs?"
                 }
             ]
         },
         {
-            "animal group": "bird",
+            "animal group": "birds",
             "features": [
                 {
                     "name": "feathers",
@@ -209,7 +222,7 @@
             ]
         },
         {
-            "animal group": "mollusk",
+            "animal group": "mollusks",
             "features": [
                 {
                     "name": "unsegmented body",
@@ -226,7 +239,7 @@
             ]
         },
         {
-            "animal group": "arthropod",
+            "animal group": "arthropods",
             "features": [
                 {
                     "name": "segmented body",
@@ -243,7 +256,7 @@
             ]
         },
         {
-            "animal group": "crustacean",
+            "animal group": "crustaceans",
             "features": [
                 {
                     "name": "aquatic",
@@ -260,7 +273,7 @@
             ]
         },
         {
-            "animal group": "myriapod",
+            "animal group": "myriapods",
             "features": [
                 {
                     "name": "segmented body with numerous legs",
@@ -277,7 +290,7 @@
             ]
         },
         {
-            "animal group": "arachnoid",
+            "animal group": "arachnids",
             "features": [
                 {
                     "name": "two segments",
@@ -294,11 +307,11 @@
             ]
         },
         {
-            "animal group": "insect",
+            "animal group": "insects",
             "features": [
                 {
                     "name": "three segments",
-                    "question": "Does the animal have a body divided into three main segments (head, thorax, abdomen)?"
+                    "question": "Does the animal have a body divided into three main segments: head, thorax, and abdomen?"
                 },
                 {
                     "name": "six legs",
@@ -311,49 +324,28 @@
             ]
         },
         {
-            "animal group": "echinoderm",
+            "animal group": "echinoderms",
             "features": [
-                {
-                    "name": "radial symmetry",
-                    "question": "Does the animal have radial symmetry?"
-                },
                 {
                     "name": "endoskeleton",
                     "question": "Does the animal have an endoskeleton made of ossicles?"
                 },
                 {
                     "name": "water vascular system",
-                    "question": "Does the animal have a Does the animal have a water vascular system?"
+                    "question": "Does the animal have a water vascular system?"
                 }
             ]
         },
         {
-            "animal group": "sponge",
+            "animal group": "coelenterates",
             "features": [
                 {
-                    "name": "lack of tissues and organs",
-                    "question": "Does the animal lack true tissues or organs?"
-                },
-                {
-                    "name": "pores",
-                    "question": "Does the animal have a porous body with many small holes (pores)?"
-                },
-                {
-                    "name": "also lives in fresh water",
-                    "question": "Can the animal be found in fresh water?"
-                }
-            ]
-        },
-        {
-            "animal group": "coelenterate",
-            "features": [
-                {
-                    "name": "symmetry",
+                    "name": "radial symmetry",
                     "question": "Does the animal have radial symmetry?"
                 },
                 {
                     "name": "cnidocytes",
-                    "question": "Does the animal have stinging cells (cnidocytes) on its tentacles?"
+                    "question": "Does the animal have stinging cells (cnidocytes)?"
                 },
                 {
                     "name": "sac-like",
@@ -362,7 +354,7 @@
             ]
         },
         {
-            "animal group": "coral",
+            "animal group": "corals",
             "features": [
                 {
                     "name": "sessile",
@@ -383,7 +375,7 @@
             "features": [
                 {
                     "name": "freshwater",
-                    "question": "Does the animal live in freshwater (like lakes, rivers, or ponds instead of the ocean?"
+                    "question": "Does the animal live in freshwater (like lakes, rivers, or ponds) instead of the ocean?"
                 },
                 {
                     "name": "regenerate",
@@ -413,11 +405,11 @@
             ]
         },
         {
-            "animal group": "worm",
+            "animal group": "worms",
             "features": [
                 {
                     "name": "unsegmented or segmented body",
-                    "question": "Does the animal have a long, soft, unsegmented or segmented body?"
+                    "question": "Does the animal have a long, soft body that is either unsegmented or segmented?"
                 },
                 {
                     "name": "bilateral symmetry",
@@ -430,7 +422,7 @@
             ]
         },
         {
-            "animal group": "flatworm",
+            "animal group": "flatworms",
             "features": [
                 {
                     "name": "dorsoventrally flattened",
@@ -447,7 +439,7 @@
             ]
         },
         {
-            "animal group": "roundworm",
+            "animal group": "roundworms",
             "features": [
                 {
                     "name": "cylindrical, unsegmented body",
@@ -464,7 +456,7 @@
             ]
         },
         {
-            "animal group": "segmented worm",
+            "animal group": "segmented worms",
             "features": [
                 {
                     "name": "segmented body divided into repeating sections",
@@ -483,573 +475,378 @@
     ],
     "Rules": [
         {
-            "question number": "1 and 2",
-            "current animal group": "animal",
-            "features": [
+            "current animal group": "vertebrates",
+            "required features": [
                 "backbone",
-                "skeleton"
-            ],
-            "bothTrue": "4 and 5",
-            "bothFalse": "19 and 20",
-            "oneTrue": "3"
-        },
-        {
-            "question number": "3",
-            "current animal group": "animal",
-            "features": [
+                "skeleton",
                 "skull"
             ],
-            "true": "4 and 5",
-            "false": "19 and 20"
+            "new direction": "mammals",
+            "else": "sponges"
         },
         {
-            "question number": "4 and 5",
-            "current animal group": "vertebrates",
-            "features": [
+            "current animal group": "mammals",
+            "required features": [
                 "milk feeding",
-                "warm blooded"
-            ],
-            "bothTrue": "37 and 38",
-            "bothFalse": "7 and 8",
-            "oneTrue": "6"
-        },
-        {
-            "question number": "6",
-            "current animal group": "vertebrates",
-            "features": [
+                "warm blooded",
                 "hair fur"
             ],
-            "true": "37 and 38",
-            "false": "7 and 8"
+            "new direction": "marsupials",
+            "else": "fish"
         },
         {
-            "question number": "7 and 8",
-            "current animal group": "vertebrates",
-            "features": [
-                "fins",
-                "gills"
-            ],
-            "bothTrue": "46 and 47",
-            "bothFalse": "10 and 11",
-            "oneTrue": "9"
-        },
-        {
-            "question number": "9",
-            "current animal group": "vertebrates",
-            "features": [
-                "in water"
-            ],
-            "true": "46 and 47",
-            "false": "10 and 11"
-        },
-        {
-            "question number": "10 and 11",
-            "current animal group": "vertebrates",
-            "features": [
-                "both water land",
-                "larva born"
-            ],
-            "bothTrue": "amphibian",
-            "bothFalse": "13 and 14",
-            "oneTrue": "12"
-        },
-        {
-            "question number": "12",
-            "current animal group": "vertebrates",
-            "features": [
-                "eggs in water"
-            ],
-            "true": "amphibian",
-            "false": "13 and 14"
-        },
-        {
-            "question number": "13 and 14",
-            "current animal group": "vertebrates",
-            "features": [
-                "scaly skin",
-                "lungs"
-            ],
-            "bothTrue": "reptile",
-            "bothFalse": "16 and 17",
-            "oneTrue": "15"
-        },
-        {
-            "question number": "15",
-            "current animal group": "vertebrates",
-            "features": [
-                "leathery eggs"
-            ],
-            "true": "reptile",
-            "false": "16 and 17"
-        },
-        {
-            "question number": "16 and 17",
-            "current animal group": "vertebrates",
-            "features": [
-                "feathers",
-                "beak"
-            ],
-            "bothTrue": "bird",
-            "bothFalse": "1 and 2",
-            "oneTrue": "18"
-        },
-        {
-            "question number": "18",
-            "current animal group": "vertebrates",
-            "features": [
-                "eggs hard shell"
-            ],
-            "true": "bird",
-            "false": "1 and 2"
-        },
-        {
-            "question number": "19 and 20",
-            "current animal group": "invertebrates",
-            "features": [
-                "lack of tissues and organs",
-                "pores"
-            ],
-            "bothTrue": "sponge",
-            "bothFalse": "22 and 23",
-            "oneTrue": "21"
-        },
-        {
-            "question number": "21",
-            "current animal group": "invertebrates",
-            "features": [
-                "also lives in fresh water"
-            ],
-            "true": "sponge",
-            "false": "22 and 23"
-        },
-        {
-            "question number": "22 and 23",
-            "current animal group": "invertebrates",
-            "features": [
-                "symmetry",
-                "cnidocytes"
-            ],
-            "bothTrue": "55 and 56",
-            "bothFalse": "25 and 26",
-            "oneTrue": "24"
-        },
-        {
-            "question number": "24",
-            "current animal group": "invertebrates",
-            "features": [
-                "sac-like"
-            ],
-            "true": "55 and 56",
-            "false": "25 and 26"
-        },
-        {
-            "question number": "25 and 26",
-            "current animal group": "invertebrates",
-            "features": [
-                "unsegmented or segmented body",
-                "bilateral symmetry"
-            ],
-            "bothTrue": "64 and 65",
-            "bothFalse": "28 and 29",
-            "oneTrue": "27"
-        },
-        {
-            "question number": "27",
-            "current animal group": "invertebrates",
-            "features": [
-                "lacks legs or appendages"
-            ],
-            "true": "64 and 65",
-            "false": "28 and 29"
-        },
-        {
-            "question number": "28 and 29",
-            "current animal group": "invertebrates",
-            "features": [
-                "unsegmented body",
-                "tentacles"
-            ],
-            "bothTrue": "mollusk",
-            "bothFalse": "31 and 32",
-            "oneTrue": "30"
-        },
-        {
-            "question number": "30",
-            "current animal group": "invertebrates",
-            "features": [
-                "mantle"
-            ],
-            "true": "mollusk",
-            "false": "31 and 32"
-        },
-        {
-            "question number": "31 and 32",
-            "current animal group": "invertebrates",
-            "features": [
-                "segmented body",
-                "jointed legs"
-            ],
-            "bothTrue": "73 and 74",
-            "bothFalse": "34 and 35",
-            "oneTrue": "33"
-        },
-        {
-            "question number": "33",
-            "current animal group": "invertebrates",
-            "features": [
-                "exoskeleton"
-            ],
-            "true": "73 and 74",
-            "false": "34 and 35"
-        },
-        {
-            "question number": "34 and 35",
-            "current animal group": "invertebrates",
-            "features": [
-                "radial symmetry",
-                "endoskeleton"
-            ],
-            "bothTrue": "echinoderm",
-            "bothFalse": "1 and 2",
-            "oneTrue": "36"
-        },
-        {
-            "question number": "36",
-            "current animal group": "invertebrates",
-            "features": [
-                "water vascular system"
-            ],
-            "true": "echinoderm",
-            "false": "1 and 2"
-        },
-        {
-            "question number": "37 and 38",
-            "current animal group": "mammal",
-            "features": [
+            "current animal group": "marsupials",
+            "required features": [
                 "underdeveloped young",
-                "pouch"
-            ],
-            "bothTrue": "marsupial",
-            "bothFalse": "40 and 41",
-            "oneTrue": "39"
-        },
-        {
-            "question number": "39",
-            "current animal group": "mammal",
-            "features": [
+                "pouch",
                 "live birth"
             ],
-            "true": "marsupial",
-            "false": "40 and 41"
+            "new direction": "classification marsupial",
+            "else": "placentals"
         },
         {
-            "question number": "40 and 41",
-            "current animal group": "mammal",
-            "features": [
+            "current animal group": "classification marsupial",
+            "end classification": "The animal is classified as a marsupial.\n Vertebrates → Mammals → Marsupials"
+        },
+        {
+            "current animal group": "placentals",
+            "required features": [
                 "fully developed young",
-                "placenta"
-            ],
-            "bothTrue": "placental",
-            "bothFalse": "43 and 44",
-            "oneTrue": "42"
-        },
-        {
-            "question number": "42",
-            "current animal group": "mammal",
-            "features": [
+                "placenta",
                 "chewing"
             ],
-            "true": "placental",
-            "false": "43 and 44"
+            "new direction": "classification placental",
+            "else": "monotremes"
         },
         {
-            "question number": "43 and 44",
-            "current animal group": "mammal",
-            "features": [
+            "current animal group": "classification placental",
+            "end classification": "The animal is classified as a placental mammal.\n Vertebrates → Mammals → Placentals"
+        },
+        {
+            "current animal group": "monotremes",
+            "required features": [
                 "lay eggs",
-                "specialized glands"
-            ],
-            "bothTrue": "monotreme",
-            "bothFalse": "37 and 38",
-            "oneTrue": "45"
-        },
-        {
-            "question number": "45",
-            "current animal group": "mammal",
-            "features": [
+                "specialized glands",
                 "live in water"
             ],
-            "true": "monotreme",
-            "false": "37 and 38"
+            "new direction": "classification monotreme",
+            "else": "mammals"
         },
         {
-            "question number": "46 and 47",
+            "current animal group": "classification monotreme",
+            "end classification": "The animal is classified as a monotreme.\n Vertebrates → Mammals → Monotremes"
+        },
+        {
             "current animal group": "fish",
-            "features": [
-                "sucker-like or slit-like mouth",
-                "looks like an eel"
+            "required features": [
+                "fins",
+                "gills",
+                "in water"
             ],
-            "bothTrue": "jawless fish",
-            "bothFalse": "49 and 50",
-            "oneTrue": "48"
+            "new direction": "jawless fish",
+            "else": "birds"
         },
         {
-            "question number": "48",
-            "current animal group": "fish",
-            "features": [
+            "current animal group": "jawless fish",
+            "required features": [
+                "sucker-like or slit-like mouth",
+                "looks like an eel",
                 "slim, elongated body"
             ],
-            "true": "jawless fish",
-            "false": "49 and 50"
+            "new direction": "classification jawless fish",
+            "else": "cartilaginous fish"
         },
         {
-            "question number": "49 and 50",
-            "current animal group": "fish",
-            "features": [
+            "current animal group": "classification jawless fish",
+            "end classification": "The animal is classified as a jawless fish.\n Vertebrates → Fish → Jawless Fish"
+        },
+        {
+            "current animal group": "cartilaginous fish",
+            "required features": [
                 "feels rough like sandpaper",
-                "looks like a shark"
-            ],
-            "bothTrue": "cartilaginous fish",
-            "bothFalse": "52 and 53",
-            "oneTrue": "51"
-        },
-        {
-            "question number": "51",
-            "current animal group": "fish",
-            "features": [
+                "looks like a shark",
                 "long, cylindrical body"
             ],
-            "true": "cartilaginous fish",
-            "false": "52 and 53"
+            "new direction": "classification cartilaginous fish",
+            "else": "bony fish"
         },
         {
-            "question number": "52 and 53",
-            "current animal group": "fish",
-            "features": [
+            "current animal group": "classification cartilaginous fish",
+            "end classification": "The animal is classified as a cartilaginous fish.\n Vertebrates → Fish → Cartilaginous Fish"
+        },
+        {
+            "current animal group": "bony fish",
+            "required features": [
                 "hard bones, shiny scales",
-                "looks like common fish"
-            ],
-            "bothTrue": "bony fish",
-            "bothFalse": "46 and 47",
-            "oneTrue": "54"
-        },
-        {
-            "question number": "54",
-            "current animal group": "fish",
-            "features": [
+                "looks like common fish",
                 "streamlined or symmetrical body"
             ],
-            "true": "bony fish",
-            "false": "46 and 47"
+            "new direction": "classification bony fish",
+            "else": "fish"
         },
         {
-            "question number": "55 and 56",
-            "current animal group": "coelenterate",
-            "features": [
-                "sessile",
-                "reefs"
+            "current animal group": "classification bony fish",
+            "end classification": "The animal is classified as a bony fish.\n Vertebrates → Fish → Bony Fish"
+        },
+        {
+            "current animal group": "birds",
+            "required features": [
+                "feathers",
+                "beak",
+                "eggs hard shell"
             ],
-            "bothTrue": "coral",
-            "bothFalse": "58 and 59",
-            "oneTrue": "57"
+            "new direction": "classification bird",
+            "else": "reptiles"
         },
         {
-            "question number": "57",
-            "current animal group": "coelenterate",
-            "features": [
+            "current animal group": "classification bird",
+            "end classification": "The animal is classified as a bird.\n Vertebrates → Birds"
+        },
+        {
+            "current animal group": "reptiles",
+            "required features": [
+                "scaly skin",
+                "lungs",
+                "leathery eggs"
+            ],
+            "new direction": "classification reptile",
+            "else": "amphibians"
+        },
+        {
+            "current animal group": "classification reptile",
+            "end classification": "The animal is classified as a reptile.\n Vertebrates → Reptiles"
+        },
+        {
+            "current animal group": "amphibians",
+            "required features": [
+                "both water land",
+                "larva born",
+                "eggs in water"
+            ],
+            "new direction": "classification amphibian",
+            "else": "vertebrates"
+        },
+        {
+            "current animal group": "classification amphibian",
+            "end classification": "The animal is classified as an amphibian.\n Vertebrates → Amphibians"
+        },
+        {
+            "current animal group": "sponges",
+            "required features": [
+                "lack of tissues and organs",
+                "pores",
+                "also lives in fresh water"
+            ],
+            "new direction": "classification sponge",
+            "else": "coelenterates"
+        },
+        {
+            "current animal group": "classification sponge",
+            "end classification": "The animal is classified as a sponge.\n Invertebrates → Sponges"
+        },
+        {
+            "current animal group": "coelenterates",
+            "required features": [
+                "radial symmetry",
+                "cnidocytes",
+                "sac-like"
+            ],
+            "new direction": "corals",
+            "else": "worms"
+        },
+        {
+            "current animal group": "corals",
+            "required features": [
+                "sessile",
+                "reefs",
                 "get energy from tiny plants"
             ],
-            "true": "coral",
-            "false": "58 and 59"
+            "new direction": "classification coral",
+            "else": "hydra"
         },
         {
-            "question number": "58 and 59",
-            "current animal group": "coelenterate",
-            "features": [
+            "current animal group": "classification coral",
+            "end classification": "The animal is classified as a coral.\n Invertebrates → Coelenterates → Coral"
+        },
+        {
+            "current animal group": "hydra",
+            "required features": [
                 "freshwater",
-                "regenerate"
-            ],
-            "bothTrue": "hydra",
-            "bothFalse": "61 and 62",
-            "oneTrue": "60"
-        },
-        {
-            "question number": "60",
-            "current animal group": "coelenterate",
-            "features": [
+                "regenerate",
                 "stay in one place"
             ],
-            "true": "hydra",
-            "false": "61 and 62"
+            "new direction": "classification hydra",
+            "else": "jellyfish"
         },
         {
-            "question number": "61 and 62",
-            "current animal group": "coelenterate",
-            "features": [
+            "current animal group": "classification hydra",
+            "end classification": "The animal is classified as a hydra.\n Invertebrates → Coelenterates → Hydra"
+        },
+        {
+            "current animal group": "jellyfish",
+            "required features": [
                 "bell-shaped",
-                "float-freely"
-            ],
-            "bothTrue": "jellyfish",
-            "bothFalse": "55 and 56",
-            "oneTrue": "63"
-        },
-        {
-            "question number": "63",
-            "current animal group": "coelenterate",
-            "features": [
+                "float-freely",
                 "stinging cells"
             ],
-            "true": "jellyfish",
-            "false": "55 and 56"
+            "new direction": "jellyfish",
+            "else": "coelenterates"
         },
         {
-            "question number": "64 and 65",
-            "current animal group": "worm",
-            "features": [
-                "dorsoventrally flattened",
-                "lacks body cavity"
+            "current animal group": "classification jellyfish",
+            "end classification": "The animal is classified as a jellyfish.\n Invertebrates → Coelenterates → Jellyfish"
+        },
+        {
+            "current animal group": "worms",
+            "required features": [
+                "unsegmented or segmented body",
+                "bilateral symmetry",
+                "lacks legs or appendages"
             ],
-            "bothTrue": "flatworm",
-            "bothFalse": "67 and 68",
-            "oneTrue": "66"
+            "new direction": "flatworms",
+            "else": "mollusks"
         },
         {
-            "question number": "66",
-            "current animal group": "worm",
-            "features": [
+            "current animal group": "flatworms",
+            "required features": [
+                "dorsoventrally flattened",
+                "lacks body cavity",
                 "relies on diffusion for gas exchange"
             ],
-            "true": "flatworm",
-            "false": "67 and 68"
+            "new direction": "classification flatworm",
+            "else": "roundworms"
         },
         {
-            "question number": "67 and 68",
-            "current animal group": "worm",
-            "features": [
+            "current animal group": "classification flatworm",
+            "end classification": "The animal is classified as a flatworm.\n Invertebrates → Worms → Flatworms"
+        },
+        {
+            "current animal group": "roundworms",
+            "required features": [
                 "cylindrical, unsegmented body",
-                "complete digestive tract"
-            ],
-            "bothTrue": "roundworm",
-            "bothFalse": "70 and 71",
-            "oneTrue": "69"
-        },
-        {
-            "question number": "69",
-            "current animal group": "worm",
-            "features": [
+                "complete digestive tract",
                 "parasite in mammals"
             ],
-            "true": "roundworm",
-            "false": "70 and 71"
+            "new direction": "classification roundworm",
+            "else": "segmented worms"
         },
         {
-            "question number": "70 and 71",
-            "current animal group": "worm",
-            "features": [
+            "current animal group": "classification roundworm",
+            "end classification": "The animal is classified as a roundworm.\n Invertebrates → Worms → Roundworms"
+        },
+        {
+            "current animal group": "segmented worms",
+            "required features": [
                 "segmented body divided into repeating sections",
-                "circulatory system with blood vessels"
-            ],
-            "bothTrue": "segmented worm",
-            "bothFalse": "64 and 65",
-            "oneTrue": "72"
-        },
-        {
-            "question number": "72",
-            "current animal group": "worm",
-            "features": [
+                "circulatory system with blood vessels",
                 "tiny hair-like structures"
             ],
-            "true": "segmented worm",
-            "false": "28 and 29"
+            "new direction": "classification segmented worm",
+            "else": "worms"
         },
         {
-            "question number": "73 and 74",
-            "current animal group": "arthropod",
-            "features": [
-                "aquatic",
-                "pairs of antennae"
+            "current animal group": "classification segmented worm",
+            "end classification": "The animal is classified as a segmented worm.\n Invertebrates → Worms → Segmented Worms"
+        },
+        {
+            "current animal group": "mollusks",
+            "required features": [
+                "unsegmented body",
+                "tentacles",
+                "mantle"
             ],
-            "bothTrue": "crustacean",
-            "bothFalse": "76 and 77",
-            "oneTrue": "75"
+            "new direction": "classification mollusk",
+            "else": "arthropods"
         },
         {
-            "question number": "75",
-            "current animal group": "arthropod",
-            "features": [
+            "current animal group": "classification mollusk",
+            "end classification": "The animal is classified as a mollusk.\n Invertebrates → Mollusks"
+        },
+        {
+            "current animal group": "arthropods",
+            "required features": [
+                "segmented body",
+                "jointed legs",
+                "exoskeleton"
+            ],
+            "new direction": "crustaceans",
+            "else": "echinoderms"
+        },
+        {
+            "current animal group": "crustaceans",
+            "required features": [
+                "aquatic",
+                "pairs of antennae",
                 "carapace"
             ],
-            "true": "crustacean",
-            "false": "76 and 77"
+            "new direction": "classification crustacean",
+            "else": "arachnids"
         },
         {
-            "question number": "76 and 77",
-            "current animal group": "arthropod",
-            "features": [
-                "segmented body with numerous legs",
-                "pair of legs per segment"
-            ],
-            "bothTrue": "myriapod",
-            "bothFalse": "79 and 80",
-            "oneTrue": "78"
+            "current animal group": "classification crustacean",
+            "end classification": "The animal is classified as a crustacean.\n Invertebrates → Arthropods → Crustaceans"
         },
         {
-            "question number": "78",
-            "current animal group": "arthropod",
-            "features": [
-                "fangs or small mandibles"
-            ],
-            "true": "myriapod",
-            "false": "79 and 80"
-        },
-        {
-            "question number": "79 and 80",
-            "current animal group": "arthropod",
-            "features": [
+            "current animal group": "arachnids",
+            "required features": [
                 "two segments",
-                "eight legs"
-            ],
-            "bothTrue": "arachnoid",
-            "bothFalse": "82 and 83",
-            "oneTrue": "81"
-        },
-        {
-            "question number": "81",
-            "current animal group": "arthropod",
-            "features": [
+                "eight legs",
                 "pedipalps"
             ],
-            "true": "arachnoid",
-            "false": "82 and 83"
+            "new direction": "classification arachnid",
+            "else": "myriapods"
         },
         {
-            "question number": "82 and 83",
-            "current animal group": "arthropod",
-            "features": [
-                "three segments",
-                "six legs"
+            "current animal group": "classification arachnid",
+            "end classification": "The animal is classified as an arachnid.\n Invertebrates → Arthropods → Arachnids"
+        },
+        {
+            "current animal group": "myriapods",
+            "required features": [
+                "segmented body with numerous legs",
+                "pair of legs per segment",
+                "fangs or small mandibles"
             ],
-            "bothTrue": "insect",
-            "bothFalse": "73 and 74",
-            "oneTrue": "84"
+            "new direction": "classification myriapod",
+            "else": "insects"
         },
         {
-            "question number": "84",
-            "current animal group": "arthropod",
-            "features": [
+            "current animal group": "classification myriapod",
+            "end classification": "The animal is classified as a myriapod.\n Invertebrates → Arthropods → Myriapods"
+        },
+        {
+            "current animal group": "insects",
+            "required features": [
+                "three segments",
+                "six legs",
                 "compound eyes and antennae"
             ],
-            "true": "insect",
-            "false": "73 and 74"
+            "new direction": "classification insect",
+            "else": "arthropods"
+        },
+        {
+            "current animal group": "classification insect",
+            "end classification": "The animal is classified as an insect.\n Invertebrates → Arthropods → Insects"
+        },
+        {
+            "current animal group": "echinoderms",
+            "required features": [
+                "radial symmetry",
+                "endoskeleton",
+                "water vascular system"
+            ],
+            "new direction": "classification echinoderm",
+            "else": "vertebrates"
+        },
+        {
+            "current animal group": "classification echinoderm",
+            "end classification": "The animal is classified as an echinoderm.\n Invertebrates → Echinoderms"
         }
     ],
     "Facts": [
         "backbone",
         "skeleton",
         "skull",
-        "no backbone",
-        "no skeleton",
-        "no skull",
         "milk feeding",
         "warm blooded",
         "hair fur",
@@ -1068,7 +865,6 @@
         "lack of tissues and organs",
         "pores",
         "also lives in fresh water",
-        "symmetry",
         "cnidocytes",
         "sac-like",
         "unsegmented or segmented body",

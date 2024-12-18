@@ -5,20 +5,23 @@
             "features": [
                 {
                     "name": "backbone",
-                    "question": "Does the animal have a backbone or spine or notochord?"
+                    "question": "Does the animal have a backbone, spine, or notochord?",
+                    "negative feature": "no backbone"
                 },
                 {
                     "name": "skeleton",
-                    "question": "Does the animal have an internal skeleton (or notochord) made of bone or cartilage?"
+                    "question": "Does the animal have an internal skeleton (or notochord) made of bone or cartilage?",
+                    "negative feature": "no skeleton"
                 },
                 {
                     "name": "skull",
-                    "question": "Does the animal have a head with a brain protected by a skull?"
+                    "question": "Does the animal have a head with a brain protected by a skull?",
+                    "negative feature": "no skull"
                 }
             ]
         },
         {
-            "animal group": "invertebrates sponge",
+            "animal group": "sponges",
             "features": [
                 {
                     "name": "lack of tissues and organs",
@@ -35,11 +38,11 @@
             ]
         },         
         {
-            "animal group": "mammal",
+            "animal group": "mammals",
             "features": [
                 {
                     "name": "milk feeding",
-                    "question": "Does the animal produce milk (NOT crop milk) to feed its young? "
+                    "question": "Does the animal produce milk (NOT crop milk) to feed its young?"
                 },
                 {
                     "name": "warm blooded",
@@ -52,7 +55,7 @@
             ]
         },
         {
-            "animal group": "marsupial",
+            "animal group": "marsupials",
             "features": [
                 {
                     "name": "underdeveloped young",
@@ -64,20 +67,20 @@
                 },
                 {
                     "name": "live birth",
-                    "question": "Does the animal give live birth (i.e., the offspring develop inside the mother and are born alive, rather than hatching from eggs)? "
+                    "question": "Does the animal give live birth (i.e., do the offspring develop inside the mother and are born alive, rather than hatching from eggs)?"
                 }
             ]
         },
         {
-            "animal group": "placental",
+            "animal group": "placentals",
             "features": [
                 {
                     "name": "fully developed young",
-                    "question": "Does the animal give birth to fully developed young (does not require nurturing outside the womb (e.g., in a pouch))?"
+                    "question": "Does the animal give birth to fully developed young (i.e., those that do not require nurturing outside the womb, such as in a pouch)?"
                 },
                 {
                     "name": "placenta",
-                    "question": "Does the animal have a placenta to nourish the young during gestation (between contraception and birth)?"
+                    "question": "Does the animal have a placenta to nourish the young during gestation (between conception and birth)?"
                 },
                 {
                     "name": "chewing",
@@ -86,7 +89,7 @@
             ]
         },
         {
-            "animal group": "monotreme",
+            "animal group": "monotremes",
             "features": [
                 {
                     "name": "lay eggs",
@@ -94,7 +97,7 @@
                 },
                 {
                     "name": "specialized glands",
-                    "question": "Does the animal have specialized glands for producing milk but no nipples?"
+                    "question": "Does the animal have specialized mammary glands for producing milk, but no nipples?"
                 },
                 {
                     "name": "live in water",
@@ -171,7 +174,7 @@
             ]
         },
         {
-            "animal group": "amphibian",
+            "animal group": "amphibians",
             "features": [
                 {
                     "name": "both water land",
@@ -188,7 +191,7 @@
             ]
         },
         {
-            "animal group": "reptile",
+            "animal group": "reptiles",
             "features": [
                 {
                     "name": "scaly skin",
@@ -200,12 +203,12 @@
                 },
                 {
                     "name": "leathery eggs",
-                    "question": "Does the animal lay eggs leathery or soft-shell eggs?"
+                    "question": "Does the animal lay leathery or soft-shell eggs?"
                 }
             ]
         },
         {
-            "animal group": "bird",
+            "animal group": "birds",
             "features": [
                 {
                     "name": "feathers",
@@ -222,7 +225,7 @@
             ]
         },
         {
-            "animal group": "mollusk",
+            "animal group": "mollusks",
             "features": [
                 {
                     "name": "unsegmented body",
@@ -239,7 +242,7 @@
             ]
         },
         {
-            "animal group": "arthropod",
+            "animal group": "arthropods",
             "features": [
                 {
                     "name": "segmented body",
@@ -256,7 +259,7 @@
             ]
         },
         {
-            "animal group": "crustacean",
+            "animal group": "crustaceans",
             "features": [
                 {
                     "name": "aquatic",
@@ -273,7 +276,7 @@
             ]
         },
         {
-            "animal group": "myriapod",
+            "animal group": "myriapods",
             "features": [
                 {
                     "name": "segmented body with numerous legs",
@@ -290,7 +293,7 @@
             ]
         },
         {
-            "animal group": "arachnoid",
+            "animal group": "arachnids",
             "features": [
                 {
                     "name": "two segments",
@@ -307,11 +310,11 @@
             ]
         },
         {
-            "animal group": "insect",
+            "animal group": "insects",
             "features": [
                 {
                     "name": "three segments",
-                    "question": "Does the animal have a body divided into three main segments (head, thorax, abdomen)?"
+                    "question": "Does the animal have a body divided into three main segments: head, thorax, and abdomen?"
                 },
                 {
                     "name": "six legs",
@@ -324,27 +327,23 @@
             ]
         },
         {
-            "animal group": "echinoderm",
+            "animal group": "echinoderms",
             "features": [
-                {
-                    "name": "radial symmetry",
-                    "question": "Does the animal have radial symmetry?"
-                },
                 {
                     "name": "endoskeleton",
                     "question": "Does the animal have an endoskeleton made of ossicles?"
                 },
                 {
                     "name": "water vascular system",
-                    "question": "Does the animal have a Does the animal have a water vascular system?"
+                    "question": "Does the animal have a water vascular system?"
                 }
             ]
         },
         {
-            "animal group": "coelenterate",
+            "animal group": "coelenterates",
             "features": [
                 {
-                    "name": "symmetry",
+                    "name": "radial symmetry",
                     "question": "Does the animal have radial symmetry?"
                 },
                 {
@@ -358,7 +357,7 @@
             ]
         },
         {
-            "animal group": "coral",
+            "animal group": "corals",
             "features": [
                 {
                     "name": "sessile",
@@ -379,7 +378,7 @@
             "features": [
                 {
                     "name": "freshwater",
-                    "question": "Does the animal live in freshwater (like lakes, rivers, or ponds instead of the ocean?"
+                    "question": "Does the animal live in freshwater (like lakes, rivers, or ponds) instead of the ocean?"
                 },
                 {
                     "name": "regenerate",
@@ -409,11 +408,11 @@
             ]
         },
         {
-            "animal group": "worm",
+            "animal group": "worms",
             "features": [
                 {
                     "name": "unsegmented or segmented body",
-                    "question": "Does the animal have a long, soft, unsegmented or segmented body?"
+                    "question": "Does the animal have a long, soft body that is either unsegmented or segmented?"
                 },
                 {
                     "name": "bilateral symmetry",
@@ -426,7 +425,7 @@
             ]
         },
         {
-            "animal group": "flatworm",
+            "animal group": "flatworms",
             "features": [
                 {
                     "name": "dorsoventrally flattened",
@@ -443,7 +442,7 @@
             ]
         },
         {
-            "animal group": "roundworm",
+            "animal group": "roundworms",
             "features": [
                 {
                     "name": "cylindrical, unsegmented body",
@@ -460,7 +459,7 @@
             ]
         },
         {
-            "animal group": "segmented worm",
+            "animal group": "segmented worms",
             "features": [
                 {
                     "name": "segmented body divided into repeating sections",
@@ -485,48 +484,70 @@
                 "skeleton",
                 "skull"
             ],
-            "new direction": "mammal",
-            "else": "invertebrates sponge"
+            "new direction": "mammals",
+            "else": "invertebrates"
         },
         {
-            "current animal group": "mammal",
+            "current animal group": "invertebrates",
+            "required features": [
+                "no backbone",
+                "no skeleton",
+                "no skull"
+            ],
+            "new direction": "sponges",
+            "else": "vertebrates"
+        },
+        {
+            "current animal group": "mammals",
             "required features": [
                 "milk feeding",
                 "warm blooded",
                 "hair fur"
             ],
-            "new direction": "marsupial",
+            "new direction": "marsupials",
             "else": "fish"
         },
         {
-            "current animal group": "marsupial",
+            "current animal group": "marsupials",
             "required features": [
                 "underdeveloped young",
                 "pouch",
                 "live birth"
             ],
-            "new direction": "marsupial",
-            "else": "placental"
+            "new direction": "classification marsupial",
+            "else": "placentals"
         },
         {
-            "current animal group": "placental",
+            "current animal group": "classification marsupial",
+            "end classification": "The animal is classified as a marsupial.\n Vertebrates → Mammals → Marsupials"
+        },
+        {
+            "current animal group": "placentals",
             "required features": [
                 "fully developed young",
                 "placenta",
                 "chewing"
             ],
-            "new direction": "placental",
-            "else": "monotreme"
+            "new direction": "classification placental",
+            "else": "monotremes"
         },
         {
-            "current animal group": "monotreme",
+            "current animal group": "classification placental",
+            "end classification": "The animal is classified as a placental mammal.\n Vertebrates → Mammals → Placentals"
+        },
+        {
+            "current animal group": "monotremes",
             "required features": [
                 "lay eggs",
                 "specialized glands",
                 "live in water"
             ],
-            "new direction": "monotreme",
-            "else": "mammal"
+            "new direction": "classification monotreme",
+            "else": "mammals"
+        },
+        {
+            "current animal group": "classification monotreme",
+            "end classification": "The animal is classified as a monotreme.\n Vertebrates → Mammals → Monotremes"
         },
         {
             "current animal group": "fish",
@@ -536,7 +557,7 @@
                 "in water"
             ],
             "new direction": "jawless fish",
-            "else": "bird"
+            "else": "birds"
         },
         {
             "current animal group": "jawless fish",
@@ -545,8 +566,12 @@
                 "looks like an eel",
                 "slim, elongated body"
             ],
-            "new direction": "jawless fish",
+            "new direction": "classification jawless fish",
             "else": "cartilaginous fish"
+        },
+        {
+            "current animal group": "classification jawless fish",
+            "end classification": "The animal is classified as a jawless fish.\n Vertebrates → Fish → Jawless Fish"
         },
         {
             "current animal group": "cartilaginous fish",
@@ -555,8 +580,12 @@
                 "looks like a shark",
                 "long, cylindrical body"
             ],
-            "new direction": "cartilaginous fish",
+            "new direction": "classification cartilaginous fish",
             "else": "bony fish"
+        },
+        {
+            "current animal group": "classification cartilaginous fish",
+            "end classification": "The animal is classified as a cartilaginous fish.\n Vertebrates → Fish → Cartilaginous Fish"
         },
         {
             "current animal group": "bony fish",
@@ -565,68 +594,92 @@
                 "looks like common fish",
                 "streamlined or symmetrical body"
             ],
-            "new direction": "bony fish",
+            "new direction": "classification bony fish",
             "else": "fish"
         },
         {
-            "current animal group": "bird",
+            "current animal group": "classification bony fish",
+            "end classification": "The animal is classified as a bony fish.\n Vertebrates → Fish → Bony Fish"
+        },
+        {
+            "current animal group": "birds",
             "required features": [
                 "feathers",
                 "beak",
                 "eggs hard shell"
             ],
-            "new direction": "bird",
-            "else": "reptile"
+            "new direction": "classification bird",
+            "else": "reptiles"
         },
         {
-            "current animal group": "reptile",
+            "current animal group": "classification bird",
+            "end classification": "The animal is classified as a bird.\n Vertebrates → Birds"
+        },
+        {
+            "current animal group": "reptiles",
             "required features": [
                 "scaly skin",
                 "lungs",
                 "leathery eggs"
             ],
-            "new direction": "reptile",
-            "else": "amphibian"
+            "new direction": "classification reptile",
+            "else": "amphibians"
         },
         {
-            "current animal group": "amphibian",
+            "current animal group": "classification reptile",
+            "end classification": "The animal is classified as a reptile.\n Vertebrates → Reptiles"
+        },
+        {
+            "current animal group": "amphibians",
             "required features": [
                 "both water land",
                 "larva born",
                 "eggs in water"
             ],
-            "new direction": "amphibian",
+            "new direction": "classification amphibian",
             "else": "vertebrates"
         },
         {
-            "current animal group": "invertebrates sponge",
+            "current animal group": "classification amphibian",
+            "end classification": "The animal is classified as an amphibian.\n Vertebrates → Amphibians"
+        },
+        {
+            "current animal group": "sponges",
             "required features": [
                 "lack of tissues and organs",
                 "pores",
                 "also lives in fresh water"
             ],
-            "new direction": "sponge",
+            "new direction": "classification sponge",
             "else": "coelenterates"
+        },
+        {
+            "current animal group": "classification sponge",
+            "end classification": "The animal is classified as a sponge.\n Invertebrates → Sponges"
         },
         {
             "current animal group": "coelenterates",
             "required features": [
-                "symmetry",
+                "radial symmetry",
                 "cnidocytes",
                 "sac-like"
             ],
-            "new direction": "coral",
+            "new direction": "corals",
             "else": "worms"
         },
         {
-            "current animal group": "coral",
+            "current animal group": "corals",
             "required features": [
                 "sessile",
                 "reefs",
                 "get energy from tiny plants"
             ],
-            "new direction": "coral",
+            "new direction": "classification coral",
             "else": "hydra"
+        },
+        {
+            "current animal group": "classification coral",
+            "end classification": "The animal is classified as a coral.\n Invertebrates → Coelenterates → Coral"
         },
         {
             "current animal group": "hydra",
@@ -635,8 +688,12 @@
                 "regenerate",
                 "stay in one place"
             ],
-            "new direction": "hydra",
+            "new direction": "classification hydra",
             "else": "jellyfish"
+        },
+        {
+            "current animal group": "classification hydra",
+            "end classification": "The animal is classified as a hydra.\n Invertebrates → Coelenterates → Hydra"
         },
         {
             "current animal group": "jellyfish",
@@ -649,44 +706,60 @@
             "else": "coelenterates"
         },
         {
+            "current animal group": "classification jellyfish",
+            "end classification": "The animal is classified as a jellyfish.\n Invertebrates → Coelenterates → Jellyfish"
+        },
+        {
             "current animal group": "worms",
             "required features": [
                 "unsegmented or segmented body",
                 "bilateral symmetry",
                 "lacks legs or appendages"
             ],
-            "new direction": "flatworm",
+            "new direction": "flatworms",
             "else": "mollusks"
         },
         {
-            "current animal group": "flatworm",
+            "current animal group": "flatworms",
             "required features": [
                 "dorsoventrally flattened",
                 "lacks body cavity",
                 "relies on diffusion for gas exchange"
             ],
-            "new direction": "flatworm",
-            "else": "roundworm"
+            "new direction": "classification flatworm",
+            "else": "roundworms"
         },
         {
-            "current animal group": "roundworm",
+            "current animal group": "classification flatworm",
+            "end classification": "The animal is classified as a flatworm.\n Invertebrates → Worms → Flatworms"
+        },
+        {
+            "current animal group": "roundworms",
             "required features": [
                 "cylindrical, unsegmented body",
                 "complete digestive tract",
                 "parasite in mammals"
             ],
-            "new direction": "roundworm",
-            "else": "segmented worm"
+            "new direction": "classification roundworm",
+            "else": "segmented worms"
         },
         {
-            "current animal group": "segmented worm",
+            "current animal group": "classification roundworm",
+            "end classification": "The animal is classified as a roundworm.\n Invertebrates → Worms → Roundworms"
+        },
+        {
+            "current animal group": "segmented worms",
             "required features": [
                 "segmented body divided into repeating sections",
                 "circulatory system with blood vessels",
                 "tiny hair-like structures"
             ],
-            "new direction": "segmented worm",
+            "new direction": "classification segmented worm",
             "else": "worms"
+        },
+        {
+            "current animal group": "classification segmented worm",
+            "end classification": "The animal is classified as a segmented worm.\n Invertebrates → Worms → Segmented Worms"
         },
         {
             "current animal group": "mollusks",
@@ -695,8 +768,12 @@
                 "tentacles",
                 "mantle"
             ],
-            "new direction": "mollusk",
+            "new direction": "classification mollusk",
             "else": "arthropods"
+        },
+        {
+            "current animal group": "classification mollusk",
+            "end classification": "The animal is classified as a mollusk.\n Invertebrates → Mollusks"
         },
         {
             "current animal group": "arthropods",
@@ -705,48 +782,64 @@
                 "jointed legs",
                 "exoskeleton"
             ],
-            "new direction": "crustacean",
+            "new direction": "crustaceans",
             "else": "echinoderms"
         },
         {
-            "current animal group": "crustacean",
+            "current animal group": "crustaceans",
             "required features": [
                 "aquatic",
                 "pairs of antennae",
                 "carapace"
             ],
-            "new direction": "crustacean",
-            "else": "echinoderms"
-        }, 
+            "new direction": "classification crustacean",
+            "else": "arachnids"
+        },
         {
-            "current animal group": "arachnoid",
+            "current animal group": "classification crustacean",
+            "end classification": "The animal is classified as a crustacean.\n Invertebrates → Arthropods → Crustaceans"
+        },
+        {
+            "current animal group": "arachnids",
             "required features": [
                 "two segments",
                 "eight legs",
                 "pedipalps"
             ],
-            "new direction": "arachnoid",
-            "else": "myriapod"
+            "new direction": "classification arachnid",
+            "else": "myriapods"
         },
         {
-            "current animal group": "myriapod",
+            "current animal group": "classification arachnid",
+            "end classification": "The animal is classified as an arachnid.\n Invertebrates → Arthropods → Arachnids"
+        },
+        {
+            "current animal group": "myriapods",
             "required features": [
                 "segmented body with numerous legs",
                 "pair of legs per segment",
                 "fangs or small mandibles"
             ],
-            "new direction": "myriapod",
-            "else": "insect"
+            "new direction": "classification myriapod",
+            "else": "insects"
         },
         {
-            "current animal group": "insect",
+            "current animal group": "classification myriapod",
+            "end classification": "The animal is classified as a myriapod.\n Invertebrates → Arthropods → Myriapods"
+        },
+        {
+            "current animal group": "insects",
             "required features": [
                 "three segments",
                 "six legs",
                 "compound eyes and antennae"
             ],
-            "new direction": "insect",
+            "new direction": "classification insect",
             "else": "arthropods"
+        },
+        {
+            "current animal group": "classification insect",
+            "end classification": "The animal is classified as an insect.\n Invertebrates → Arthropods → Insects"
         },
         {
             "current animal group": "echinoderms",
@@ -755,8 +848,12 @@
                 "endoskeleton",
                 "water vascular system"
             ],
-            "new direction": "echinoderm",
+            "new direction": "classification echinoderm",
             "else": "invertebrates"
+        },
+        {
+            "current animal group": "classification echinoderm",
+            "end classification": "The animal is classified as an echinoderm.\n Invertebrates → Echinoderms"
         }
     ],
     "Facts": [
@@ -784,7 +881,6 @@
         "lack of tissues and organs",
         "pores",
         "also lives in fresh water",
-        "symmetry",
         "cnidocytes",
         "sac-like",
         "unsegmented or segmented body",
