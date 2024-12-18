@@ -1,7 +1,7 @@
 import tkinter as tk
 import json
 
-# Load the JSON data
+# Load the JSON data (this file should contain the knowledge base and rules)
 with open('without_negative_features.json', 'r') as file:
     knowledge_data = json.load(file)
 
@@ -11,6 +11,7 @@ rules = knowledge_data["Rules"]
 
 class KnowledgeBaseApp:
     def __init__(self, root, knowledge_base, rules):
+        # Initializing the app with necessary parameters
         self.root = root
         self.knowledge_base = knowledge_base
         self.rules = rules
@@ -22,10 +23,11 @@ class KnowledgeBaseApp:
         self.initial_feature_index = 0  # Track progress in answering initial questions
         self.initial_phase_complete = False  # Track if initial questions are completed
         self.asking_third_question = False  # Flag for checking third question
+        self.third_question_answered = False  # Ensure third question is only asked once
         self.setup_gui()
 
     def setup_gui(self):
-        # Main frame setup
+        # Setting up the main frame for the UI
         self.main_frame = tk.Frame(self.root, bg='#A5D6A7')  # Light green background
         self.main_frame.pack(fill="both", expand=True)
 
@@ -33,7 +35,7 @@ class KnowledgeBaseApp:
         self.root.geometry("1200x800")  # Set initial window size (adjustable for macOS screen)
         self.root.title("Animal Classification System")  # Window title
 
-        # Welcome Label
+        # Welcome Label (this will be shown initially)
         self.welcome_label = tk.Label(
             self.main_frame,
             text="Welcome to the Animal Classification System!",
@@ -44,7 +46,7 @@ class KnowledgeBaseApp:
         )
         self.welcome_label.place(relx=0.5, rely=0.4, anchor="center")
 
-        # Start Button
+        # Start Button to start the classification process
         self.start_button = tk.Button(
             self.main_frame,
             text="Start",
@@ -57,7 +59,7 @@ class KnowledgeBaseApp:
         )
         self.start_button.place(relx=0.5, rely=0.6, anchor="center")
 
-        # Question label (initially hidden)
+        # Question label (initially hidden, will be shown when asking a question)
         self.question_label = tk.Label(
             self.main_frame,
             text="",
@@ -109,12 +111,12 @@ class KnowledgeBaseApp:
         self.animal_group_label.place_forget()  # Initially hide it
 
     def start(self):
-        # Hide welcome message and start button
+        # Hide welcome message and start button when the user clicks "Start"
         print("Starting the application...")
         self.welcome_label.place_forget()
         self.start_button.place_forget()
 
-        # Show question label and buttons
+        # Show question label and buttons to start asking questions
         self.question_label.place(relx=0.5, rely=0.4, anchor="center")
         self.button_frame.place(relx=0.5, rely=0.6, anchor="center")
         self.yes_button.pack(side="left", padx=40)
@@ -140,7 +142,7 @@ class KnowledgeBaseApp:
             self.animal_group_label.config(text=f"Current Animal Group: {current_animal_group}")
             self.animal_group_label.place(relx=0.01, rely=0.05)  # Show the animal group label
             
-            # Initialize initial features for the current animal group
+            # Initialize initial features for the current animal group (taking the first two features)
             self.initial_features = [feature["name"] for feature in self.current_question["features"][:2]]
             self.initial_feature_index = 0  # Start asking the first feature
 
@@ -159,6 +161,7 @@ class KnowledgeBaseApp:
         return None
 
     def ask_initial_features(self, current_animal_group):
+        # Check if there are still features left to ask
         if self.initial_feature_index < len(self.initial_features):
             feature_name = self.initial_features[self.initial_feature_index]
             print(f"Asking about feature: {feature_name}")
@@ -180,18 +183,26 @@ class KnowledgeBaseApp:
 
     def answer(self, user_input):
         # Store the user's answer for the feature
-        feature_name = self.initial_features[self.initial_feature_index]
+        if not self.asking_third_question:  # If we're not in the third question phase
+            feature_name = self.initial_features[self.initial_feature_index]
+        else:  # If it's the third question phase
+            feature_name = self.current_question["features"][2]["name"]
+        
         print(f"User answered {user_input} for feature: {feature_name}")
         self.answers[feature_name] = (user_input == "Yes")
         if user_input == "Yes":
             self.stored_features.append(feature_name)
 
         # Move to the next feature or process the rule
-        self.initial_feature_index += 1
-        if self.initial_feature_index < len(self.initial_features):
-            self.ask_initial_features(self.rule_from_rules["current animal group"])
-        else:
-            print("All initial questions answered. Comparing features with rule...")
+        if not self.asking_third_question:  # If not in third question phase
+            self.initial_feature_index += 1
+            if self.initial_feature_index < len(self.initial_features):
+                self.ask_initial_features(self.rule_from_rules["current animal group"])
+            else:
+                print("All initial questions answered. Comparing features with rule...")
+                self.compare_features_with_rule(self.rule_from_rules)
+        else:  # If in third question phase
+            print("After third question, comparing features with rule again...")
             self.compare_features_with_rule(self.rule_from_rules)
 
     def compare_features_with_rule(self, current_rule):
@@ -200,15 +211,12 @@ class KnowledgeBaseApp:
         
         # Safely access 'required features' from the current rule
         required_features = current_rule.get("required features")
-        print(required_features)
+        print(f"Required features: {required_features}")
         
         if not required_features:
             print(f"Error: Rule for {current_rule.get('current animal group', 'Unknown group')} does not contain 'required features'. Skipping this rule.")
             return  # Skip the rule if it doesn't have required features
         
-        print(f"Required features: {required_features}")  # Debugging print
-        
-        # If the "required features" are present, proceed to compare them
         print("Comparing stored features with required features...")
 
         # Count how many required features the user has answered "Yes" to
@@ -220,18 +228,29 @@ class KnowledgeBaseApp:
             # If 2 or more features match, proceed to the new direction
             print(f"Feature matches sufficient. Moving to new direction: {current_rule['new direction']}")
             self.display_next_question(current_rule["new direction"])
+        elif not self.asking_third_question:
+            # If feature matches are insufficient, and the third question hasn't been asked yet
+            print("Feature matches insufficient. Asking the third question...")
+            self.ask_third_question(current_rule)  # Ask the third question
+            self.asking_third_question = True  # Mark that the third question has been asked
         else:
-            # If insufficient feature matches, ask the third question
-            print("Feature matches insufficient. Asking third question...")
-            self.ask_third_question(current_rule)
+            # If feature matches are insufficient and the third question has already been asked
+            print("Feature matches insufficient. Moving to the 'else' of the current rule...")
+            self.display_next_question(current_rule["else"])
 
     def ask_third_question(self, rule):
-        # Ask the third question
-        feature_name = self.current_question["features"][2]["name"]
-        print(f"Asking third question for feature: {feature_name}")
-        question_text = self.get_question_text(feature_name)
-        self.question_label.config(text=question_text)
-        self.asking_third_question = True  # Flag to indicate third question is being asked
+        # Only ask the third question once (if the flag is False)
+        if not self.asking_third_question:
+            self.asking_third_question = True  # Mark as asked
+            feature_name = self.current_question["features"][2]["name"]
+            print(f"Asking third question for feature: {feature_name}")
+            question_text = self.get_question_text(feature_name)
+            self.question_label.config(text=question_text)
+            self.asking_third_question = True  # Flag to indicate third question is being asked
+        else:
+            # If the third question was already asked, directly move to the "else" section
+            print("Third question has already been asked. Moving to the next rule or direction...")
+            self.compare_features_with_rule(rule)
 
     def handle_third_answer(self, user_input):
         # Store the answer to the third question
@@ -260,15 +279,40 @@ class KnowledgeBaseApp:
                 self.process_rule(next_rule)
 
     def end_classification(self, classification_message):
-        # Display the final classification result
-        print(f"End of classification: {classification_message}")
-        self.question_label.config(text=classification_message)
-        self.animal_group_label.config(text=f"Classification: {classification_message}")
-        self.animal_group_label.place(relx=0.01, rely=0.05)  # Show the animal group label
+        # Clear the main frame
+        for widget in self.main_frame.winfo_children():
+            widget.destroy()
 
-        # Remove the "Yes" and "No" buttons
-        self.yes_button.pack_forget()
-        self.no_button.pack_forget()
+        # Separate the main and secondary parts of the message
+        parts = classification_message.split("\n")
+        main_message = parts[0]
+        secondary_message = parts[1] if len(parts) > 1 else ""
+
+        # Create a new frame to hold the classification message (to center it)
+        message_frame = tk.Frame(self.main_frame, bg='#A5D6A7')
+        message_frame.place(relx=0.5, rely=0.5, anchor="center")  # Center on the screen
+
+        # Create a label for the main message
+        main_label = tk.Label(
+            message_frame,
+            text=main_message,
+            bg='#A5D6A7',
+            fg='black',
+            font=("Arial", 40, "bold"),
+            wraplength=1100
+        )
+        main_label.pack()
+
+        # Create a label for the secondary message
+        secondary_label = tk.Label(
+            message_frame,
+            text=secondary_message,
+            bg='#A5D6A7',
+            fg='#555555',
+            font=("Arial", 30),
+            wraplength=1100
+        )
+        secondary_label.pack(pady=(10, 0))  # Add slight spacing between the lines
 
 # Initialize the app
 root = tk.Tk()

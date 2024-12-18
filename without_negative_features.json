@@ -506,7 +506,7 @@
         },
         {
             "current animal group": "classification marsupial",
-            "end classification": "The animal is classified as a marsupial.\n Vertebrates → Mammals → Marsupials"
+            "end classification": "The animal is classified as a marsupial.\n Vertebrates \u2192 Mammals \u2192 Marsupials"
         },
         {
             "current animal group": "placentals",
@@ -520,7 +520,7 @@
         },
         {
             "current animal group": "classification placental",
-            "end classification": "The animal is classified as a placental mammal.\n Vertebrates → Mammals → Placentals"
+            "end classification": "The animal is classified as a placental mammal.\n Vertebrates \u2192 Mammals \u2192 Placentals"
         },
         {
             "current animal group": "monotremes",
@@ -534,7 +534,7 @@
         },
         {
             "current animal group": "classification monotreme",
-            "end classification": "The animal is classified as a monotreme.\n Vertebrates → Mammals → Monotremes"
+            "end classification": "The animal is classified as a monotreme.\n Vertebrates \u2192 Mammals \u2192 Monotremes"
         },
         {
             "current animal group": "fish",
@@ -558,7 +558,7 @@
         },
         {
             "current animal group": "classification jawless fish",
-            "end classification": "The animal is classified as a jawless fish.\n Vertebrates → Fish → Jawless Fish"
+            "end classification": "The animal is classified as a jawless fish.\n Vertebrates \u2192 Fish \u2192 Jawless Fish"
         },
         {
             "current animal group": "cartilaginous fish",
@@ -572,7 +572,7 @@
         },
         {
             "current animal group": "classification cartilaginous fish",
-            "end classification": "The animal is classified as a cartilaginous fish.\n Vertebrates → Fish → Cartilaginous Fish"
+            "end classification": "The animal is classified as a cartilaginous fish.\n Vertebrates \u2192 Fish \u2192 Cartilaginous Fish"
         },
         {
             "current animal group": "bony fish",
@@ -586,7 +586,7 @@
         },
         {
             "current animal group": "classification bony fish",
-            "end classification": "The animal is classified as a bony fish.\n Vertebrates → Fish → Bony Fish"
+            "end classification": "The animal is classified as a bony fish.\n Vertebrates \u2192 Fish \u2192 Bony Fish"
         },
         {
             "current animal group": "birds",
@@ -600,7 +600,7 @@
         },
         {
             "current animal group": "classification bird",
-            "end classification": "The animal is classified as a bird.\n Vertebrates → Birds"
+            "end classification": "The animal is classified as a bird.\n Vertebrates \u2192 Birds"
         },
         {
             "current animal group": "reptiles",
@@ -614,7 +614,7 @@
         },
         {
             "current animal group": "classification reptile",
-            "end classification": "The animal is classified as a reptile.\n Vertebrates → Reptiles"
+            "end classification": "The animal is classified as a reptile.\n Vertebrates \u2192 Reptiles"
         },
         {
             "current animal group": "amphibians",
@@ -628,7 +628,7 @@
         },
         {
             "current animal group": "classification amphibian",
-            "end classification": "The animal is classified as an amphibian.\n Vertebrates → Amphibians"
+            "end classification": "The animal is classified as an amphibian.\n Vertebrates \u2192 Amphibians"
         },
         {
             "current animal group": "sponges",
@@ -642,7 +642,7 @@
         },
         {
             "current animal group": "classification sponge",
-            "end classification": "The animal is classified as a sponge.\n Invertebrates → Sponges"
+            "end classification": "The animal is classified as a sponge.\n Invertebrates \u2192 Sponges"
         },
         {
             "current animal group": "coelenterates",
@@ -666,7 +666,7 @@
         },
         {
             "current animal group": "classification coral",
-            "end classification": "The animal is classified as a coral.\n Invertebrates → Coelenterates → Coral"
+            "end classification": "The animal is classified as a coral.\n Invertebrates \u2192 Coelenterates \u2192 Coral"
         },
         {
             "current animal group": "hydra",
@@ -680,7 +680,7 @@
         },
         {
             "current animal group": "classification hydra",
-            "end classification": "The animal is classified as a hydra.\n Invertebrates → Coelenterates → Hydra"
+            "end classification": "The animal is classified as a hydra.\n Invertebrates \u2192 Coelenterates \u2192 Hydra"
         },
         {
             "current animal group": "jellyfish",
@@ -694,7 +694,7 @@
         },
         {
             "current animal group": "classification jellyfish",
-            "end classification": "The animal is classified as a jellyfish.\n Invertebrates → Coelenterates → Jellyfish"
+            "end classification": "The animal is classified as a jellyfish.\n Invertebrates \u2192 Coelenterates \u2192 Jellyfish"
         },
         {
             "current animal group": "worms",
@@ -718,7 +718,7 @@
         },
         {
             "current animal group": "classification flatworm",
-            "end classification": "The animal is classified as a flatworm.\n Invertebrates → Worms → Flatworms"
+            "end classification": "The animal is classified as a flatworm.\n Invertebrates \u2192 Worms \u2192 Flatworms"
         },
         {
             "current animal group": "roundworms",
@@ -732,7 +732,7 @@
         },
         {
             "current animal group": "classification roundworm",
-            "end classification": "The animal is classified as a roundworm.\n Invertebrates → Worms → Roundworms"
+            "end classification": "The animal is classified as a roundworm.\n Invertebrates \u2192 Worms \u2192 Roundworms"
         },
         {
             "current animal group": "segmented worms",
@@ -746,7 +746,7 @@
         },
         {
             "current animal group": "classification segmented worm",
-            "end classification": "The animal is classified as a segmented worm.\n Invertebrates → Worms → Segmented Worms"
+            "end classification": "The animal is classified as a segmented worm.\n Invertebrates \u2192 Worms \u2192 Segmented Worms"
         },
         {
             "current animal group": "mollusks",
@@ -760,7 +760,7 @@
         },
         {
             "current animal group": "classification mollusk",
-            "end classification": "The animal is classified as a mollusk.\n Invertebrates → Mollusks"
+            "end classification": "The animal is classified as a mollusk.\n Invertebrates \u2192 Mollusks"
         },
         {
             "current animal group": "arthropods",
@@ -784,7 +784,7 @@
         },
         {
             "current animal group": "classification crustacean",
-            "end classification": "The animal is classified as a crustacean.\n Invertebrates → Arthropods → Crustaceans"
+            "end classification": "The animal is classified as a crustacean.\n Invertebrates \u2192 Arthropods \u2192 Crustaceans"
         },
         {
             "current animal group": "arachnids",
@@ -798,7 +798,7 @@
         },
         {
             "current animal group": "classification arachnid",
-            "end classification": "The animal is classified as an arachnid.\n Invertebrates → Arthropods → Arachnids"
+            "end classification": "The animal is classified as an arachnid.\n Invertebrates \u2192 Arthropods \u2192 Arachnids"
         },
         {
             "current animal group": "myriapods",
@@ -812,7 +812,7 @@
         },
         {
             "current animal group": "classification myriapod",
-            "end classification": "The animal is classified as a myriapod.\n Invertebrates → Arthropods → Myriapods"
+            "end classification": "The animal is classified as a myriapod.\n Invertebrates \u2192 Arthropods \u2192 Myriapods"
         },
         {
             "current animal group": "insects",
@@ -826,7 +826,7 @@
         },
         {
             "current animal group": "classification insect",
-            "end classification": "The animal is classified as an insect.\n Invertebrates → Arthropods → Insects"
+            "end classification": "The animal is classified as an insect.\n Invertebrates \u2192 Arthropods \u2192 Insects"
         },
         {
             "current animal group": "echinoderms",
@@ -840,7 +840,7 @@
         },
         {
             "current animal group": "classification echinoderm",
-            "end classification": "The animal is classified as an echinoderm.\n Invertebrates → Echinoderms"
+            "end classification": "The animal is classified as an echinoderm.\n Invertebrates \u2192 Echinoderms"
         }
     ],
     "Facts": [
