@@ -332,7 +332,7 @@ class KnowledgeBaseApp:
         if group_name in self.animal_media[0]:
             media = self.animal_media[0][group_name]
             message_frame = tk.Frame(self.main_frame, bg='#A5D6A7')
-            message_frame.place(relx=0.5, rely=0.5, anchor="center")
+            message_frame.place(relx=0.5, rely=0.45, anchor="center")
             parts = classification_message.split("\n")
             main_message = parts[0]
             secondary_message = parts[1] if len(parts) > 1 else ""
@@ -356,12 +356,22 @@ class KnowledgeBaseApp:
                 wraplength=1100
             )
             secondary_label.pack(pady=(10, 0))
+
+            examples_message = tk.Label(
+                message_frame,
+                text=f"Some examples of {group_name} (hover over them):",
+                bg='#A5D6A7',
+                fg='black',
+                font=("Arial", 20),
+                wraplength=1100
+            )
+            examples_message.pack(pady=(100, 0))
             
             message_frame.update_idletasks()
             message_frame_height = message_frame.winfo_height()
 
             images_frame = tk.Frame(self.main_frame, bg="#A5D6A7", width=800, height=400)
-            images_frame.place(relx=0.5, rely=0.5 + (message_frame_height / self.main_frame.winfo_height()), anchor="n")
+            images_frame.place(relx=0.5, rely=0.5 + (message_frame_height / self.main_frame.winfo_height()) - 0.2, anchor="n")
 
             x_pos, y_pos = 50, 0
             for animal in media["Images"]:
@@ -373,8 +383,8 @@ class KnowledgeBaseApp:
 
                 def on_enter(event, name=animal["Name"], fact=animal["Fact"]):
                     hover_label = Label(images_frame, text=f"{name}: {fact}", bg="#FFF", fg="black", font=("Arial", 12))
-                    hover_label.place(x=event.x_root - images_frame.winfo_rootx() + 10,
-                                    y=event.y_root - images_frame.winfo_rooty() + 10)
+                    hover_label.place(x=min(event.x_root - images_frame.winfo_rootx() + 10, images_frame.winfo_width() - hover_label.winfo_reqwidth() - 10),
+                                      y=min(event.y_root - images_frame.winfo_rooty() + 10, images_frame.winfo_height() - hover_label.winfo_reqheight() - 10))
                     event.widget.hover_label = hover_label
 
                 def on_leave(event):
@@ -385,10 +395,7 @@ class KnowledgeBaseApp:
                 img_label.bind("<Enter>", on_enter)
                 img_label.bind("<Leave>", on_leave)
 
-                x_pos += 250
-                if x_pos > 600:
-                    x_pos = 50
-                    y_pos += 250
+                x_pos += 220
 
     def end_classification(self, classification_message):
         # Clear the main frame
