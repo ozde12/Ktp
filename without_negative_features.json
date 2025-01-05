@@ -530,11 +530,15 @@
                 "live in water"
             ],
             "new direction": "classification monotreme",
-            "else": "mammals"
+            "else": "classification mammal"
         },
         {
             "current animal group": "classification monotreme",
             "end classification": "The animal is classified as a monotreme.\n Vertebrates \u2192 Mammals \u2192 Monotremes"
+        },
+        {
+            "current animal group": "classification mammal",
+            "end classification": "The animal cannot be classified into a subgroup based on your current answers. You may restart the program and try again with different answers.\n Vertebrates \u2192 Mammals"
         },
         {
             "current animal group": "fish",
@@ -582,11 +586,15 @@
                 "streamlined or symmetrical body"
             ],
             "new direction": "classification bony fish",
-            "else": "fish"
+            "else": "classification fish"
         },
         {
             "current animal group": "classification bony fish",
             "end classification": "The animal is classified as a bony fish.\n Vertebrates \u2192 Fish \u2192 Bony Fish"
+        },
+        {
+            "current animal group": "classification fish",
+            "end classification": "The animal cannot be classified into a subgroup based on your current answers. You may restart the program and try again with different answers.\n Vertebrates \u2192 Fish"
         },
         {
             "current animal group": "birds",
@@ -624,11 +632,15 @@
                 "eggs in water"
             ],
             "new direction": "classification amphibian",
-            "else": "vertebrates"
+            "else": "classification vertebrates"
         },
         {
             "current animal group": "classification amphibian",
             "end classification": "The animal is classified as an amphibian.\n Vertebrates \u2192 Amphibians"
+        },
+        {
+            "current animal group": "classification vertebrates",
+            "end classification": "The animal cannot be classified into a more specific class based on your current answers. You may restart the program and try again with different answers.\n It is for sure a vertebrate."
         },
         {
             "current animal group": "sponges",
@@ -690,11 +702,15 @@
                 "stinging cells"
             ],
             "new direction": "jellyfish",
-            "else": "coelenterates"
+            "else": "classification coelenterates"
         },
         {
             "current animal group": "classification jellyfish",
             "end classification": "The animal is classified as a jellyfish.\n Invertebrates \u2192 Coelenterates \u2192 Jellyfish"
+        },
+        {
+            "current animal group": "classification coelenterates",
+            "end classification": "The animal cannot be classified into a subgroup based on your current answers. You may restart the program and try again with different answers.\n Invertebrates \u2192 Coelenterates"
         },
         {
             "current animal group": "worms",
@@ -742,11 +758,15 @@
                 "tiny hair-like structures"
             ],
             "new direction": "classification segmented worm",
-            "else": "worms"
+            "else": "classification worms"
         },
         {
             "current animal group": "classification segmented worm",
             "end classification": "The animal is classified as a segmented worm.\n Invertebrates \u2192 Worms \u2192 Segmented Worms"
+        },
+        {
+            "current animal group": "classification worms",
+            "end classification": "The animal cannot be classified into a subgroup based on your current answers. You may restart the program and try again with different answers.\n Invertebrates \u2192 Worms"
         },
         {
             "current animal group": "mollusks",
@@ -822,11 +842,15 @@
                 "compound eyes and antennae"
             ],
             "new direction": "classification insect",
-            "else": "arthropods"
+            "else": "classification arthropods"
         },
         {
             "current animal group": "classification insect",
             "end classification": "The animal is classified as an insect.\n Invertebrates \u2192 Arthropods \u2192 Insects"
+        },
+        {
+            "current animal group": "classification arthropods",
+            "end classification": "The animal cannot be classified into a subgroup based on your current answers. You may restart the program and try again with different answers.\n Invertebrates \u2192 Arthropods"
         },
         {
             "current animal group": "echinoderms",
@@ -836,11 +860,15 @@
                 "water vascular system"
             ],
             "new direction": "classification echinoderm",
-            "else": "vertebrates"
+            "else": "classification invertebrates"
         },
         {
             "current animal group": "classification echinoderm",
             "end classification": "The animal is classified as an echinoderm.\n Invertebrates \u2192 Echinoderms"
+        },
+        {
+            "current animal group": "classification invertebrates",
+            "end classification": "The animal cannot be classified into a more specific class based on your current answers. You may restart the program and try again with different answers.\n It is for sure an invertebrate."
         }
     ],
     "Facts": [
@@ -927,5 +955,119 @@
         "bell-shaped",
         "float-freely",
         "stinging cells"
+    ],
+    "Dictionary": [
+        {
+        "Term": "Acoelomate",
+        "Definition": "An animal that lacks a body cavity (coelom). Example: flatworms."
+        },
+        {
+        "Term": "Bilateral symmetry",
+        "Definition": "A body plan where the left and right sides of the body are mirror images of each other."
+        },
+        {
+        "Term": "Carapace",
+        "Definition": "A hard outer shell that protects some animals, like crabs or turtles."
+        },
+        {
+        "Term": "Cartilage",
+        "Definition": "A flexible connective tissue found in animals, often in their skeletons."
+        },
+        {
+        "Term": "Cephalothorax",
+        "Definition": "A body region in some arthropods that combines the head and thorax into one part."
+        },
+        {
+        "Term": "Cnidocytes",
+        "Definition": "Specialized stinging cells found in coelenterates like jellyfish."
+        },
+        {
+        "Term": "Digestive tract",
+        "Definition": "A system of organs in animals that processes food, typically including a mouth and anus."
+        },
+        {
+        "Term": "Diffusion",
+        "Definition": "The process by which molecules move from an area of higher concentration to lower concentration."
+        },
+        {
+        "Term": "Endoskeleton",
+        "Definition": "An internal skeleton made of bone or cartilage, found in vertebrates and echinoderms."
+        },
+        {
+        "Term": "Exoskeleton",
+        "Definition": "A hard, external covering or shell that supports and protects the body of some animals."
+        },
+        {
+        "Term": "Larva",
+        "Definition": "An immature stage in the life cycle of an animal that undergoes metamorphosis."
+        },
+        {
+        "Term": "Mantle",
+        "Definition": "A tissue layer in mollusks that secretes the shell and protects internal organs."
+        },
+        {
+        "Term": "Metamorphosis",
+        "Definition": "A biological process in which an animal changes its body form during its life cycle."
+        },
+        {
+        "Term": "Nematocyst",
+        "Definition": "A specialized cell containing a barbed or venomous coiled thread in cnidarians like jellyfish."
+        },
+        {
+        "Term": "Notochord",
+        "Definition": "A flexible rod-like structure that supports the body in all embryonic and some adult chordates."
+        },
+        {
+        "Term": "Ossicles",
+        "Definition": "Small calcareous plates that make up the endoskeleton of echinoderms."
+        },
+        {
+        "Term": "Placenta",
+        "Definition": "An organ in placental mammals that nourishes the fetus during gestation."
+        },
+        {
+        "Term": "Radial symmetry",
+        "Definition": "A body plan where parts are arranged around a central axis, as in jellyfish and starfish."
+        },
+        {
+        "Term": "Regenerate",
+        "Definition": "The ability to regrow lost or damaged body parts."
+        },
+        {
+        "Term": "Sessile",
+        "Definition": "Describes an organism that is fixed in one place and does not move."
+        },
+        {
+        "Term": "Stinging cells",
+        "Definition": "Specialized cells in cnidarians used for capturing prey and defense, containing nematocysts."
+        },
+        {
+        "Term": "Symmetry",
+        "Definition": "The balanced arrangement of body parts on either side of a dividing line or around a central point."
+        },
+        {
+        "Term": "Tentacles",
+        "Definition": "Flexible, elongated structures used for grasping, feeding, or sensory purposes in some animals."
+        },
+        {
+        "Term": "Vascular system",
+        "Definition": "A system of tubes in plants or animals for transporting fluids like blood or water."
+        },
+        {
+        "Term": "Vertebrates",
+        "Definition": "Animals with a backbone or spinal column."
+        }
+    ],
+    "Animal media": [
+        {
+            "Marsupials": {
+                "Images": [
+                    {"File": "quokka.png", "Name": "Quokka", "Fact": "Known as the happiest animal in the world."},
+                    {"File": "kangaroo.png", "Name": "Kangaroo", "Fact": "Kangaroos can hop up to 25 feet in a single bound!"},
+                    {"File": "koala.png", "Name": "Koala", "Fact": "Koalas sleep up to 20 hours a day."}
+                ],
+                "Animation": "KangarooJump"
+            }
+        }
     ]
 }

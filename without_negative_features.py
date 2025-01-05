@@ -1,3 +1,5 @@
+from tkinter import Toplevel, Canvas, Label
+from PIL import Image, ImageTk
 import tkinter as tk
 import json
 
@@ -5,16 +7,20 @@ import json
 with open('without_negative_features.json', 'r') as file:
     knowledge_data = json.load(file)
 
-# The JSON structure is expected to have two keys: Knowledge base and rules
+# The JSON structure is expected to have additional media information under "Animal media"
 knowledge_base = knowledge_data["Knowledge base"]
 rules = knowledge_data["Rules"]
+dictionary_data = knowledge_data["Dictionary"]
+animal_media = knowledge_data.get("Animal media", {})  # Optional "Animal media" key
 
 class KnowledgeBaseApp:
-    def __init__(self, root, knowledge_base, rules):
+    def __init__(self, root, knowledge_base, rules, dictionary, animal_media):
         # Initializing the app with necessary parameters
         self.root = root
         self.knowledge_base = knowledge_base
         self.rules = rules
+        self.dictionary = dictionary
+        self.animal_media = animal_media  # Store animal media
         self.current_question = None
         self.current_feature_index = 0  # Track which feature within the rule is being asked
         self.answers = {}  # Store user answers
@@ -58,6 +64,19 @@ class KnowledgeBaseApp:
             pady=10
         )
         self.start_button.place(relx=0.5, rely=0.6, anchor="center")
+
+        # Dictionary button (always visible)
+        self.dictionary_button = tk.Button(
+            self.root,  # Attach it directly to the root window
+            text="Open Dictionary",
+            command=self.open_dictionary,
+            fg="black",
+            font=("Arial", 15),
+            relief="solid",
+            padx=10,
+            pady=5
+        )
+        self.dictionary_button.place(relx=0.9, rely=0.05, anchor="ne")  # Fixed top-right corner
 
         # Question label (initially hidden, will be shown when asking a question)
         self.question_label = tk.Label(
@@ -125,6 +144,37 @@ class KnowledgeBaseApp:
         # Start with the first rule
         print("Processing the first rule...")
         self.process_rule(self.rules[0])
+
+    def open_dictionary(self):
+        dictionary_window = tk.Toplevel(self.root)
+        dictionary_window.title("Dictionary")
+        dictionary_window.geometry("600x600")
+
+        # Create a scrollable frame
+        scrollable_frame = tk.Frame(dictionary_window)
+        scrollable_frame.pack(fill="both", expand=True)
+
+        canvas = tk.Canvas(scrollable_frame)
+        scrollbar = tk.Scrollbar(scrollable_frame, orient="vertical", command=canvas.yview)
+        frame_content = tk.Frame(canvas)
+
+        frame_content.bind(
+            "<Configure>",
+            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+        )
+
+        canvas.create_window((0, 0), window=frame_content, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+
+        # Add dictionary terms and definitions
+        for entry in self.dictionary:
+            term_label = tk.Label(frame_content, text=f"{entry['Term']}", font=("Arial", 14, "bold"), anchor="w")
+            definition_label = tk.Label(frame_content, text=f"{entry['Definition']}", font=("Arial", 12), wraplength=550, anchor="w", justify="left")
+            term_label.pack(fill="x", pady=5)
+            definition_label.pack(fill="x", pady=(0, 10))
 
     def process_rule(self, rule):
         # Find the rule for the current animal group from the Rules section
@@ -278,6 +328,68 @@ class KnowledgeBaseApp:
             if next_rule:
                 self.process_rule(next_rule)
 
+    def display_animal_images(self, group_name, classification_message):
+        if group_name in self.animal_media[0]:
+            media = self.animal_media[0][group_name]
+            message_frame = tk.Frame(self.main_frame, bg='#A5D6A7')
+            message_frame.place(relx=0.5, rely=0.5, anchor="center")
+            parts = classification_message.split("\n")
+            main_message = parts[0]
+            secondary_message = parts[1] if len(parts) > 1 else ""
+            
+            main_label = tk.Label(
+                message_frame,
+                text=main_message,
+                bg='#A5D6A7',
+                fg='black',
+                font=("Arial", 40, "bold"),
+                wraplength=1100
+            )
+            main_label.pack()
+
+            secondary_label = tk.Label(
+                message_frame,
+                text=secondary_message,
+                bg='#A5D6A7',
+                fg='#555555',
+                font=("Arial", 30),
+                wraplength=1100
+            )
+            secondary_label.pack(pady=(10, 0))
+            
+            message_frame.update_idletasks()
+            message_frame_height = message_frame.winfo_height()
+
+            images_frame = tk.Frame(self.main_frame, bg="#A5D6A7", width=800, height=400)
+            images_frame.place(relx=0.5, rely=0.5 + (message_frame_height / self.main_frame.winfo_height()), anchor="n")
+
+            x_pos, y_pos = 50, 0
+            for animal in media["Images"]:
+                img = Image.open(animal["File"]).resize((200, 200))
+                photo = ImageTk.PhotoImage(img)
+                img_label = Label(images_frame, image=photo, bg="#A5D6A7")
+                img_label.image = photo
+                img_label.place(x=x_pos, y=y_pos)
+
+                def on_enter(event, name=animal["Name"], fact=animal["Fact"]):
+                    hover_label = Label(images_frame, text=f"{name}: {fact}", bg="#FFF", fg="black", font=("Arial", 12))
+                    hover_label.place(x=event.x_root - images_frame.winfo_rootx() + 10,
+                                    y=event.y_root - images_frame.winfo_rooty() + 10)
+                    event.widget.hover_label = hover_label
+
+                def on_leave(event):
+                    if hasattr(event.widget, "hover_label"):
+                        event.widget.hover_label.destroy()
+                        del event.widget.hover_label
+
+                img_label.bind("<Enter>", on_enter)
+                img_label.bind("<Leave>", on_leave)
+
+                x_pos += 250
+                if x_pos > 600:
+                    x_pos = 50
+                    y_pos += 250
+
     def end_classification(self, classification_message):
         # Clear the main frame
         for widget in self.main_frame.winfo_children():
@@ -287,36 +399,15 @@ class KnowledgeBaseApp:
         parts = classification_message.split("\n")
         main_message = parts[0]
         secondary_message = parts[1] if len(parts) > 1 else ""
+        group_name = secondary_message.split("→")[-1].strip()  # Extract group name
 
-        # Create a new frame to hold the classification message (to center it)
-        message_frame = tk.Frame(self.main_frame, bg='#A5D6A7')
-        message_frame.place(relx=0.5, rely=0.5, anchor="center")  # Center on the screen
-
-        # Create a label for the main message
-        main_label = tk.Label(
-            message_frame,
-            text=main_message,
-            bg='#A5D6A7',
-            fg='black',
-            font=("Arial", 40, "bold"),
-            wraplength=1100
-        )
-        main_label.pack()
-
-        # Create a label for the secondary message
-        secondary_label = tk.Label(
-            message_frame,
-            text=secondary_message,
-            bg='#A5D6A7',
-            fg='#555555',
-            font=("Arial", 30),
-            wraplength=1100
-        )
-        secondary_label.pack(pady=(10, 0))  # Add slight spacing between the lines
+        if group_name in self.animal_media[0]:
+            group_data = self.animal_media[0][group_name]
+            self.display_animal_images(group_name, classification_message)
 
 # Initialize the app
 root = tk.Tk()
-app = KnowledgeBaseApp(root, knowledge_base, rules)
+app = KnowledgeBaseApp(root, knowledge_base, rules, dictionary_data, animal_media)
 
 # Ensuring the Tkinter event loop is properly handled in macOS
 root.mainloop()
