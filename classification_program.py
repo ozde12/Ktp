@@ -1,26 +1,29 @@
-from tkinter import Toplevel, Canvas, Label
+from tkinter import Button, Label, Toplevel
 from PIL import Image, ImageTk
 import tkinter as tk
 import json
 
 # Load the JSON data (this file should contain the knowledge base and rules)
-with open('without_negative_features.json', 'r') as file:
+with open('knowledge_base.json', 'r') as file:
     knowledge_data = json.load(file)
 
 # The JSON structure is expected to have additional media information under "Animal media"
 knowledge_base = knowledge_data["Knowledge base"]
 rules = knowledge_data["Rules"]
 dictionary_data = knowledge_data["Dictionary"]
-animal_media = knowledge_data.get("Animal media", {})  # Optional "Animal media" key
+animal_media = knowledge_data.get("Animal media", {})
+instructions = knowledge_data.get("Instructions", "")
+
 
 class KnowledgeBaseApp:
-    def __init__(self, root, knowledge_base, rules, dictionary, animal_media):
+    def __init__(self, root, knowledge_base, rules, dictionary, animal_media, instructions):
         # Initializing the app with necessary parameters
         self.root = root
         self.knowledge_base = knowledge_base
         self.rules = rules
         self.dictionary = dictionary
         self.animal_media = animal_media  # Store animal media
+        self.instructions = instructions
         self.current_question = None
         self.current_feature_index = 0  # Track which feature within the rule is being asked
         self.answers = {}  # Store user answers
@@ -31,6 +34,7 @@ class KnowledgeBaseApp:
         self.asking_third_question = False  # Flag for checking third question
         self.third_question_answered = False  # Ensure third question is only asked once
         self.setup_gui()
+
 
     def setup_gui(self):
         # Setting up the main frame for the UI
@@ -48,9 +52,20 @@ class KnowledgeBaseApp:
             bg='#A5D6A7',
             fg='black',
             font=("Arial", 40, "bold"),
-            wraplength=1100
+            wraplength=1200
         )
         self.welcome_label.place(relx=0.5, rely=0.4, anchor="center")
+
+        # Instructions overview label (under the welcome message)
+        self.instructions_label = tk.Label(
+            self.main_frame,
+            text="(Click on the question mark button for detailed instructions.)",
+            bg='#A5D6A7',
+            fg='#555555',
+            font=("Arial", 18),
+            wraplength=1100
+        )
+        self.instructions_label.place(relx=0.5, rely=0.465, anchor="center")
 
         # Start Button to start the classification process
         self.start_button = tk.Button(
@@ -67,7 +82,7 @@ class KnowledgeBaseApp:
 
         # Dictionary button (always visible)
         self.dictionary_button = tk.Button(
-            self.root,  # Attach it directly to the root window
+            self.root,
             text="Open Dictionary",
             command=self.open_dictionary,
             fg="black",
@@ -76,7 +91,33 @@ class KnowledgeBaseApp:
             padx=10,
             pady=5
         )
-        self.dictionary_button.place(relx=0.9, rely=0.05, anchor="ne")  # Fixed top-right corner
+        self.dictionary_button.place(relx=0.90, rely=0.05, anchor="ne")
+
+        # Question Mark button (for Instructions)
+        self.question_mark_button = tk.Button(
+            self.root,  # Attach it directly to the root window
+            text="?",
+            command=self.show_instructions,
+            fg="black",
+            font=("Arial", 14),
+            relief="solid",
+            padx=10,
+            pady=5
+        )
+        # Place the button to the right of the dictionary button with some margin
+        self.question_mark_button.place(relx=0.94, rely=0.05, anchor="ne")
+
+        self.tree_button = Button(
+            self.root,
+            text="Show Classification Tree",
+            command=self.show_classification_tree,
+            fg="black",
+            font=("Arial", 15),
+            relief="solid",
+            padx=10,
+            pady=5
+        )
+        self.tree_button.place(relx=0.77, rely=0.05, anchor="ne")
 
         # Question label (initially hidden, will be shown when asking a question)
         self.question_label = tk.Label(
@@ -129,6 +170,38 @@ class KnowledgeBaseApp:
         self.animal_group_label.place(relx=0.01, rely=0.05)  # Position at the top left
         self.animal_group_label.place_forget()  # Initially hide it
 
+
+    def show_instructions(self):
+        instructions_window = tk.Toplevel(self.root)
+        instructions_window.title("Instructions")
+        instructions_window.geometry(f"700x600+{self.root.winfo_x() + 750}+{self.root.winfo_y() + 150}")
+
+        scrollable_frame = tk.Frame(instructions_window)
+        scrollable_frame.pack(fill="both", expand=True)
+
+        canvas = tk.Canvas(scrollable_frame)
+        scrollbar = tk.Scrollbar(scrollable_frame, orient="vertical", command=canvas.yview)
+        frame_content = tk.Frame(canvas)
+
+        frame_content.bind(
+            "<Configure>",
+            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+        )
+
+        canvas.create_window((0, 0), window=frame_content, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+
+        for i, instruction in enumerate(self.instructions):
+            if i == 0:
+                instruction_label = tk.Label(frame_content, text=instruction, font=("Arial", 16, "bold"), wraplength=600, anchor="w", justify="left")
+            else:
+                instruction_label = tk.Label(frame_content, text=instruction, font=("Arial", 14), wraplength=600, anchor="w", justify="left")
+            instruction_label.pack(pady=5)
+
+
     def start(self):
         # Hide welcome message and start button when the user clicks "Start"
         print("Starting the application...")
@@ -145,10 +218,25 @@ class KnowledgeBaseApp:
         print("Processing the first rule...")
         self.process_rule(self.rules[0])
 
+        self.animal_group_label = tk.Label(
+            self.main_frame,
+            text="Current Animal Group: None",
+            bg='#A5D6A7',
+            fg='black',
+            font=("Arial", 12),
+            anchor="w"
+        )
+        self.animal_group_label.place(relx=0.01, rely=0.05)  # Position at the top left
+        self.animal_group_label.place_forget()  # Initially hide it
+
+        # Start the main loop
+        self.root.mainloop()
+
+
     def open_dictionary(self):
         dictionary_window = tk.Toplevel(self.root)
         dictionary_window.title("Dictionary")
-        dictionary_window.geometry("600x600")
+        dictionary_window.geometry(f"700x600+{self.root.winfo_x() + 750}+{self.root.winfo_y() + 150}")
 
         # Create a scrollable frame
         scrollable_frame = tk.Frame(dictionary_window)
@@ -176,6 +264,22 @@ class KnowledgeBaseApp:
             term_label.pack(fill="x", pady=5)
             definition_label.pack(fill="x", pady=(0, 10))
 
+
+    def show_classification_tree(self):
+        img_path = "Images\\animal tree.png"
+        img = Image.open(img_path)
+        img = img.resize((500, 500))
+        
+        img_window = Toplevel(self.root)
+        img_window.title("Classification Tree")
+        img_window.geometry("500x500+10+100")
+        
+        tk_img = ImageTk.PhotoImage(img)
+        img_label = Label(img_window, image=tk_img)
+        img_label.image = tk_img
+        img_label.pack()
+
+
     def process_rule(self, rule):
         # Find the rule for the current animal group from the Rules section
         current_animal_group = rule["current animal group"]
@@ -190,6 +294,7 @@ class KnowledgeBaseApp:
             # Update the animal group label at the top left
             print(f"Setting animal group label to: {current_animal_group}")
             self.animal_group_label.config(text=f"Current Animal Group: {current_animal_group}")
+            print(current_animal_group)
             self.animal_group_label.place(relx=0.01, rely=0.05)  # Show the animal group label
             
             # Initialize initial features for the current animal group (taking the first two features)
@@ -201,6 +306,7 @@ class KnowledgeBaseApp:
         else:
             print(f"No rule found for animal group: {current_animal_group}")
 
+
     def get_animal_group_data(self, group_name):
         # Search for the animal group data in the knowledge base
         print(f"Searching for data for animal group: {group_name}")
@@ -209,6 +315,7 @@ class KnowledgeBaseApp:
                 return group
         print(f"No data found for animal group: {group_name}")
         return None
+
 
     def ask_initial_features(self, current_animal_group):
         # Check if there are still features left to ask
@@ -222,6 +329,7 @@ class KnowledgeBaseApp:
             print("Initial questions complete, comparing features with rule...")
             self.compare_features_with_rule(current_animal_group)
 
+
     def get_question_text(self, feature_name):
         # Search for the feature and return the corresponding question
         print(f"Getting question for feature: {feature_name}")
@@ -230,6 +338,7 @@ class KnowledgeBaseApp:
                 return feature["question"]
         print(f"No question found for feature: {feature_name}")
         return ""
+
 
     def answer(self, user_input):
         # Store the user's answer for the feature
@@ -254,6 +363,7 @@ class KnowledgeBaseApp:
         else:  # If in third question phase
             print("After third question, comparing features with rule again...")
             self.compare_features_with_rule(self.rule_from_rules)
+
 
     def compare_features_with_rule(self, current_rule):
         # Ensure the rule contains the "required features" key
@@ -288,6 +398,7 @@ class KnowledgeBaseApp:
             print("Feature matches insufficient. Moving to the 'else' of the current rule...")
             self.display_next_question(current_rule["else"])
 
+
     def ask_third_question(self, rule):
         # Only ask the third question once (if the flag is False)
         if not self.asking_third_question:
@@ -302,6 +413,7 @@ class KnowledgeBaseApp:
             print("Third question has already been asked. Moving to the next rule or direction...")
             self.compare_features_with_rule(rule)
 
+
     def handle_third_answer(self, user_input):
         # Store the answer to the third question
         feature_name = self.current_question["features"][2]["name"]
@@ -313,6 +425,7 @@ class KnowledgeBaseApp:
         # After the third question, check the features again
         print("After third question, comparing features with rule again...")
         self.compare_features_with_rule(self.rule_from_rules)
+
 
     def display_next_question(self, group_name):
         # Check if the group_name is a classification endpoint
@@ -327,6 +440,7 @@ class KnowledgeBaseApp:
             next_rule = next((rule for rule in self.rules if rule["current animal group"] == group_name), None)
             if next_rule:
                 self.process_rule(next_rule)
+
 
     def display_animal_images(self, group_name, classification_message):
         if group_name in self.animal_media[0]:
@@ -397,6 +511,7 @@ class KnowledgeBaseApp:
 
                 x_pos += 220
 
+
     def end_classification(self, classification_message):
         # Clear the main frame
         for widget in self.main_frame.winfo_children():
@@ -412,9 +527,10 @@ class KnowledgeBaseApp:
             group_data = self.animal_media[0][group_name]
             self.display_animal_images(group_name, classification_message)
 
+
 # Initialize the app
 root = tk.Tk()
-app = KnowledgeBaseApp(root, knowledge_base, rules, dictionary_data, animal_media)
+app = KnowledgeBaseApp(root, knowledge_base, rules, dictionary_data, animal_media, instructions)
 
 # Ensuring the Tkinter event loop is properly handled in macOS
 root.mainloop()

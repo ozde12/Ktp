@@ -956,6 +956,15 @@
         "float-freely",
         "stinging cells"
     ],
+    "Instructions": [
+        "Welcome to the Animal Classification System!\n",
+        "This system will help you classify the animal you have in mind into one of the groups shown on the classification tree (accessible via the 'Tree' button). You will be asked a series of yes/no questions about the animal's features. If you make a mistake, do not worry, you can restart the process at any time.\n",
+        "An 'Open Dictionary' button is available at the top right corner to help you understand any unfamiliar biological terms. Please keep in mind that the system may not always be accurate and cannot classify every possible animal. In some cases, the system may not be able to determine a specific class or subgroup, but it will still provide the best possible classification group.\n",
+        "Throughout the classification process, updates will be displayed at the top left corner of the page. Once completed, you will receive a classification message along with example images of animals from that group. Hovering over the images will reveal a fun surprise!\n",
+        "If you wish to stop at any time, simply click the 'X' at the top right of the page to exit the program.\n",
+        "You can always access these instructions by clicking the question mark button at the top right corner.\n",
+        "We hope you enjoy using the system and that it proves helpful in your animal classification journey!\n"
+    ],
     "Dictionary": [
         {
         "Term": "Acoelomate",
@@ -1062,9 +1071,9 @@
         {
             "Marsupials": {
                 "Images": [
-                    {"File": "quokka.png", "Name": "Quokka", "Fact": "Known as the happiest animal in the world."},
-                    {"File": "kangaroo.png", "Name": "Kangaroo", "Fact": "Kangaroos can hop up to 25 feet in a single bound!"},
-                    {"File": "koala.png", "Name": "Koala", "Fact": "Koalas sleep up to 20 hours a day."}
+                    {"File": "Images\\quokka.png", "Name": "Quokka", "Fact": "Known as the happiest animal in the world."},
+                    {"File": "Images\\kangaroo.png", "Name": "Kangaroo", "Fact": "Kangaroos can hop up to 25 feet in a single bound!"},
+                    {"File": "Images\\koala.png", "Name": "Koala", "Fact": "Koalas sleep up to 20 hours a day."}
                 ],
                 "Animation": "KangarooJump"
             }
