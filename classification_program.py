@@ -117,7 +117,7 @@ class KnowledgeBaseApp:
             text="?",
             command=self.show_instructions,
             fg="black",
-            font=("Arial", 14),
+            font=("Arial", 15),
             relief="raised",
             padx=10,
             pady=5
