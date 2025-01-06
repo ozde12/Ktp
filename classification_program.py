@@ -3,17 +3,6 @@ from PIL import Image, ImageTk
 import tkinter as tk
 import json
 
-# Load the JSON data (this file should contain the knowledge base and rules)
-with open('knowledge_base.json', 'r') as file:
-    knowledge_data = json.load(file)
-
-# The JSON structure is expected to have additional media information under "Animal media"
-knowledge_base = knowledge_data["Knowledge base"]
-rules = knowledge_data["Rules"]
-dictionary_data = knowledge_data["Dictionary"]
-animal_media = knowledge_data.get("Animal media", {})
-instructions = knowledge_data.get("Instructions", "")
-
 
 class KnowledgeBaseApp:
     def __init__(self, root, knowledge_base, rules, dictionary, animal_media, instructions):
@@ -67,6 +56,12 @@ class KnowledgeBaseApp:
         )
         self.instructions_label.place(relx=0.5, rely=0.465, anchor="center")
 
+        def on_enter(event):
+            event.widget['background'] = "#CCCCCC"
+
+        def on_leave(event):
+            event.widget['background'] = "white"
+
         # Start Button to start the classification process
         self.start_button = tk.Button(
             self.main_frame,
@@ -79,45 +74,57 @@ class KnowledgeBaseApp:
             pady=10
         )
         self.start_button.place(relx=0.5, rely=0.6, anchor="center")
+        self.start_button.bind("<Enter>", on_enter)
+        self.start_button.bind("<Leave>", on_leave)
 
-        # Dictionary button (always visible)
-        self.dictionary_button = tk.Button(
-            self.root,
-            text="Open Dictionary",
-            command=self.open_dictionary,
-            fg="black",
-            font=("Arial", 15),
-            relief="solid",
-            padx=10,
-            pady=5
-        )
-        self.dictionary_button.place(relx=0.90, rely=0.05, anchor="ne")
+        # Frame to allign tree, dictionary and question mark buttons
+        self.top_button_frame = tk.Frame(self.root, bg='#A5D6A7')
+        self.top_button_frame.place(relx=0.98, rely=0.05, anchor="ne")
 
-        # Question Mark button (for Instructions)
-        self.question_mark_button = tk.Button(
-            self.root,  # Attach it directly to the root window
-            text="?",
-            command=self.show_instructions,
-            fg="black",
-            font=("Arial", 14),
-            relief="solid",
-            padx=10,
-            pady=5
-        )
-        # Place the button to the right of the dictionary button with some margin
-        self.question_mark_button.place(relx=0.94, rely=0.05, anchor="ne")
-
-        self.tree_button = Button(
-            self.root,
+        # Tree button
+        self.tree_button = tk.Button(
+            self.top_button_frame,
             text="Show Classification Tree",
             command=self.show_classification_tree,
             fg="black",
             font=("Arial", 15),
-            relief="solid",
+            relief="raised",
             padx=10,
             pady=5
         )
-        self.tree_button.place(relx=0.77, rely=0.05, anchor="ne")
+        self.tree_button.pack(side="left", padx=1.5)
+        self.tree_button.bind("<Enter>", on_enter)
+        self.tree_button.bind("<Leave>", on_leave)
+
+        # Dictionary button (always visible)
+        self.dictionary_button = tk.Button(
+            self.top_button_frame,
+            text="Open Dictionary",
+            command=self.open_dictionary,
+            fg="black",
+            font=("Arial", 15),
+            relief="raised",
+            padx=10,
+            pady=5
+        )
+        self.dictionary_button.pack(side="left", padx=1.5)
+        self.dictionary_button.bind("<Enter>", on_enter)
+        self.dictionary_button.bind("<Leave>", on_leave)
+
+        # Question Mark button (for Instructions)
+        self.question_mark_button = tk.Button(
+            self.top_button_frame,
+            text="?",
+            command=self.show_instructions,
+            fg="black",
+            font=("Arial", 14),
+            relief="raised",
+            padx=10,
+            pady=5
+        )
+        self.question_mark_button.pack(side="left", padx=1.5)
+        self.question_mark_button.bind("<Enter>", on_enter)
+        self.question_mark_button.bind("<Leave>", on_leave)
 
         # Question label (initially hidden, will be shown when asking a question)
         self.question_label = tk.Label(
@@ -129,7 +136,7 @@ class KnowledgeBaseApp:
             wraplength=1100
         )
 
-        # Frame for buttons to align them horizontally (initially hidden)
+        # Frame for yes/no buttons to align them horizontally (initially hidden)
         self.button_frame = tk.Frame(self.main_frame, bg='#A5D6A7')
 
         # Yes button
@@ -143,6 +150,8 @@ class KnowledgeBaseApp:
             padx=30,  # Padding for a larger clickable area
             pady=15
         )
+        self.yes_button.bind("<Enter>", on_enter)
+        self.yes_button.bind("<Leave>", on_leave)
 
         # No button
         self.no_button = tk.Button(
@@ -155,6 +164,8 @@ class KnowledgeBaseApp:
             padx=30,
             pady=15
         )
+        self.no_button.bind("<Enter>", on_enter)
+        self.no_button.bind("<Leave>", on_leave)
 
         # Animal group label (hidden at the start)
         self.animal_group_label = tk.Label(
@@ -162,7 +173,7 @@ class KnowledgeBaseApp:
             text="Current Animal Group: None",
             bg='#A5D6A7',
             fg='black',
-            font=("Arial", 12),
+            font=("Arial", 14),
             anchor="w"
         )
 
@@ -174,7 +185,7 @@ class KnowledgeBaseApp:
     def show_instructions(self):
         instructions_window = tk.Toplevel(self.root)
         instructions_window.title("Instructions")
-        instructions_window.geometry(f"700x600+{self.root.winfo_x() + 750}+{self.root.winfo_y() + 150}")
+        instructions_window.geometry(f"700x600+{self.root.winfo_x() + 800}+{self.root.winfo_y() + 150}")
 
         scrollable_frame = tk.Frame(instructions_window)
         scrollable_frame.pack(fill="both", expand=True)
@@ -218,17 +229,6 @@ class KnowledgeBaseApp:
         print("Processing the first rule...")
         self.process_rule(self.rules[0])
 
-        self.animal_group_label = tk.Label(
-            self.main_frame,
-            text="Current Animal Group: None",
-            bg='#A5D6A7',
-            fg='black',
-            font=("Arial", 12),
-            anchor="w"
-        )
-        self.animal_group_label.place(relx=0.01, rely=0.05)  # Position at the top left
-        self.animal_group_label.place_forget()  # Initially hide it
-
         # Start the main loop
         self.root.mainloop()
 
@@ -236,7 +236,7 @@ class KnowledgeBaseApp:
     def open_dictionary(self):
         dictionary_window = tk.Toplevel(self.root)
         dictionary_window.title("Dictionary")
-        dictionary_window.geometry(f"700x600+{self.root.winfo_x() + 750}+{self.root.winfo_y() + 150}")
+        dictionary_window.geometry(f"700x600+{self.root.winfo_x() + 800}+{self.root.winfo_y() + 150}")
 
         # Create a scrollable frame
         scrollable_frame = tk.Frame(dictionary_window)
@@ -268,11 +268,11 @@ class KnowledgeBaseApp:
     def show_classification_tree(self):
         img_path = "Images\\animal tree.png"
         img = Image.open(img_path)
-        img = img.resize((500, 500))
+        img = img.resize((600, 600))
         
         img_window = Toplevel(self.root)
         img_window.title("Classification Tree")
-        img_window.geometry("500x500+10+100")
+        img_window.geometry("600x600+10+100")
         
         tk_img = ImageTk.PhotoImage(img)
         img_label = Label(img_window, image=tk_img)
@@ -528,9 +528,22 @@ class KnowledgeBaseApp:
             self.display_animal_images(group_name, classification_message)
 
 
-# Initialize the app
-root = tk.Tk()
-app = KnowledgeBaseApp(root, knowledge_base, rules, dictionary_data, animal_media, instructions)
+def main() -> None:
+    with open('knowledge_base.json', 'r') as file:
+        knowledge_data = json.load(file)
 
-# Ensuring the Tkinter event loop is properly handled in macOS
-root.mainloop()
+    knowledge_base = knowledge_data["Knowledge base"]
+    rules = knowledge_data["Rules"]
+    dictionary_data = knowledge_data["Dictionary"]
+    animal_media = knowledge_data.get("Animal media", {})
+    instructions = knowledge_data.get("Instructions", "")
+
+    root = tk.Tk()
+    KnowledgeBaseApp(root, knowledge_base, rules, dictionary_data, animal_media, instructions)
+
+    # Ensuring the Tkinter event loop is properly handled in macOS
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    main()
