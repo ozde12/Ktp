@@ -705,7 +705,7 @@
                 "float-freely",
                 "stinging cells"
             ],
-            "new direction": "jellyfish",
+            "new direction": "classification jellyfish",
             "else": "classification coelenterates"
         },
         {
