@@ -8,8 +8,8 @@
                     "question": "Does the animal have a backbone, spine, or notochord?"
                 },
                 {
-                    "name": "skeleton",
-                    "question": "Does the animal have an internal skeleton (or notochord) made of bone or cartilage?"
+                    "name": "central nervous system",
+                    "question": "Does the animal have a central nervous system?"
                 },
                 {
                     "name": "skull",
@@ -63,8 +63,8 @@
                     "question": "Does the animal have a pouch where the young develop after birth?"
                 },
                 {
-                    "name": "live birth",
-                    "question": "Does the animal give live birth (i.e., do the offspring develop inside the mother and are born alive, rather than hatching from eggs)?"
+                    "name": "short pregnancy",
+                    "question": "Does the animal have a short pregnancy, leading to tiny offspring at birth?"
                 }
             ]
         },
@@ -115,7 +115,7 @@
                 },
                 {
                     "name": "in water",
-                    "question": "Does the animal live in water?"
+                    "question": "Does the animal live only in water?"
                 }
             ]
         },
@@ -157,12 +157,12 @@
             "animal group": "bony fish",
             "features": [
                 {
-                    "name": "hard bones, shiny scales",
-                    "question": "Does the fish look like it has hard bones, scales that are smooth or shiny, and a wide variety of body shapes?"
+                    "name": "hard bones",
+                    "question": "Does the fish look like it has hard bones?"
                 },
                 {
-                    "name": "looks like common fish",
-                    "question": "Does it look like most common fish you would see in aquariums or when fishing?"
+                    "name": "shiny scales",
+                    "question": "Does the fish have scales that are smooth or shiny?"
                 },
                 {
                     "name": "streamlined or symmetrical body",
@@ -333,6 +333,10 @@
                 {
                     "name": "water vascular system",
                     "question": "Does the animal have a water vascular system?"
+                },
+                {
+                    "name": "radial symmetry",
+                    "question": "Does the animal have radial symmetry (body parts arranged around a central axis)?"
                 }
             ]
         },
@@ -340,8 +344,8 @@
             "animal group": "coelenterates",
             "features": [
                 {
-                    "name": "radial symmetry",
-                    "question": "Does the animal have radial symmetry?"
+                    "name": "bell-like motion",
+                    "question": "Does the animal use a pulsing bell-like motion or slow crawling?"
                 },
                 {
                     "name": "cnidocytes",
@@ -478,7 +482,7 @@
             "current animal group": "vertebrates",
             "required features": [
                 "backbone",
-                "skeleton",
+                "central nervous system",
                 "skull"
             ],
             "new direction": "mammals",
@@ -499,7 +503,7 @@
             "required features": [
                 "underdeveloped young",
                 "pouch",
-                "live birth"
+                "short pregnancy"
             ],
             "new direction": "classification marsupial",
             "else": "placentals"
@@ -581,8 +585,8 @@
         {
             "current animal group": "bony fish",
             "required features": [
-                "hard bones, shiny scales",
-                "looks like common fish",
+                "hard bones",
+                "shiny scales",
                 "streamlined or symmetrical body"
             ],
             "new direction": "classification bony fish",
@@ -659,7 +663,7 @@
         {
             "current animal group": "coelenterates",
             "required features": [
-                "radial symmetry",
+                "bell-like motion",
                 "cnidocytes",
                 "sac-like"
             ],
@@ -873,7 +877,7 @@
     ],
     "Facts": [
         "backbone",
-        "skeleton",
+        "central nervous system",
         "skull",
         "milk feeding",
         "warm blooded",
@@ -909,7 +913,7 @@
         "unsegmented body",
         "underdeveloped young",
         "pouch",
-        "live birth",
+        "short pregnancy",
         "fully developed young",
         "placenta",
         "chewing",
@@ -922,8 +926,8 @@
         "feels rough like sandpaper",
         "looks like a shark",
         "long, cylindrical body",
-        "hard bones, shiny scales",
-        "looks like common fish",
+        "hard bones",
+        "shiny scales",
         "streamlined or symmetrical body",
         "dorsoventrally flattened",
         "lacks body cavity",
@@ -954,6 +958,7 @@
         "stay in one place",
         "bell-shaped",
         "float-freely",
+        "bell-like motion",
         "stinging cells"
     ],
     "Instructions": [
