@@ -1293,7 +1293,7 @@
             "crustacean": {
                 "Images": [
                     {"File": "Images\\blue crab.png", "Name": "Blue crab", "Fact": "Have a blue color on their front claws (tips are red on females)."},
-                    {"File": "Images\\japanese spider crab.png", "Name": "Japanese spider crab", "Fact": "Largest known crab, leg span of up to 3.7 meters, it lives deep in the ocean."},
+                    {"File": "Images\\japanese spider crab.png", "Name": "Japanese spider crab", "Fact": "Largest known crab, with a leg span of up to 3.7 meters (luckily it lives deep in the ocean)."},
                     {"File": "Images\\shrimp.png", "Name": "Shrimp", "Fact": "The heart is in its head."}
                 ]
             }

@@ -350,6 +350,7 @@ class KnowledgeBaseApp:
         self.display_next_question()
 
     def display_animal_images(self, group_name, message_frame) -> None:
+        print(group_name)
         for group in self.animal_media:
             if group_name in group:
                 media = group[group_name]
@@ -413,7 +414,7 @@ class KnowledgeBaseApp:
                 end_message = rule["end classification"]
                 main_message = end_message.split("\n")[0]
                 secondary_message = end_message.split("\n")[1]
-                group_name = classification_group.split(" ")[1]
+                group_name = " ".join(classification_group.split(" ")[1:])
 
                 message_frame = tk.Frame(self.main_frame, bg='#A5D6A7')
                 message_frame.place(relx=0.5, rely=0.45, anchor="center")
