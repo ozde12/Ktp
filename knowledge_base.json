@@ -644,7 +644,7 @@
         },
         {
             "current animal group": "classification vertebrates",
-            "end classification": "The animal cannot be classified into a more specific class based on your current answers. You may restart the program and try again with different answers.\n It is for sure a vertebrate."
+            "end classification": "The animal cannot be classified into a more specific class based on your current answers. You may restart the program and try again with different answers.\n The animal is for sure a vertebrate."
         },
         {
             "current animal group": "sponges",
@@ -872,7 +872,7 @@
         },
         {
             "current animal group": "classification invertebrates",
-            "end classification": "The animal cannot be classified into a more specific class based on your current answers. You may restart the program and try again with different answers.\n It is for sure an invertebrate."
+            "end classification": "The animal cannot be classified into a more specific class based on your current answers. You may restart the program and try again with different answers.\n The animal is for sure an invertebrate."
         }
     ],
     "Facts": [
@@ -1074,7 +1074,7 @@
     ],
     "Animal media": [
         {
-            "Vertebrates": {
+            "vertebrates": {
                 "Images": [
                     {"File": "Images\\cat.png", "Name": "Cat", "Fact": "Cats have been to space."},
                     {"File": "Images\\capybara.png", "Name": "Capybara", "Fact": "Adult capybaras weigh as much as adult humans."},
@@ -1083,7 +1083,7 @@
             }
         },
         {
-            "Invertebrates": {
+            "invertebrates": {
                 "Images": [
                     {"File": "Images\\housefly.png", "Name": "Housefly", "Fact": "Houseflies can taste with their feet."},
                     {"File": "Images\\sponge.png", "Name": "Sponge", "Fact": "Sponges lack a nervous system, but can coordinate their activities."},
@@ -1092,7 +1092,7 @@
             }
         },
         {
-            "Mammals": {
+            "mammal": {
                 "Images": [
                     {"File": "Images\\walrus.png", "Name": "Walrus", "Fact": "Walrus calves are born weighing about 85 kg."},
                     {"File": "Images\\orca.png", "Name": "Orca", "Fact": "Orcas are pregnant for 17 months."},
@@ -1101,7 +1101,7 @@
             }
         },
         {
-            "Monotremes": {
+            "monotreme": {
                 "Images": [
                     {"File": "Images\\platypus.png", "Name": "Platypus", "Fact": "Platypuses are venomous."},
                     {"File": "Images\\short-beaked echidna.png", "Name": "Short-beaked echidna", "Fact": "They can grow up to 40 cm."},
@@ -1110,7 +1110,7 @@
             }
         },
         {
-            "Marsupials": {
+            "marsupial": {
                 "Images": [
                     {"File": "Images\\quokka.png", "Name": "Quokka", "Fact": "Known as the happiest animal in the world."},
                     {"File": "Images\\kangaroo.png", "Name": "Kangaroo", "Fact": "Most kangaroos are left-handed."},
@@ -1119,7 +1119,7 @@
             }
         },
         {
-            "Placentals": {
+            "placental": {
                 "Images": [
                     {"File": "Images\\horse.png", "Name": "Horse", "Fact": "In 2003, a mare was cloned in Italy."},
                     {"File": "Images\\dog.png", "Name": "Dog", "Fact": "Dogs poop aligned with Earth's magnetic field."},
@@ -1128,7 +1128,7 @@
             }
         },
         {
-            "Fish": {
+            "fish": {
                 "Images": [
                     {"File": "Images\\king mackerel.png", "Name": "King mackerel", "Fact": "They can be 1.7 meters long and 45 kg heavy."},
                     {"File": "Images\\butterfly ray.png", "Name": "Butterfly ray", "Fact": "They can grow up to 4 meters wide."},
@@ -1137,7 +1137,7 @@
             }
         },
         {
-            "Jawless fish": {
+            "jawless fish": {
                 "Images": [
                     {"File": "Images\\lamprey.png", "Name": "Lamprey", "Fact": "They can survive without eating for up to a year."},
                     {"File": "Images\\hagfish.png", "Name": "Hagfish", "Fact": "They have four hearts."},
@@ -1146,7 +1146,7 @@
             }
         },
         {
-            "Cartilaginous fish": {
+            "cartilaginous fish": {
                 "Images": [
                     {"File": "Images\\great white shark.png", "Name": "Great white shark", "Fact": "Can detect one drop of blood in 95 liters of water."},
                     {"File": "Images\\manta ray.png", "Name": "Manta ray", "Fact": "Smaller fish clean parasites from their bodies."},
@@ -1155,7 +1155,7 @@
             }
         },
         {
-            "Bony fish": {
+            "bony fish": {
                 "Images": [
                     {"File": "Images\\clownfish.png", "Name": "Clownfish", "Fact": "Clownfish can change sex during their lifetime."},
                     {"File": "Images\\swordfish.png", "Name": "Swordfish", "Fact": "Rarely preyed on by other animals."},
@@ -1164,7 +1164,7 @@
             }
         },
         {
-            "Birds": {
+            "bird": {
                 "Images": [
                     {"File": "Images\\macaw.png", "Name": "Macaw", "Fact": "They fall in love for life."},
                     {"File": "Images\\starling.png", "Name": "Starling", "Fact": "Can mimic sounds like human speech."},
@@ -1173,7 +1173,7 @@
             }
         },
         {
-            "Reptiles": {
+            "reptile": {
                 "Images": [
                     {"File": "Images\\turtle.png", "Name": "Turtle", "Fact": "Their shell is part of its skeleton, made of over 50 bones."},
                     {"File": "Images\\iguana.png", "Name": "Iguana", "Fact": "Iguanas have a third eye."},
@@ -1182,7 +1182,7 @@
             }
         },
         {
-            "Amphibians": {
+            "amphibian": {
                 "Images": [
                     {"File": "Images\\frog.png", "Name": "Frog", "Fact": "A frog cannot keep its eyes open when eating."},
                     {"File": "Images\\salamander.png", "Name": "Salamander", "Fact": "Earliest salamander species lived before the dinosaurs."},
@@ -1191,7 +1191,7 @@
             }
         },
         {
-            "Sponges": {
+            "sponge": {
                 "Images": [
                     {"File": "Images\\boring sponge.png", "Name": "Boring sponge", "Fact": "Can create small tunnels in rocks and shells."},
                     {"File": "Images\\tube sponge.png", "Name": "Tube sponge", "Fact": "Can reach 50 cm."},
@@ -1200,7 +1200,7 @@
             }
         },
         {
-            "Coelenterates": {
+            "coelenterates": {
                 "Images": [
                     {"File": "Images\\moon jellyfish.png", "Name": "Moon jellyfish", "Fact": "When food is limited, they can shrink to 1/10 of their size to save energy."},
                     {"File": "Images\\brain coral.png", "Name": "Brain coral", "Fact": "Can live for up to 900 years."},
@@ -1209,7 +1209,7 @@
             }
         },
         {
-            "Corals": {
+            "coral": {
                 "Images": [
                     {"File": "Images\\acropora.png", "Name": "Acropora", "Fact": "Develops in the shape of sunshades."},
                     {"File": "Images\\elkhorn coral.png", "Name": "Elkhorn coral", "Fact": "Can live for up to 5000 years."},
@@ -1218,7 +1218,7 @@
             }
         },
         {
-            "Hydra": {
+            "hydra": {
                 "Images": [
                     {"File": "Images\\freshwater hydra.png", "Name": "Freshwater hydra", "Fact": "Known for its ability to regenerate lost body parts."},
                     {"File": "Images\\green hydra.png", "Name": "Green hydra", "Fact": "Typically 10 mm long."},
@@ -1227,7 +1227,7 @@
             }
         },
         {
-            "Jellyfish": {
+            "jellyfish": {
                 "Images": [
                     {"File": "Images\\box jellyfish.png", "Name": "Box jellyfish", "Fact": "Known for its extremely toxic sting; one of the most dangerous marine creatures."},
                     {"File": "Images\\lions mane jellyfish.png", "Name": "Lion's mane jellyfish", "Fact": "Its tentacles can reach up to 36 meters in length."},
@@ -1236,7 +1236,7 @@
             }
         },
         {
-            "Worms": {
+            "worms": {
                 "Images": [
                     {"File": "Images\\earthworm.png", "Name": "Earthworm", "Fact": "Can dig as deep as 2 meters into the soil."},
                     {"File": "Images\\polychaete worm.png", "Name": "Polychaete worm", "Fact": "Most polychaetes live in the ocean."},
@@ -1245,7 +1245,7 @@
             }
         },
         {
-            "Flatworms": {
+            "flatworm": {
                 "Images": [
                     {"File": "Images\\planarian.png", "Name": "Planarian", "Fact": "Lives as long as not killed."},
                     {"File": "Images\\marine flatworm.png", "Name": "Marine flatworm", "Fact": "Often found in coral reefs and can be toxic to predators."},
@@ -1254,7 +1254,7 @@
             }
         },
         {
-            "Roundworms": {
+            "roundworm": {
                 "Images": [
                     {"File": "Images\\ascaris.png", "Name": "Ascaris", "Fact": "One of the largest intestinal roundworms."},
                     {"File": "Images\\trichinella.png", "Name": "Trichinella", "Fact": "Parasitic disease caused by eating raw or undercooked meat."},
@@ -1263,7 +1263,7 @@
             }
         },
         {
-            "Segmented worms": {
+            "segmented worm": {
                 "Images": [
                     {"File": "Images\\eunice aphroditois.png", "Name": "Eunice aphroditois", "Fact": "Lives mainly in the Atlantic Ocean."},
                     {"File": "Images\\leech.png", "Name": "Leech", "Fact": "Medicinal leeches were used for centuries to treat diseases thought to be caused by excess blood."},
@@ -1272,7 +1272,7 @@
             }
         },
         {
-            "Mollusks": {
+            "mollusk": {
                 "Images": [
                     {"File": "Images\\scallop.png", "Name": "Scallop", "Fact": "Only bivalve mollusk that can jump and swim."},
                     {"File": "Images\\garden snail.png", "Name": "Garden snail", "Fact": "Have both male and female reproductive organs and can mate with any other snail."},
@@ -1281,7 +1281,7 @@
             }
         },
         {
-            "Arthropods": {
+            "arthropods": {
                 "Images": [
                     {"File": "Images\\honey bee.png", "Name": "Honey bee", "Fact": "Worker bee lives for 5 to 6 weeks, queen up to 5 years."},
                     {"File": "Images\\tarantula.png", "Name": "Tarantula", "Fact": "Female tarantulas live longer than males."},
@@ -1290,7 +1290,7 @@
             }
         },
         {
-            "Crustaceans": {
+            "crustacean": {
                 "Images": [
                     {"File": "Images\\blue crab.png", "Name": "Blue crab", "Fact": "Have a blue color on their front claws (tips are red on females)."},
                     {"File": "Images\\japanese spider crab.png", "Name": "Japanese spider crab", "Fact": "Largest known crab, leg span of up to 3.7 meters, it lives deep in the ocean."},
@@ -1299,7 +1299,7 @@
             }
         },
         {
-            "Arachnids": {
+            "arachnid": {
                 "Images": [
                     {"File": "Images\\black widow spider.png", "Name": "Black widow spider", "Fact": "Its bite is highly toxic but rarely fatal to humans."},
                     {"File": "Images\\scorpion.png", "Name": "Scorpion", "Fact": "Some species can glow under UV light."},
@@ -1308,7 +1308,7 @@
             }
         },
         {
-            "Myriapods": {
+            "myriapod": {
                 "Images": [
                     {"File": "Images\\millipede.png", "Name": "Millipede", "Fact": "Curl into a tight coil when they feel threatened."},
                     {"File": "Images\\pauropod.png", "Name": "Pauropod", "Fact": "They have no eyes."},
@@ -1317,7 +1317,7 @@
             }
         },
         {
-            "Insects": {
+            "insect": {
                 "Images": [
                     {"File": "Images\\butterfly.png", "Name": "Butterfly", "Fact": "Butterfly wings are transparent."},
                     {"File": "Images\\dragonfly.png", "Name": "Dragonfly", "Fact": "They have nearly 360-degree vision."},
@@ -1326,7 +1326,7 @@
             }
         },
         {
-            "Echinoderms": {
+            "echinoderm": {
                 "Images": [
                     {"File": "Images\\starfish.png", "Name": "Starfish", "Fact": "They can have up to 40 arms."},
                     {"File": "Images\\sand dollar.png", "Name": "Sand dollar", "Fact": "They love hanging out in groups."},
