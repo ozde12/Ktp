@@ -1,3 +1,5 @@
+from tkinter import Button, Label, Toplevel
+from PIL import Image, ImageTk
 import tkinter as tk
 import json
 
@@ -160,12 +162,87 @@ class KnowledgeBaseApp:
         )
         self.display_next_question()
 
+    def display_animal_images(self, group_name, classification_message):
+        if group_name in self.animal_media[0]:
+            media = self.animal_media[0][group_name]
+            message_frame = tk.Frame(self.main_frame, bg='#A5D6A7')
+            message_frame.place(relx=0.5, rely=0.45, anchor="center")
+            parts = classification_message.split("\n")
+            main_message = parts[0]
+            secondary_message = parts[1] if len(parts) > 1 else ""
+            
+            main_label = tk.Label(
+                message_frame,
+                text=main_message,
+                bg='#A5D6A7',
+                fg='black',
+                font=("Arial", 40, "bold"),
+                wraplength=1100
+            )
+            main_label.pack()
+
+            secondary_label = tk.Label(
+                message_frame,
+                text=secondary_message,
+                bg='#A5D6A7',
+                fg='#555555',
+                font=("Arial", 30),
+                wraplength=1100
+            )
+            secondary_label.pack(pady=(10, 0))
+
+            examples_message = tk.Label(
+                message_frame,
+                text=f"Some examples of {group_name} (hover over them):",
+                bg='#A5D6A7',
+                fg='black',
+                font=("Arial", 20),
+                wraplength=1100
+            )
+            examples_message.pack(pady=(100, 0))
+            
+            message_frame.update_idletasks()
+            message_frame_height = message_frame.winfo_height()
+
+            images_frame = tk.Frame(self.main_frame, bg="#A5D6A7", width=800, height=400)
+            images_frame.place(relx=0.5, rely=0.5 + (message_frame_height / self.main_frame.winfo_height()) - 0.2, anchor="n")
+
+            x_pos, y_pos = 50, 0
+            for animal in media["Images"]:
+                if animal == group_name:
+                    img = Image.open(animal["File"]).resize((200, 200))
+                    photo = ImageTk.PhotoImage(img)
+                    img_label = Label(images_frame, image=photo, bg="#A5D6A7")
+                    img_label.image = photo
+                    img_label.place(x=x_pos, y=y_pos)
+
+                    def on_enter(event, name=animal["Name"], fact=animal["Fact"]):
+                        hover_label = Label(images_frame, text=f"{name}: {fact}", bg="#FFF", fg="black", font=("Arial", 12))
+                        hover_label.place(x=min(event.x_root - images_frame.winfo_rootx() + 10, images_frame.winfo_width() - hover_label.winfo_reqwidth() - 10),
+                                        y=min(event.y_root - images_frame.winfo_rooty() + 10, images_frame.winfo_height() - hover_label.winfo_reqheight() - 10))
+                        event.widget.hover_label = hover_label
+
+                    def on_leave(event):
+                        if hasattr(event.widget, "hover_label"):
+                            event.widget.hover_label.destroy()
+                            del event.widget.hover_label
+
+                    img_label.bind("<Enter>", on_enter)
+                    img_label.bind("<Leave>", on_leave)
+
+                    x_pos += 220
+                
     def end_classification(self, classification_group):
         print(f"Ending classification. Group: {classification_group}")
         for rule in self.rules:
             if rule["current animal group"] == classification_group and "end classification" in rule:
-                print(f"Final classification message: {rule['end classification']}")
-                self.question_label.config(text=rule["end classification"])
+                end_message = rule["end classification"]
+                parts = end_message.split("\n")
+                secondary_message = parts[1]
+                group_name = secondary_message.split("→")[-1].strip()
+                # self.question_label.config(text=rule["end classification"])
+                if group_name in self.animal_media[0]:
+                    self.display_animal_images(group_name, end_message)
                 break
         self.yes_button.pack_forget()
         self.no_button.pack_forget()
