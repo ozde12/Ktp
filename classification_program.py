@@ -19,6 +19,12 @@ class KnowledgeBaseApp:
         self.current_question = None
         self.setup_gui()
 
+    def restart_program(self):
+        # Restarts the entire program
+        self.root.quit()
+        self.root.destroy()
+        main()
+
     def exit_fullscreen(self, event=None) -> None:
         # Exit the full-screen mode when the ESC key is pressed
         self.root.wm_attributes("-fullscreen", False)
@@ -72,7 +78,7 @@ class KnowledgeBaseApp:
             text="(Click on the question mark button for detailed instructions.)",
             bg='#A5D6A7',
             fg='#555555',
-            font=("Arial", 18),
+            font=("Arial", 20),
             wraplength=1100
         )
         self.instructions_label.place(relx=0.5, rely=0.465, anchor="center")
@@ -91,7 +97,7 @@ class KnowledgeBaseApp:
         self.start_button.bind("<Enter>", self.on_enter_buttons)
         self.start_button.bind("<Leave>", self.on_leave_buttons)
 
-        # Frame to allign tree, dictionary and question mark buttons
+        # Frame to allign tree, dictionary, restart, and question mark buttons
         self.top_button_frame = tk.Frame(self.root, bg='#A5D6A7')
         self.top_button_frame.place(relx=0.98, rely=0.05, anchor="ne")
 
@@ -133,9 +139,23 @@ class KnowledgeBaseApp:
             padx=10,
             pady=5
         )
-        self.question_mark_button.pack(side="left", padx=1.5)
+        self.question_mark_button.pack(side="left", padx=(1.5, 20))
         self.question_mark_button.bind("<Enter>", self.on_enter_buttons)
         self.question_mark_button.bind("<Leave>", self.on_leave_buttons)
+
+        self.restart_button = tk.Button(
+            self.top_button_frame,
+            text="Restart",
+            command=self.restart_program,
+            fg="black",
+            font=("Arial", 15),
+            relief="raised",
+            padx=10,
+            pady=5
+        )
+        self.restart_button.pack(side="left", padx=1.5)
+        self.restart_button.bind("<Enter>", self.on_enter_buttons)
+        self.restart_button.bind("<Leave>", self.on_leave_buttons)
 
         self.question_label = tk.Label(
             self.main_frame,
@@ -189,7 +209,7 @@ class KnowledgeBaseApp:
     def show_instructions(self) -> None:
         instructions_window = tk.Toplevel(self.root)
         instructions_window.title("Instructions")
-        instructions_window.geometry(f"700x600+{self.root.winfo_x()+800}+{self.root.winfo_y()+150}")
+        instructions_window.geometry(f"700x600+{self.root.winfo_x()+680}+{self.root.winfo_y()+150}")
 
         scrollable_frame = tk.Frame(instructions_window)
         scrollable_frame.pack(fill="both", expand=True)
@@ -219,7 +239,7 @@ class KnowledgeBaseApp:
     def open_dictionary(self) -> None:
         dictionary_window = tk.Toplevel(self.root)
         dictionary_window.title("Dictionary")
-        dictionary_window.geometry(f"700x600+{self.root.winfo_x()+800}+{self.root.winfo_y()+150}")
+        dictionary_window.geometry(f"700x600+{self.root.winfo_x()+680}+{self.root.winfo_y()+150}")
 
         scrollable_frame = tk.Frame(dictionary_window)
         scrollable_frame.pack(fill="both", expand=True)
@@ -259,6 +279,19 @@ class KnowledgeBaseApp:
         img_label.image = tk_img
         img_label.pack()
 
+    def update_animal_group_label(self, label) -> None:
+        vowels = ('a', 'e', 'i', 'o', 'u')
+
+        if label.endswith('s'):
+            label = label.rstrip('s')
+
+        if label.startswith(vowels):
+            self.animal_group_label.config(text=f"Your animal is an {label}")
+        else:
+            self.animal_group_label.config(text=f"Your animal is a {label}")
+
+        self.animal_group_label.place(relx=0.01, rely=0.05)
+
     def start(self) -> None:
         self.start_button.place_forget()
         self.welcome_label.place_forget()
@@ -274,8 +307,6 @@ class KnowledgeBaseApp:
         if self.current_rule_index is not None and self.current_rule_index < len(self.rules):
             self.current_question = self.rules[self.current_rule_index]
             self.current_feature_index = 0
-            self.animal_group_label.config(text=f"Current Animal Group: {self.current_question['current animal group']}")
-            self.animal_group_label.place(relx=0.01, rely=0.05)
             print(f"Displaying question for rule: {self.current_question['current animal group']}")
 
             if "required features" in self.current_question:
@@ -316,15 +347,21 @@ class KnowledgeBaseApp:
             yes_count = sum(self.answers.get(feature, False) for feature in self.current_question["required features"][:2])
             print(f"First two features yes count: {yes_count}")
             if yes_count == 2:
+                self.update_animal_group_label(self.current_question['current animal group'])
                 self.check_subcategories(self.current_question["new direction"])
             elif yes_count == 1:
                 self.ask_feature_question()  # Ask the third question
             else:
+                if self.current_question['current animal group'] == "vertebrates":
+                    self.update_animal_group_label("invertebrates")
                 self.go_to_next_rule(self.current_question["else"])
         else:
             if self.answers[feature_name]:  # Third question is "Yes"
+                self.update_animal_group_label(self.current_question['current animal group'])
                 self.check_subcategories(self.current_question["new direction"])
             else:  # Third question is "No"
+                if self.current_question['current animal group'] == "vertebrates":
+                    self.update_animal_group_label("invertebrate")
                 self.go_to_next_rule(self.current_question["else"])
 
     def check_subcategories(self, group) -> None:
