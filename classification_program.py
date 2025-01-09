@@ -281,6 +281,8 @@ class KnowledgeBaseApp:
 
 
     def process_rule(self, rule):
+        #1
+        print("MOVING ON TO THE PROCESS RULE FUNCTION")
         # Find the rule for the current animal group from the Rules section
         current_animal_group = rule["current animal group"]
         print(f"Processing rule for animal group: {current_animal_group}")
@@ -303,11 +305,14 @@ class KnowledgeBaseApp:
 
             # Ask the initial feature questions
             self.ask_initial_features(self.rule_from_rules)  # Pass the correct rule
+            #self.ask_initial_features()
         else:
             print(f"No rule found for animal group: {current_animal_group}")
 
 
     def get_animal_group_data(self, group_name):
+        #2
+        print("MOVING ON TO THE GET ANIMAL GROUP DATA FUNCTION")
         # Search for the animal group data in the knowledge base
         print(f"Searching for data for animal group: {group_name}")
         for group in self.knowledge_base:
@@ -318,54 +323,96 @@ class KnowledgeBaseApp:
 
 
     def ask_initial_features(self, current_animal_group):
+        #3
+        print("MOVING ON TO THE ASK INITIAL FEATURES FUNCTION")
         # Check if there are still features left to ask
         if self.initial_feature_index < len(self.initial_features):
             feature_name = self.initial_features[self.initial_feature_index]
-            print(f"Asking about feature: {feature_name}")
+
+            question_number = self.initial_feature_index + 1    
+            print(f"Asking about feature number {question_number}: {feature_name}")
             question_text = self.get_question_text(feature_name)
             self.question_label.config(text=question_text)
         else:
             # After the first two questions, compare the stored features with required features
             print("Initial questions complete, comparing features with rule...")
             self.compare_features_with_rule(current_animal_group)
+            #self.compare_features_with_rule()
 
 
     def get_question_text(self, feature_name):
+        #4
+        print("MOVING ON TO THE GET QUESTION TEXT FUNCTION")
         # Search for the feature and return the corresponding question
         print(f"Getting question for feature: {feature_name}")
-        for feature in self.current_question["features"]:
+        for index, feature in enumerate(self.current_question["features"], start = 1):
             if feature["name"] == feature_name:
-                return feature["question"]
+                print(f"Feature number: {index}, Feature name: {feature_name}")
+                return feature["question"], index
         print(f"No question found for feature: {feature_name}")
         return ""
 
 
-    def answer(self, user_input):
-        # Store the user's answer for the feature
-        if not self.asking_third_question:  # If we're not in the third question phase
-            feature_name = self.initial_features[self.initial_feature_index]
-        else:  # If it's the third question phase
-            feature_name = self.current_question["features"][2]["name"]
+    def answer(self, user_input, feature_number=None):
+        print("MOVING ON TO THE ANSWER FUNCTION")
         
+        # If feature_number is provided, use it; otherwise, fall back to existing logic
+        
+        if feature_number is None:
+            feature_name = self.initial_features[self.initial_feature_index]
+            question_text, feature_number = self.get_question_text(feature_number)
+            print(f"Feature determined from get_question_text. Feature name: {feature_name}, Feature number: {feature_number}")
+        else:
+            feature_name = self.current_question["features"][feature_number - 1]["name"]
+            question_text = self.get_question_text(feature_name)[0]
+            print(f"Using provided feature number: {feature_number}. Feature name: {feature_name}")
+
+        # Process user input (logic to be added based on your specific requirements)
+        print(f"Processing user input for Feature: {feature_name}, Feature Number: {feature_number}")
+
+        """if not self.asking_third_question:  # If we're not in the third question phase
+                feature_name = self.initial_features[self.initial_feature_index]
+                feature_number = self.initial_feature_index + 1  # Feature number based on the index
+                print(f"Feature is from initial features. Feature name: {feature_name}, Feature number: {feature_number}")
+            else:  # If it's the third question phase
+                feature_name = self.current_question["features"][2]["name"]
+                feature_number = 3  # Explicitly set for third question
+                print(f"Feature is from third question phase. Feature name: {feature_name}, Feature number: {feature_number}")
+        else:
+            print(f"Using passed feature number: {feature_number}")"""
+
+        # Store the user's answer for the feature
+        print(f"Storing answer for feature number {feature_number}: {feature_name}")
         print(f"User answered {user_input} for feature: {feature_name}")
+    
+        # Store the answer
         self.answers[feature_name] = (user_input == "Yes")
         if user_input == "Yes":
             self.stored_features.append(feature_name)
+    
+        # Debug print to show stored features and answers
+        print(f"Stored features: {self.stored_features}")
+        print(f"Answers so far: {self.answers}")
 
         # Move to the next feature or process the rule
         if not self.asking_third_question:  # If not in third question phase
             self.initial_feature_index += 1
+            print(f"Initial feature index after increment: {self.initial_feature_index}")
             if self.initial_feature_index < len(self.initial_features):
                 self.ask_initial_features(self.rule_from_rules["current animal group"])
             else:
                 print("All initial questions answered. Comparing features with rule...")
                 self.compare_features_with_rule(self.rule_from_rules)
+                #self.compare_features_with_rule()
         else:  # If in third question phase
             print("After third question, comparing features with rule again...")
             self.compare_features_with_rule(self.rule_from_rules)
+            #self.compare_features_with_rule()
 
 
+    # last
     def compare_features_with_rule(self, current_rule):
+        print("MOVING ON TO THE COMPARE FEATURES WITH RULE FUNCTION")   
         # Ensure the rule contains the "required features" key
         print(f"Current rule: {current_rule}")  # Debugging print
         
@@ -400,6 +447,7 @@ class KnowledgeBaseApp:
 
 
     def ask_third_question(self, rule):
+        print("MOVING ON TO THE ASK THIRD QUESTION FUNCTION")
         # Only ask the third question once (if the flag is False)
         if not self.asking_third_question:
             self.asking_third_question = True  # Mark as asked
@@ -415,6 +463,7 @@ class KnowledgeBaseApp:
 
 
     def handle_third_answer(self, user_input):
+        print("MOVING ON TO THE HANDLE THIRD ANSWER FUNCTION")
         # Store the answer to the third question
         feature_name = self.current_question["features"][2]["name"]
         print(f"User answered {user_input} for third question on feature: {feature_name}")
@@ -428,6 +477,7 @@ class KnowledgeBaseApp:
 
 
     def display_next_question(self, group_name):
+        print("MOVING ON TO THE DISPLAY NEXT QUESTION FUNCTION")    
         # Check if the group_name is a classification endpoint
         print(f"Displaying next question for group: {group_name}")
         if group_name.startswith("classification"):
