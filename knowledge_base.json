@@ -972,128 +972,128 @@
         "You can always access these instructions by clicking the question mark button in the top right corner.\n",
         "We hope you enjoy using the system and that it proves helpful in your animal classification journey!\n"
     ],
-"Dictionary": [
-    {
-      "Term": "Acoelomate",
-      "Definition": "Animals that do not have a body cavity."
-    },
-    {
-      "Term": "Antennae",
-      "Definition": "Feelers on the head of some animals, like insects, that help them sense the world."
-    },
-    {
-      "Term": "Appendages",
-      "Definition": "Extra parts like legs, arms, or antennae that help animals move or feel things."
-    },
-    {
-      "Term": "Bilateral symmetry",
-      "Definition": "When the body can be divided into two equal halves, like in butterflies."
-    },
-    {
-      "Term": "Body cavity",
-      "Definition": "A space inside the body, lined by membranes, where internal organs are kept and protected."
-    },
-    {
-      "Term": "Burrow",
-      "Definition": "To dig a hole or tunnel, usually for shelter or to live in."
-    },
-    {
-      "Term": "Budding",
-      "Definition": "When a new part of an animal grows from the parent and turns into a new animal."
-    },
-    {
-      "Term": "Central nervous system",
-      "Definition": "The brain and spinal cord that help animals move and think."
-    },
-    {
-        "Term": "Cephalothorax",
-        "Definition": "The fused head and thorax of spiders and other arthropods like scorpions and horseshoe crabs."
-    },
-    {
-      "Term": "Circulatory system",
-      "Definition": "The system that moves blood around the body to give the body oxygen and food."
-    },
-    {
-      "Term": "Compound eyes",
-      "Definition": "Eyes made of many small parts, helping animals like flies see in many directions."
-    },
-    {
-      "Term": "Crop milk",
-      "Definition": "A special kind of milk that some birds feed their babies."
-    },
-    {
-      "Term": "Diffusion",
-      "Definition": "When animals exchange gases, like oxygen and carbon dioxide, and remove waste through their skin or body surfaces."
-    },
-    {
-      "Term": "Endoskeleton",
-      "Definition": "An internal skeleton inside the body."
-    },
-    {
-      "Term": "Exoskeleton",
-      "Definition": "A hard outer shell that protects the body of animals, like insects and crabs."
-    },
-    {
-      "Term": "Larva",
-      "Definition": "An immature (first) form of an animal that looks different from the adult, like a caterpillar."
-    },
-    {
-      "Term": "Muscular foot",
-      "Definition": "A strong part of an animal's body that helps it move, like in snails."
-    },
-    {
-      "Term": "Notochord",
-      "Definition": "A soft, flexible rod that some animals have to support their body before they grow a backbone."
-    },
-    {
-      "Term": "Ossicles",
-      "Definition": "Tiny bones found inside animals like starfish."
-    },
-    {
-      "Term": "Parasite",
-      "Definition": "An animal that lives inside or on another animal and harms it, like a tick on a dog."
-    },
-    {
-      "Term": "Pedipalps",
-      "Definition": "Special parts on animals like spiders used for feeling or holding food."
-    },
-    {
-      "Term": "Placenta",
-      "Definition": "An organ inside the mother that gives food and oxygen to the baby before it is born."
-    },
-    {
-      "Term": "Pouch",
-      "Definition": "A special pocket on a mother's body where some animals carry their babies, like in kangaroos."
-    },
-    {
-      "Term": "Secretes",
-      "Definition": "To produce and release a substance."
-    },
-    {
-      "Term": "Segmented body",
-      "Definition": "A body that is divided into repeating parts."
-    },
-    {
-      "Term": "Tadpole",
-      "Definition": "The baby form of frogs, living in water with a tail before they grow legs."
-    },
-    {
-      "Term": "Thorax",
-      "Definition": "The middle part of an animal's body, where the legs and wings are, like in insects."
-    },
-    {
-      "Term": "True tissue",
-      "Definition": "Groups of special cells that work together to do a job in the body, like muscles or nerves."
-    },
-    {
-      "Term": "Unsegmented body",
-      "Definition": "A body that is not divided into parts."
-    },
-    {
-      "Term": "Water vascular system",
-      "Definition": "A system of tubes inside animals like starfish, used for moving and eating."
-    }
-  ],
+    "Dictionary": [
+        {
+        "Term": "Acoelomate",
+        "Definition": "Animals that do not have a body cavity."
+        },
+        {
+        "Term": "Antennae",
+        "Definition": "Feelers on the head of some animals, like insects, that help them sense the world."
+        },
+        {
+        "Term": "Appendages",
+        "Definition": "Extra parts like legs, arms, or antennae that help animals move or feel things."
+        },
+        {
+        "Term": "Bilateral symmetry",
+        "Definition": "When the body can be divided into two equal halves, like in butterflies."
+        },
+        {
+        "Term": "Body cavity",
+        "Definition": "A space inside the body, lined by membranes, where internal organs are kept and protected."
+        },
+        {
+        "Term": "Burrow",
+        "Definition": "To dig a hole or tunnel, usually for shelter or to live in."
+        },
+        {
+        "Term": "Budding",
+        "Definition": "When a new part of an animal grows from the parent and turns into a new animal."
+        },
+        {
+        "Term": "Central nervous system",
+        "Definition": "The brain and spinal cord that help animals move and think."
+        },
+        {
+            "Term": "Cephalothorax",
+            "Definition": "The fused head and thorax of spiders and other arthropods like scorpions and horseshoe crabs."
+        },
+        {
+        "Term": "Circulatory system",
+        "Definition": "The system that moves blood around the body to give the body oxygen and food."
+        },
+        {
+        "Term": "Compound eyes",
+        "Definition": "Eyes made of many small parts, helping animals like flies see in many directions."
+        },
+        {
+        "Term": "Crop milk",
+        "Definition": "A special kind of milk that some birds feed their babies."
+        },
+        {
+        "Term": "Diffusion",
+        "Definition": "When animals exchange gases, like oxygen and carbon dioxide, and remove waste through their skin or body surfaces."
+        },
+        {
+        "Term": "Endoskeleton",
+        "Definition": "An internal skeleton inside the body."
+        },
+        {
+        "Term": "Exoskeleton",
+        "Definition": "A hard outer shell that protects the body of animals, like insects and crabs."
+        },
+        {
+        "Term": "Larva",
+        "Definition": "An immature (first) form of an animal that looks different from the adult, like a caterpillar."
+        },
+        {
+        "Term": "Muscular foot",
+        "Definition": "A strong part of an animal's body that helps it move, like in snails."
+        },
+        {
+        "Term": "Notochord",
+        "Definition": "A soft, flexible rod that some animals have to support their body before they grow a backbone."
+        },
+        {
+        "Term": "Ossicles",
+        "Definition": "Tiny bones found inside animals like starfish."
+        },
+        {
+        "Term": "Parasite",
+        "Definition": "An animal that lives inside or on another animal and harms it, like a tick on a dog."
+        },
+        {
+        "Term": "Pedipalps",
+        "Definition": "Special parts on animals like spiders used for feeling or holding food."
+        },
+        {
+        "Term": "Placenta",
+        "Definition": "An organ inside the mother that gives food and oxygen to the baby before it is born."
+        },
+        {
+        "Term": "Pouch",
+        "Definition": "A special pocket on a mother's body where some animals carry their babies, like in kangaroos."
+        },
+        {
+        "Term": "Secretes",
+        "Definition": "To produce and release a substance."
+        },
+        {
+        "Term": "Segmented body",
+        "Definition": "A body that is divided into repeating parts."
+        },
+        {
+        "Term": "Tadpole",
+        "Definition": "The baby form of frogs, living in water with a tail before they grow legs."
+        },
+        {
+        "Term": "Thorax",
+        "Definition": "The middle part of an animal's body, where the legs and wings are, like in insects."
+        },
+        {
+        "Term": "True tissue",
+        "Definition": "Groups of special cells that work together to do a job in the body, like muscles or nerves."
+        },
+        {
+        "Term": "Unsegmented body",
+        "Definition": "A body that is not divided into parts."
+        },
+        {
+        "Term": "Water vascular system",
+        "Definition": "A system of tubes inside animals like starfish, used for moving and eating."
+        }
+    ],
     "Animal media": [
         {
             "vertebrates": {
