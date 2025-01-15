@@ -266,7 +266,7 @@ class KnowledgeBaseApp:
             definition_label.pack(fill="x", pady=(0, 10))
 
     def show_classification_tree(self) -> None:
-        img_path = "Images\\animal tree.png"
+        img_path = "Images/animal tree.png"
         img = Image.open(img_path)
         img = img.resize((600, 600))
         
