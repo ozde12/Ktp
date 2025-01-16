@@ -162,7 +162,6 @@ class KnowledgeBaseApp:
             text="",
             bg='#A5D6A7',
             fg='black',
-            font=("Arial", 40, "bold"),
             wraplength=1100
         )
 
@@ -307,7 +306,7 @@ class KnowledgeBaseApp:
         if self.current_rule_index is not None and self.current_rule_index < len(self.rules):
             self.current_question = self.rules[self.current_rule_index]
             self.current_feature_index = 0
-            print(f"Displaying question for rule: {self.current_question['current animal group']}")
+            # print(f"Displaying question for rule: {self.current_question['current animal group']}")
 
             if "required features" in self.current_question:
                 self.ask_feature_question()
@@ -317,35 +316,39 @@ class KnowledgeBaseApp:
             else:
                 print(f"Error: No 'required features' or 'end classification' in rule for {self.current_question['current animal group']}.")
         else:
-            print("No valid rule found. Ending classification with 'Unknown classification'.")
+            # print("No valid rule found. Ending classification with 'Unknown classification'.")
             self.end_classification("Unknown classification")
 
     def ask_feature_question(self) -> None:
         feature_name = self.current_question["required features"][self.current_feature_index]
         question_text = self.get_question_text(feature_name)
-        print(f"Asking question: {question_text} (Feature: {feature_name})")
-        self.question_label.config(text=question_text)
+        # print(f"Asking question: {question_text} (Feature: {feature_name})")
+        if len(question_text.split()) > 15:
+            font_style = ("Arial", 33, "bold")
+        else:
+            font_style = ("Arial", 40, "bold")
+        self.question_label.config(text=question_text, font=font_style)
 
     def get_question_text(self, feature_name) -> str:
         for group in self.knowledge_base:
             for feature in group["features"]:
                 if feature["name"] == feature_name:
-                    print(f"Question text for feature '{feature_name}' found: {feature['question']}")
+                    # print(f"Question text for feature '{feature_name}' found: {feature['question']}")
                     return feature.get("question", "No question available.")
-        print(f"No question text found for feature '{feature_name}'.")
+        # print(f"No question text found for feature '{feature_name}'.")
         return "No question available."
 
     def answer(self, user_input) -> None:
         feature_name = self.current_question["required features"][self.current_feature_index]
         self.answers[feature_name] = (user_input == "Yes")
-        print(f"Answer received for feature '{feature_name}': {self.answers[feature_name]}")
+        # print(f"Answer received for feature '{feature_name}': {self.answers[feature_name]}")
         self.current_feature_index += 1
 
         if self.current_feature_index < 2:
             self.ask_feature_question()
         elif self.current_feature_index == 2:
             yes_count = sum(self.answers.get(feature, False) for feature in self.current_question["required features"][:2])
-            print(f"First two features yes count: {yes_count}")
+            # print(f"First two features yes count: {yes_count}")
             if yes_count == 2:
                 self.update_animal_group_label(self.current_question['current animal group'])
                 self.check_subcategories(self.current_question["new direction"])
@@ -365,21 +368,21 @@ class KnowledgeBaseApp:
                 self.go_to_next_rule(self.current_question["else"])
 
     def check_subcategories(self, group) -> None:
-        print(f"Checking subcategories for group: {group}")
+        # print(f"Checking subcategories for group: {group}")
         subcategory_rule_index = next(
             (index for index, rule in enumerate(self.rules) if rule["current animal group"] == group),
             None
         )
         if subcategory_rule_index is not None:
-            print(f"Subcategories found. Transitioning to rule: {group}")
+            # print(f"Subcategories found. Transitioning to rule: {group}")
             self.current_rule_index = subcategory_rule_index
             self.display_next_question()
         else:
-            print(f"No subcategories found. Ending classification for group: {group}")
+            # print(f"No subcategories found. Ending classification for group: {group}")
             self.end_classification(group)
 
     def go_to_next_rule(self, next_group) -> None:
-        print(f"Moving to next rule: {next_group}")
+        # print(f"Moving to next rule: {next_group}")
         self.current_rule_index = next(
             (index for index, rule in enumerate(self.rules) if rule["current animal group"] == next_group),
             None
@@ -387,7 +390,6 @@ class KnowledgeBaseApp:
         self.display_next_question()
 
     def display_animal_images(self, group_name, message_frame) -> None:
-        print(group_name)
         for group in self.animal_media:
             if group_name in group:
                 media = group[group_name]
@@ -437,7 +439,7 @@ class KnowledgeBaseApp:
                 break
 
     def end_classification(self, classification_group) -> None:
-        print(f"Ending classification. Group: {classification_group}")
+        # print(f"Ending classification. Group: {classification_group}")
         rule_found = False
 
         for rule in self.rules:
