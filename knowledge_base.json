@@ -361,8 +361,8 @@
             "animal group": "corals",
             "features": [
                 {
-                    "name": "sessile",
-                    "question": "Is the animal sessile (fixed in one place) for its entire life?"
+                    "name": "branching or round structure",
+                    "question": "Does the animal have a structure that is either branching or has a round shape like a cup or mound?"
                 },
                 {
                     "name": "reefs",
@@ -387,7 +387,7 @@
                 },
                 {
                     "name": "stay in one place",
-                    "question": "Does the animal stay in one place (polyplop form), attached to a surface, for its whole life instead of swimming freely?"
+                    "question": "Does the animal mostly stay in one place (polyplop form), attached to a surface, for its whole life instead of swimming freely?"
                 }
             ]
         },
@@ -673,7 +673,7 @@
         {
             "current animal group": "corals",
             "required features": [
-                "sessile",
+                "branching or round structure",
                 "reefs",
                 "get energy from tiny plants"
             ],
@@ -950,7 +950,7 @@
         "three segments",
         "six legs",
         "compound eyes and antennae",
-        "sessile",
+        "branching or round structure",
         "reefs",
         "get energy from tiny plants",
         "freshwater",
