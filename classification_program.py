@@ -484,7 +484,7 @@ class KnowledgeBaseApp:
                         text=secondary_message,
                         bg='#A5D6A7',
                         fg='black',
-                        font=("Arial", 25, "bold"),
+                        font=("Arial", 30, "bold"),
                         wraplength=1200
                     )
                     main_label.pack()
